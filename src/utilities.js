@@ -1,5 +1,5 @@
 const getSongs = () => {
-    return fetch("https://www.phantasytour.com/api/songs/?bandId=12")
+    return fetch("/songs/?bandId=12")
         .then(response => {
             if (response.ok) {
                 return response.json()

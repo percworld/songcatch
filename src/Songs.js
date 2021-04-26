@@ -4,7 +4,6 @@ import Song from './Song';
 
 
 const Songs = ({ songs }) => {
-    console.log(songs[0])
     const sortedSongs = songs.sort((a, b) => a.Name - b.Name)
     const songsToDisplay = sortedSongs.map(song => {
         return (

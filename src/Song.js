@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Song = () => {
+const Song = ({ songID }) => {
+    console.log("SongID: ", songID)
     return (
-        <p>SONG</p>
+
+        <p>{songID}</p>
     )
 
 }

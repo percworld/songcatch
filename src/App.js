@@ -38,7 +38,10 @@ class App extends React.Component {
           <Route path="/originals" og={this.state.isOriginals} render={() => (<Songs songs={this.state.songs} />)} />
           <Route path="/covers" og={this.state.isOriginals} render={() => (<Songs songs={this.state.songs} />)} />
           <Route path="/songs" render={() => (<Songs songs={this.state.songs} />)} />
-          <Route path="/:song" render={() => (<Song />)} />
+          <Route path="/:song" render={({ match }) => {
+            const { songID } = match.params.song
+            return (<Song songID={songID} />)
+          }} />
         </Switch>
       </main>
     );

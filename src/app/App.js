@@ -1,13 +1,13 @@
 import React from 'react';
-import Form from './Form';
-import Songs from './Songs';
-import Song from './Song';
+import Form from '../Form';
+import Songs from '../Songs';
+import Song from '../song/Song';
 // import Covers from './Covers';
 // import Originals from './Originals';
-import Header from './Header';
+import Header from '../Header';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import { getSongs, getTourById } from './utilities';
+import { getSongs, getTourById } from '../utilities';
 
 class App extends React.Component {
   constructor() {
@@ -39,8 +39,7 @@ class App extends React.Component {
           <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} />)} />
           <Route path="/:song" render={({ match }) => {
-            const { songID } = match.params.song
-            return (<Song songID={songID} />)
+            return (<Song songID={match.params.song} />)
           }} />
         </Switch>
       </main>

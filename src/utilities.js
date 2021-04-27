@@ -24,4 +24,4 @@ const getShowsByTour = (id) => {
 const getSong = (song) => {
 
 }
-export { getSongs, getShowsByTour };
+export { getSong, getSongs, getShowsByTour };

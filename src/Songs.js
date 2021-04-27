@@ -3,10 +3,24 @@ import { Link } from 'react-router-dom';
 import Song from './Song';
 
 
-const Songs = ({ songs }) => {
+const Songs = ({ songs, category }) => {
     const sortedSongs = songs.sort((a, b) => a.Name - b.Name)
-    const songsToDisplay = sortedSongs.map(song => {
+    const filteredSongs = sortedSongs.filter(song => {
+        switch (category) {
+            case 'all':
+                return true;
+            case 'original': return !song.Cover;
+            case 'cover': return song.Cover;
+        }
+
+        // (category === 'all') && 
+        // return true;
+        // category === 'original' && return song.Cover === false;
+        // category === 'cover' && return song.Cover === true;
+    })
+    const songsToDisplay = filteredSongs.map(song => {
         return (
+
             <Link to={`/${song.Id}`} key={song.Id} className="songName">
                 <p>{song.Name}</p>
             </Link>

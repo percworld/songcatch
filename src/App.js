@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       isDashboard: false,
       isLogged: false,
-      isOriginals: true,
+      category: 'all',  // cover, original  accesses Cover: boo
       songs: []
     }
   }
@@ -35,9 +35,9 @@ class App extends React.Component {
         </nav>
         <Switch>
           <Route exact path="/" render={() => (<Form />)} />
-          <Route path="/originals" og={this.state.isOriginals} render={() => (<Songs songs={this.state.songs} />)} />
-          <Route path="/covers" og={this.state.isOriginals} render={() => (<Songs songs={this.state.songs} />)} />
-          <Route path="/songs" render={() => (<Songs songs={this.state.songs} />)} />
+          {/* <Route path="/originals" isOriginals={true} render={() => (<Songs songs={this.state.songs} />)} />
+          <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
+          <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} />)} />
           <Route path="/:song" render={({ match }) => {
             const { songID } = match.params.song
             return (<Song songID={songID} />)

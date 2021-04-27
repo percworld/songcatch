@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 const Header = () => {
     return (
         <header>
-            <Link to="/originals" >
+            <Link to="/songs" >
                 <p>Originals</p>
             </Link>
-            <Link to="/covers" >
+            <Link to="/songs" >
                 <p>Covers</p>
             </Link>
             <Link to="/songs" >

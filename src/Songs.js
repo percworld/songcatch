@@ -4,7 +4,7 @@ import Song from './song/Song';
 
 
 const Songs = ({ songs, category }) => {
-    const sortedSongs = songs.sort((a, b) => a.Name - b.Name)
+    const sortedSongs = songs.sort((a, b) => a.Name - b.Name);
     const filteredSongs = sortedSongs.filter(song => {
         switch (category) {
             case 'All':

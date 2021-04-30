@@ -25,18 +25,21 @@ class App extends React.Component {
       .then(response => this.setState({ songs: response }))
   }
 
+  updateCategory = (newCategory) => {
+    this.setState({ category: newCategory })
+  }
 
   render() {
     console.log("Songs: ", this.state)
     return (
       <main className="App" >
         <nav>
-          <Header />
+          <Header updateCategory={this.updateCategory} />
         </nav>
         <Switch>
           <Route exact path="/" render={() => (<Form />)} />
           {/* <Route path="/originals" isOriginals={true} render={() => (<Songs songs={this.state.songs} />)} />
-          <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
+              <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} />)} />
           <Route path="/:song" render={({ match }) => {
             return (<Song songID={match.params.song} />)

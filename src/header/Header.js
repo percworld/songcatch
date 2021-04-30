@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = ({ updateCategory }) => {
     return (
         <header>
-            <Link to="/songs" >
+            <Link to="/songs" onClick={() => updateCategory('Original')} >
                 <p>Originals</p>
             </Link>
-            <Link to="/songs" >
+            <Link to="/songs" onClick={() => updateCategory('Cover')} >
                 <p>Covers</p>
             </Link>
             <Link to="/songs" >

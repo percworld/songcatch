@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Header = ({ updateCategory }) => {
+const Nav = ({ updateCategory }) => {
     return (
         <header>
             <Link to="/songs" onClick={() => updateCategory('Original')} >
@@ -17,4 +17,4 @@ const Header = ({ updateCategory }) => {
         </header>)
 }
 
-export default Header;
+export default Nav;

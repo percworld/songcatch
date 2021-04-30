@@ -1,5 +1,5 @@
 import React from 'react';
-import { getSong, getPlays } from './../api';
+import { getSong, getPlays } from '../../api';
 
 const Song = ({ songID }) => {
 

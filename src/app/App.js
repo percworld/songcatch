@@ -1,10 +1,10 @@
 import React from 'react';
 import Form from '../Form';
-import Songs from '../Songs';
-import Song from '../song/Song';
-// import Covers from './Covers';
-// import Originals from './Originals';
-import Header from '../header/Header';
+import Nav from '../Components/nav/Nav'
+import Songs from '../Components/songs/Songs';
+import Shows from '../Components/shows/Shows';
+import Song from '../Components/song/Song';
+import Header from '../Components/header/Header';
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 import { getSongs, getTourById } from '../api';
@@ -29,20 +29,24 @@ class App extends React.Component {
     this.setState({ category: newCategory })
   }
 
+  makeShowList = (songID) => {
+    this.setState({ songID: songID });
+  }
+
   render() {
     console.log("Songs: ", this.state)
     return (
       <main className="App" >
-        <nav>
-          <Header updateCategory={this.updateCategory} />
-        </nav>
         <Switch>
-          <Route exact path="/" render={() => (<Form />)} />
+          <Route exact path="/" render={() => (<Nav />)} />
+          <Route path="/shows" render={() => (<Shows songs={this.state.songs} />)} />
           {/* <Route path="/originals" isOriginals={true} render={() => (<Songs songs={this.state.songs} />)} />
               <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} />)} />
           <Route path="/:song" render={({ match }) => {
-            return (<Song songID={match.params.song} />)
+            const song = match.params.song;
+            this.makeShowlist(song)
+            return (<Song songID={song} />)
           }} />
         </Switch>
       </main>

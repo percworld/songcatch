@@ -2,7 +2,20 @@
   text-align: center;
 }
 
-
+.App::before {
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2; 
+  z-index: -1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../assets/©SilkyShots2020-colorado.webres-1428.jpg');
+  background-size: contain;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

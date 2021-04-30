@@ -4,10 +4,10 @@ import Songs from '../Songs';
 import Song from '../song/Song';
 // import Covers from './Covers';
 // import Originals from './Originals';
-import Header from '../Header';
-import './App.css';
+import Header from '../header/Header';
+import './App.scss';
 import { Route, Switch } from 'react-router-dom';
-import { getSongs, getTourById } from '../utilities';
+import { getSongs, getTourById } from '../api';
 
 class App extends React.Component {
   constructor() {

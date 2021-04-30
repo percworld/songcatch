@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import { getSong, getPlays } from '../../api';
 
-const Song = ({ songID }) => {
+const Song = ({ song, plays }) => {
     const [feature, setFeature] = useState();
-    const details = async () => {
-        try {
-            const songDetails = await getSong(songID);
-            console.log(songDetails);
-            //setFeature(songDetails);
-            const playDetails = await getPlays(songID);
-            console.log(playDetails);
-        } catch {
-            throw new Error('Whyyyy')
-        }
-    }
+    plays.length && console.log(plays[0].Id)
+    //setSong(songID)
 
     return (
         <article>
-            <p>details</p>
-            <p>{feature}</p>
+            <p>Song Stats</p>
+            <p>{song.Name}</p>
+            {plays.length && <p>{plays[0].Id}</p>}
+            {song && <p>{song.Id}</p>}
         </article>
     )
     // try {

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Shows = ({ }) => {
     return (
-        <p>Shows</p>
+        <>
+            <p>Shows</p>
+        </>
     )
 }
 export default Shows;

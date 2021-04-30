@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Song from '../song/Song';
 
 
-const Songs = ({ songs, category }) => {
+const Songs = ({ songs, category, setSong }) => {
     const sortedSongs = songs.sort((a, b) => a.Name - b.Name);
     const filteredSongs = sortedSongs.filter(song => {
         switch (category) {
@@ -21,10 +21,10 @@ const Songs = ({ songs, category }) => {
     const songsToDisplay = filteredSongs.map(song => {
         return (
             <section className='songSingle' key={song.Id}>
-                <Link to={`/${song.Id}`} className="songName">
+                <Link to={`/${song.Id}`} className="songName" onClick={() => setSong(song)}>
                     <p>{song.Name}</p>
                 </Link>
-            </section >
+            </section>
         )
     })
 

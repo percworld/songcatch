@@ -1,30 +1,24 @@
+const checkResponse = (response) => {
+    if (!response.ok) {
+        throw new Error('The songs aren\'t currently available.');
+    } else {
+        return response.json();
+    }
+}
+
 const getSongs = () => {
     return fetch("/songs/?bandId=12")
-        .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('The songs aren\'t available')
-            }
-        })
+        .then(checkResponse)
 }
 
 const getShowsByTour = (id) => {
     return fetch(`/shows?tourId=${id}`)
-        .then(response => response.json())
-        .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('These shows aren\'t available')
-            }
-        })
+        .then(checkResponse)
 }
 
 const getSong = (songID) => {
     return fetch(`/songs/${songID}`)
-        .then(response => response.json())
-        .then(response => console.log(response))
+        .then(checkResponse)
 }
 
 const getPlays = (songID) => {

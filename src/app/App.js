@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       isDashboard: false,
       isLogged: false,
-      category: 'all',  // cover, original  accesses Cover: boo
+      category: 'All',  // cover, original  accesses Cover: boo
       songs: []
     }
   }

@@ -7,10 +7,10 @@ const Songs = ({ songs, category }) => {
     const sortedSongs = songs.sort((a, b) => a.Name - b.Name)
     const filteredSongs = sortedSongs.filter(song => {
         switch (category) {
-            case 'all':
+            case 'All':
                 return true;
-            case 'original': return !song.Cover;
-            case 'cover': return song.Cover;
+            case 'Original': return !song.Cover;
+            case 'Cover': return song.Cover;
         }
 
         // (category === 'all') && 
@@ -20,15 +20,17 @@ const Songs = ({ songs, category }) => {
     })
     const songsToDisplay = filteredSongs.map(song => {
         return (
-
-            <Link to={`/${song.Id}`} key={song.Id} className="songName">
-                <p>{song.Name}</p>
-            </Link>
+            <section className='songSingle' key={song.Id}>
+                <Link to={`/${song.Id}`} className="songName">
+                    <p>{song.Name}</p>
+                </Link>
+            </section >
         )
     })
 
     return (
         <section className="songList">
+            <p>{category} Songs: {filteredSongs.length} Total</p>
             {songsToDisplay}
         </section>
 

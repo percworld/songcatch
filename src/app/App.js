@@ -29,7 +29,7 @@ class App extends React.Component {
     this.setState({ category: newCategory })
   }
 
-  makeShowList = (songID) => {
+  setSong = (songID) => {
     this.setState({ songID: songID });
   }
 
@@ -38,15 +38,14 @@ class App extends React.Component {
     return (
       <main className="App" >
         <Switch>
-          <Route exact path="/" render={() => (<Nav />)} />
+          <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} />)} />
           <Route path="/shows" render={() => (<Shows songs={this.state.songs} />)} />
           {/* <Route path="/originals" isOriginals={true} render={() => (<Songs songs={this.state.songs} />)} />
               <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} />)} />
           <Route path="/:song" render={({ match }) => {
             const song = match.params.song;
-            this.makeShowlist(song)
-            return (<Song songID={song} />)
+            return (<Song songID={song} setSong={this.setSong} />)
           }} />
         </Switch>
       </main>

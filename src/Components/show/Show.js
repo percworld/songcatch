@@ -25,12 +25,11 @@ const Show = ({ plays, song, showID }) => {
     // console.log('SHOW 1st: ', show[0]);
     const songsToDisplay = show.map((track, index) => {
         return (
-            <div key={index}>
+            <Link to={`/song/${track.Id}`} key={index} >
                 <p>{track.Name}</p>
-            </div>
+            </Link>
         )
     })
-    //if (show) { return songs } else { return (<p>Loading...</p>) }
 
     return (
         <>
@@ -44,10 +43,7 @@ const Show = ({ plays, song, showID }) => {
             {/* {console.log(venue)} */}
             {venue && <div>
                 <p>{venue.Venue.Name} - {venue.Locale}</p>
-            </div>}
-            <p>Setlist - Lotus - {venue.DateTime}</p>
-
-
+                <p>Setlist - Lotus - {venue.DateTime}</p></div>}
             {show.length ? songsToDisplay : <p>Loading...</p>}
 
         </>

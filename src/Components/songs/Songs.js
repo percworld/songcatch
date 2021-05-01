@@ -21,7 +21,7 @@ const Songs = ({ songs, category, setSong }) => {
     const songsToDisplay = filteredSongs.map(song => {
         return (
             <section className='songSingle' key={song.Id}>
-                <Link to={`/${song.Id}`} className="songName" onClick={() => setSong(song)}>
+                <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
                     <p>{song.Name}</p>
                 </Link>
             </section>

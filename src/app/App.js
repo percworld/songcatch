@@ -45,10 +45,10 @@ class App extends React.Component {
   setSong = async (song) => {
     try {
       this.setState({ song: song });
-      const playDetails = await getPlays(song.Id);
+      const playDetails = await getPlays(song.id || song.Id);
       this.setState({ playlist: playDetails.aaData })
       console.log('List of Plays: ', this.state.playlist); //this.state.playlist.Venue.Locale  .Venue.Name (venue owns Id too)
-      console.log('current song: ', this.state.song)
+      console.log('current song: ', this.state.song)  // has lowercase id!
     } catch {
       throw new Error('This song has not been played yet.')
     }
@@ -70,11 +70,11 @@ class App extends React.Component {
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} plays={this.state.playlist} setSong={this.setSong} />)} />
           <Route path="/show/:showID" render={({ match }) => {
             const { showID } = match.params;
-            console.log(showID)
             return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} />)
           }} />
-          <Route path="/:song" render={() => {
-            return (<Song song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} />)
+          <Route path="/song/:song" render={({ match }) => {
+            const { song } = match.params
+            return (<Song matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} setSong={this.setSong} />)
           }} />
         </Switch>
       </main>

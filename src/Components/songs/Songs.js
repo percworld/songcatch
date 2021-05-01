@@ -30,7 +30,7 @@ const Songs = ({ songs, category, setSong }) => {
 
     return (
         <section className="songList">
-            <p>{category} Songs: {filteredSongs.length} Total</p>
+            <p>Lotus - {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
             {songsToDisplay}
         </section>
 

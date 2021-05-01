@@ -19,7 +19,8 @@ class App extends React.Component {
       songs: [],
       song: {},
       playlist: [],
-      currentShow: []
+      currentShow: [],
+      favorites: []
     }
   }
 
@@ -53,6 +54,10 @@ class App extends React.Component {
     }
   }
 
+  addFavorite = (song) => {
+    !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] })
+  }
+
   render() {
 
     return (
@@ -61,6 +66,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} />)} />
           <Route path="/festivals" render={() => (<>festivals</>)} />
+          <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} plays={this.state.playlist} setSong={this.setSong} />)} />
           <Route path="/show/:showID" render={({ match }) => {
             const { showID } = match.params;
@@ -68,7 +74,7 @@ class App extends React.Component {
             return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} />)
           }} />
           <Route path="/:song" render={() => {
-            return (<Song song={this.state.song} plays={this.state.playlist} />)
+            return (<Song song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} />)
           }} />
         </Switch>
       </main>

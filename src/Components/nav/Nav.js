@@ -10,8 +10,11 @@ const Nav = ({ updateCategory }) => {
             <Link to="/songs" onClick={() => updateCategory('Cover')} >
                 <p>Covers</p>
             </Link>
-            <Link to="/songs" >
+            <Link to="/songs" onClick={() => updateCategory('All')} >
                 <p>All Songs</p>
+            </Link>
+            <Link to="/songs/favorites" onClick={() => updateCategory('All')} >
+                <p>My Favorites</p>
             </Link>
 
         </header>)

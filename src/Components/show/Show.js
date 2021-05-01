@@ -35,10 +35,10 @@ const Show = ({ plays, song, showID }) => {
     return (
         <>
 
-            {match && <div><p>{match.Name} was song #{match.Position} in set {match.SetNumber}</p>
-                {match.DateLastPlayed && <p>It had been played last on {match.DateLastPlayed},</p>}
-                {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows before this one.</p>}
-                {match.LastPosition && <p>and was song #{match.LastPosition} in set {match.LastSetNumber}</p>}
+            {match && <div><p>{match.Name}</p><p> was song #{match.Position} in set {match.SetNumber}.</p>
+                {match.DateLastPlayed && <p>It was last played on {match.DateLastPlayed},</p>}
+                {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows ago and was</p>}
+                {match.LastPosition && <p>song #{match.LastPosition} in set {match.LastSetNumber}</p>}
             </div>
             }
             {/* {console.log(venue)} */}

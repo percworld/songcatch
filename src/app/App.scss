@@ -11,10 +11,12 @@
   left: 0;
   opacity: 31; 
   z-index: -1;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-repeat: repeat;
   background-image: url('../assets/©SilkyShots2020-colorado.webres-1428.jpg');
   background-size: contain;
+  background-attachment: fixed;
+
 }
 .App-header {
   background-color: #282c34;

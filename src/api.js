@@ -6,6 +6,12 @@ const checkResponse = (response) => {
     }
 }
 
+//https://www.phantasytour.com/api/shows/53413/songstats
+const getSet = (showID) => {
+    return fetch(`/shows/${showID}/songstats`)
+        .then(checkResponse)
+}
+
 const getSongs = () => {
     return fetch("/songs/?bandId=12")
         .then(checkResponse)
@@ -26,4 +32,4 @@ const getPlays = (songID) => {
         .then(checkResponse)
 }
 
-export { getPlays, getSong, getSongs, getShowsByTour };
+export { getPlays, getSong, getSongs, getShowsByTour, getSet };

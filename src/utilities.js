@@ -1,27 +1,8 @@
-const getSongs = () => {
-    return fetch("/songs/?bandId=12")
-        .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('The songs aren\'t available')
-            }
-        })
+const formatDate = inputDate => {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+    let date = new Date(inputDate);
+    return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 }
 
-const getShowsByTour = (id) => {
-    return fetch(`https://www.phantasytour.com/api/shows?tourId=${id}`)
-        .then(response => response.json())
-        .then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                throw new Error('These shows aren\'t available')
-            }
-        })
-}
-
-const getSong = (song) => {
-
-}
-export { getSongs, getShowsByTour };
+module.exports = formatDate;

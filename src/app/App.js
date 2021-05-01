@@ -15,11 +15,11 @@ class App extends React.Component {
     this.state = {
       isDashboard: false,
       isLogged: false,
-      category: 'All',  // cover, original  accesses Cover: boo
+      category: 'All',
       songs: [],
       song: {},
       playlist: [],
-      currentShow: {}
+      currentShow: []
     }
   }
 
@@ -35,37 +35,21 @@ class App extends React.Component {
   updateShow = async (showID) => {
     try {
       const show = await getSet(showID);
-      console.log('SHOW: ', show)
       this.setState({ currentShow: show })
     } catch {
       throw new Error(`No Set Available for Show #${showID}`)
     }
   }
 
-  // setSong = (songID) => {
-  //   this.setState({ song: getSong(songID) });
-  // }
-
-  // setSong = async (songID) => {
-  //   try {
-  //     const songDetails = await getSong(songID);
-  //     this.setState({ song: songDetails });
-  //     console.log(songDetails);
-  //     // const playDetails = await getPlays(songID);
-  //     // console.log(playDetails);
-  //   } catch {
-  //     throw new Error('Whyyyy')
-  //   }
-  // }
   setSong = async (song) => {
     try {
       this.setState({ song: song });
       const playDetails = await getPlays(song.Id);
       this.setState({ playlist: playDetails.aaData })
-      console.log(this.state.playlist); //this.state.playlist.Venue.Locale  .Venue.Name (venue owns Id too)
-      console.log(this.state.song)
+      console.log('List of Plays: ', this.state.playlist); //this.state.playlist.Venue.Locale  .Venue.Name (venue owns Id too)
+      console.log('current song: ', this.state.song)
     } catch {
-      throw new Error('Whyyyy')
+      throw new Error('This song has not been played yet.')
     }
   }
 
@@ -86,8 +70,7 @@ class App extends React.Component {
             console.log(showID)
             return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} />)
           }} />
-          <Route path="/:song" render={({ match }) => {
-            const songID = match.params.song;
+          <Route path="/:song" render={() => {
             return (<Song song={this.state.song} plays={this.state.playlist} />)
           }} />
         </Switch>

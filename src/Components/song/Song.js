@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getSong, getPlays } from '../../api';
+import { } from '../../api';
 import { dateModify } from '../../utilities'
 import { Link } from 'react-router-dom';
 
@@ -11,8 +11,7 @@ const Song = ({ song, plays }) => {
     // change date import utility
     const playsToDisplay = plays.map((play, index) => {
         return (
-            <div>
-                {console.log(play.Id)}
+            <div key={play.Id}>
                 <Link to={`/show/${play.Id}`} key={play.Id}>
                     <p>{play.Venue.Name}</p>
                 </Link>
@@ -26,9 +25,6 @@ const Song = ({ song, plays }) => {
             {song.Cover ? <p>Cover of {song.Artist}</p> : <p>Lotus Original</p>}
             <p>Plays:</p>
             {!plays.length ? <p>Loading...</p> : playsToDisplay}
-
-
-
             {song && <p>{song.Name} ID: {song.Id}</p>}
 
         </article>

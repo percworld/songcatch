@@ -1,40 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getPlays } from '../../api'
+import { getSet } from '../../api'
 
-const Show = ({ plays, song, showID, show, updateShow }) => {
-    //const [set, setSet] = useState({});
-    //const songShowMatch = show.filter(play => song.Id === play.Id);
-    console.log(plays[0].Id)
+const Show = ({ plays, song, showID }) => {
+    const [show, setShow] = useState([])
+
+    useEffect(() => {
+        const updateShow = async () => {
+            try {
+                const sets = await getSet(showID);
+                setShow(sets)
+            } catch {
+                throw new Error(`No Set Available for Show #${showID}`)
+            }
+        }
+        updateShow()
+    }, [])
+    const match = show.find(play => song.Id === play.Id);
+
+    console.log('match: ', match)
+    // console.log(plays[0].Id)
     console.log('SONG: ', song);
     console.log('PLAYS: ', plays);
     //console.log('Match: ', showID);
-    showID && updateShow(showID)
     console.log('SHOW: ', show);
+    console.log('SHOW 1st: ', show[0]);
+    //showID = '';
+    const songsToDisplay = show.map((track, index) => {
+        return (
+            <div key={index}>
+                <p>{track.Name}</p>
+            </div>
+        )
+    })
+    //if (show) { return songs } else { return (<p>Loading...</p>) }
 
-    const songsToDisplay = () => {
-        const songs = show.map((track) => {
-            return (
-                <div>
-                    <p>{track.Name}</p>
-
-
-                    <p></p>
-                </div>
-            )
-        })
-        if (show) { return songs } else { return (<p>Loading...</p>) }
-    }
     return (
         <>
-            {/* <p>{song.Name} was song
-            #{song.SongStats.Position} in set {song.SongStats.SetNumber}
-                {console.log(song)}
-            </p> */}
+
+            {match && <div><p>{match.Name} was song #{match.Position} in set {match.SetNumber}</p>
+                {match.DateLastPlayed && <p>It had been played last on {match.DateLastPlayed},</p>}
+                {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows before this one.</p>}
+                {match.LastPosition && <p>and was song #{match.LastPosition} in set {match.LastSetNumber}</p>}
+            </div>
+            }
+
             <p>Setlist</p>
 
-            {Object.values(show) ? songsToDisplay() : <p>Loading...</p>}
-            {/* {if (Object.values(show)) {songsToDisplay()}} */}
+
+            {show.length ? songsToDisplay : <p>Loading...</p>}
+
         </>
     )
 }

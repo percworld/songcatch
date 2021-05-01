@@ -6,7 +6,6 @@ const checkResponse = (response) => {
     }
 }
 
-//https://www.phantasytour.com/api/shows/53413/songstats
 const getSet = (showID) => {
     return fetch(`/shows/${showID}/songstats`)
         .then(checkResponse)

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSet } from '../../api'
-
+import { formatDate } from '../../utilities';
 const Show = ({ plays, song, showID }) => {
     const [show, setShow] = useState([])
 
@@ -17,15 +17,12 @@ const Show = ({ plays, song, showID }) => {
         updateShow()
     }, [])
     const match = show.find(play => song.Id === play.Id);
-
-    console.log('match: ', match)
-    // console.log(plays[0].Id)
-    console.log('SONG: ', song);
-    console.log('PLAYS: ', plays);
-    //console.log('Match: ', showID);
-    console.log('SHOW: ', show);
-    console.log('SHOW 1st: ', show[0]);
-    //showID = '';
+    const venue = plays.find(play => play.Id === parseInt(showID));
+    // console.log('match: ', match)
+    // console.log('SONG: ', song);
+    // console.log('PLAYS: ', plays);
+    // console.log('SHOW: ', show);
+    // console.log('SHOW 1st: ', show[0]);
     const songsToDisplay = show.map((track, index) => {
         return (
             <div key={index}>
@@ -44,8 +41,11 @@ const Show = ({ plays, song, showID }) => {
                 {match.LastPosition && <p>and was song #{match.LastPosition} in set {match.LastSetNumber}</p>}
             </div>
             }
-
-            <p>Setlist</p>
+            {/* {console.log(venue)} */}
+            {venue && <div>
+                <p>{venue.Venue.Name} - {venue.Locale}</p>
+            </div>}
+            <p>Setlist - Lotus - {venue.DateTime}</p>
 
 
             {show.length ? songsToDisplay : <p>Loading...</p>}

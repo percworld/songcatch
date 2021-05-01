@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-const Header = ({ }) => {
+const Header = () => {
     return (
         <header>
-            <h3>Sifter</h3>
+            <Link to='/'>
+                <h3>Sifter</h3>
+            </Link>
 
 
         </header>)

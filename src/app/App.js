@@ -54,16 +54,13 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log("Songs: ", this.state)
+
     return (
       <main className="App" >
+        <Header />
         <Switch>
           <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} />)} />
-          {/* <Route path="/shows" render={() => (<Show plays={this.state.playlist} songs={this.state.songs} />)} /> */}
           <Route path="/festivals" render={() => (<>festivals</>)} />
-
-          {/* <Route path="/originals" isOriginals={true} render={() => (<Songs songs={this.state.songs} />)} />
-              <Route path="/covers" og={false} render={() => (<Songs songs={this.state.songs} />)} /> */}
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} plays={this.state.playlist} setSong={this.setSong} />)} />
           <Route path="/show/:showID" render={({ match }) => {
             const { showID } = match.params;

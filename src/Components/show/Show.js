@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSet } from '../../api'
-import { formatDate } from '../../utilities';
+import { formatDate } from '../../utilities'
 const Show = ({ plays, song, showID }) => {
     const [show, setShow] = useState([])
 
@@ -41,7 +41,7 @@ const Show = ({ plays, song, showID }) => {
             </div>}
             {venue && <div>
                 <p>{venue.Venue.Name} - {venue.Locale}</p>
-                <p>Setlist - Lotus - {venue.DateTime}</p></div>}
+                <p>Setlist - Lotus - {formatDate(venue.DateTime)}</p></div>}
             {show.length ? songsToDisplay : <p>Loading...</p>}
 
         </div>

@@ -19,8 +19,14 @@ img {
    font-weight: 800;
    color: rgb(125, 47, 122);
 }
+.play, .playCount {
+    margin-bottom: 1em;
+}
+.playCount {
+
+}
 
 button {
     width: 15vw;
-    margin-top: .5vh;
+    margin-top: 1vh;
 }

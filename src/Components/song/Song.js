@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-//import { dateModify } from '../../utilities'
+import { formatDate } from '../../utilities';
 import { Link } from 'react-router-dom';
 import { getSong } from '../../api';
 import './Song.scss';
@@ -20,7 +20,7 @@ const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
     const switchSong = async () => {
         try {
             const fetchedSong = await getSong(matchedSongID)
-            console.log('SONG LINE 22 FETCH', fetchedSong)
+            //console.log('SONG LINE 22 FETCH', fetchedSong)
             setSong(fetchedSong)
         } catch {
             console.log('SONG')
@@ -32,11 +32,12 @@ const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
 
     const playsToDisplay = plays.map((play, index) => {
         return (
-            <div key={play.Id}>
-                <Link to={`/show/${play.Id}`} key={play.Id}>
+            <div className='play' key={index}>
+                <Link to={`/show/${play.Id}`} >
+                    {/* key={play.Id} */}
                     <p>{play.Venue.Name}</p>
                 </Link>
-                <p>{play.Venue.Locale}</p>
+                <span>{play.Venue.Locale} on {formatDate(play.DateTime)}</span>
             </div>
         )
     })
@@ -45,11 +46,11 @@ const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
             <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
             <p className='title'>{song.name}</p>
             <button onClick={() => { addFavorite(song) }}>Add to favorites</button>
-            {song.cover ? <p>Cover of {song.artist}</p> : <p>Lotus Original</p>}
+            {song.cover ? <p>Cover of {song.artist}</p> : <p>Lotus Original Song</p>}
 
             {!plays.length ? <p>Loading...</p> :
                 <div>
-                    <p>{plays.length} Play{plays.length > 1 && <span>s</span>}:</p>
+                    <p className='playCount'>{plays.length} Play{plays.length > 1 && <span>s</span>}:</p>
                     {playsToDisplay}
                 </div>}
         </article>

@@ -5,4 +5,4 @@ const formatDate = inputDate => {
     return monthNames[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
 }
 
-module.exports = formatDate;
+module.exports = { formatDate };

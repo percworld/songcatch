@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Nav.scss';
+import './Search.scss';
 
-const Nav = ({ searchSongName }) => {
+const Search = ({ searchSongName }) => {
     const [searchText, setSearchText] = useState('');
 
     const updateSearch = (text) => {
@@ -16,8 +16,11 @@ const Nav = ({ searchSongName }) => {
 
     return (
         <form>
-            <input onChange={event => updateSearch(event.target.value)} type='text' value={searchText} placeholder='Or Enter A Song Name' name='songName'></input>
+            <input onChange={event => updateSearch(event.target.value)} type='text' value={searchText} placeholder='Scroll or enter a Song Name' name='songName'></input>
             <button onClick={event => searchSongByName(event, searchText)}>Submit</button>
 
         </form>
     )
+}
+
+export default Search;

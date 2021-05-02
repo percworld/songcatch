@@ -1,19 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
 import './Nav.scss';
 
-const Nav = ({ updateCategory, searchSongName }) => {
-    const [searchText, setSearchText] = useState('');
-
-    const updateSearch = (text) => {
-        setSearchText(text);
-    }
-
-    const searchSongByName = (event, searchText) => {
-        event.preventDefault();
-        searchSongName(searchText);
-        setSearchText('');
-    }
+const Nav = ({ updateCategory }) => {
 
     return (
         <section className='page-container'>
@@ -31,12 +20,6 @@ const Nav = ({ updateCategory, searchSongName }) => {
                 <Link to="/songs/favorites" onClick={() => updateCategory('All')} >
                     <p>My Favorites</p>
                 </Link>
-                <form>
-                    <input onChange={event => updateSearch(event.target.value)} type='text' value={searchText} placeholder='Or Enter A Song Name' name='songName'></input>
-                    <button onClick={event => searchSongByName(event, searchText)}>Submit</button>
-
-                </form>
-
             </div>
 
         </section>)

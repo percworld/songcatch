@@ -5,7 +5,7 @@ import { getSong } from '../../api';
 import './Song.scss';
 
 const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
-    // console.log('incoming song: ', song)
+    //console.log('incoming song: ', song)
     // console.log("matched SONG ID: ", matchedSongID)
     // console.log("prev SONG ID: ", song.id)
 

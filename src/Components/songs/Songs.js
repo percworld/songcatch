@@ -1,9 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Songs.scss';
+import Search from '../search/Search';
 
-const Songs = ({ songs, category, setSong }) => {
-    const sortedSongs = songs.sort()//.sort((a, b) => a.Name - b.Name);
+const Songs = ({ songs, category, setSong, searchSongName }) => {
+    const sortedSongs = songs.sort((a, b) => {
+        let letterA = a.Name.split('')[0].toUpperCase();
+        let letterB = b.Name.split('')[0].toUpperCase();
+        console.log(letterA, a, letterB, b)
+        return letterB - letterA;
+    });
     const filteredSongs = sortedSongs.filter(song => {
         switch (category) {
             case 'All':
@@ -31,6 +37,7 @@ const Songs = ({ songs, category, setSong }) => {
     return (
         <section className='songList'>
             <p className='head'>Lotus {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
+            <Search searchSongName={searchSongName}></Search>
             {songsToDisplay}
         </section>
 

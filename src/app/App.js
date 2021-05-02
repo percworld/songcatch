@@ -1,5 +1,4 @@
 import React from 'react';
-import Form from '../Form';
 import Nav from '../Components/nav/Nav'
 import Songs from '../Components/songs/Songs';
 import Show from '../Components/show/Show';
@@ -7,7 +6,7 @@ import Song from '../Components/song/Song';
 import Header from '../Components/header/Header';
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
-import { getSongs, getPlays, getTourById, getSet } from '../api';
+import { getSongs, getPlays, getSet } from '../api'; //getTourById, 
 
 class App extends React.Component {
   constructor() {
@@ -54,6 +53,10 @@ class App extends React.Component {
     }
   }
 
+  searchSongName = async (searchText) => {
+    console.log(searchText);
+  }
+
   addFavorite = (song) => {
     !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] })
   }
@@ -64,7 +67,7 @@ class App extends React.Component {
       <main className="App" >
         <Header />
         <Switch>
-          <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} />)} />
+          <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} />)} />
           <Route path="/festivals" render={() => (<>festivals</>)} />
           <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
           <Route path="/songs" render={() => (<Songs category={this.state.category} songs={this.state.songs} plays={this.state.playlist} setSong={this.setSong} />)} />

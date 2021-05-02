@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Song from '../song/Song';
 import './Songs.scss';
 
 const Songs = ({ songs, category, setSong }) => {
-    const sortedSongs = songs.sort((a, b) => a.Name - b.Name);
+    const sortedSongs = songs.sort()//.sort((a, b) => a.Name - b.Name);
     const filteredSongs = sortedSongs.filter(song => {
         switch (category) {
             case 'All':
                 return true;
             case 'Original': return !song.Cover;
             case 'Cover': return song.Cover;
+            default: return true;
         }
 
         // (category === 'all') && 

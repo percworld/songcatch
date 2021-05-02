@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSet } from '../../api'
-import { formatDate } from '../../utilities'
+import { formatDate } from '../../utilities';
+import './Show.scss';
+
 const Show = ({ plays, song, showID }) => {
     const [show, setShow] = useState([])
 
@@ -15,15 +17,32 @@ const Show = ({ plays, song, showID }) => {
             }
         }
         updateShow()
-    }, [])
+    }, [showID])
     const match = show.find(play => song.Id === play.Id);
     const venue = plays.find(play => play.Id === parseInt(showID));
+    const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
+    const setTwo = show.filter(song => parseInt(song.SetNumber) === 2);
+    const encore = show.filter(song => parseInt(song.SetNumber) === 9);
     // console.log('match: ', match)
     // console.log('SONG: ', song);
     // console.log('PLAYS: ', plays);
-    // console.log('SHOW: ', show);
+    console.log('SHOW: ', show);
     // console.log('SHOW 1st: ', show[0]);
-    const songsToDisplay = show.map((track, index) => {
+    const songsToDisplayOne = setOne.map((track, index) => {
+        return (
+            <Link to={`/song/${track.Id}`} key={index} >
+                <p>{track.Name}</p>
+            </Link>
+        )
+    });
+    const songsToDisplayTwo = setTwo.map((track, index) => {
+        return (
+            <Link to={`/song/${track.Id}`} key={index} >
+                <p>{track.Name}</p>
+            </Link>
+        )
+    });
+    const encoreToDisplay = encore.map((track, index) => {
         return (
             <Link to={`/song/${track.Id}`} key={index} >
                 <p>{track.Name}</p>
@@ -39,10 +58,24 @@ const Show = ({ plays, song, showID }) => {
                 {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows ago and was</p>}
                 {match.LastPosition && <p>song #{match.LastPosition} in set {match.LastSetNumber}</p>}
             </div>}
-            {venue && <div>
-                <p>{venue.Venue.Name} - {venue.Locale}</p>
-                <p>Setlist - Lotus - {formatDate(venue.DateTime)}</p></div>}
-            {show.length ? songsToDisplay : <p>Loading...</p>}
+            {venue && <div className='head'>
+                <p>Lotus - {formatDate(venue.DateTime)}</p>
+                <p className='head2'>{venue.Venue.Name}</p>
+                <p className='head3'>{venue.Venue.Locale}</p>
+            </div>}
+            <p>Set 1</p>
+            <p>-----------------------</p>
+            {show.length ? songsToDisplayOne : <p>Loading...</p>}
+            <div className='set'>
+                {songsToDisplayTwo.length && <p>Set 2</p>}
+                <p>-----------------------</p>
+                {show.length && songsToDisplayTwo}
+            </div>
+            <div className='set'>
+                {encore.length && <p>Encore</p>}
+                <p>-----------------------</p>
+                {encore.length && encoreToDisplay}
+            </div>
 
         </div>
     )

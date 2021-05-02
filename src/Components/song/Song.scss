@@ -4,8 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    margin-top: 1em;
-    font-family: $setlist-font;
+    font-family: $songlist-font;
     //font-size: 85%;
 }
 
@@ -22,8 +21,11 @@ img {
 .play, .playCount {
     margin-bottom: 1em;
 }
+.head {
+    margin-bottom: 0;
+}
 .playCount {
-
+    .margin-top: -2em;
 }
 
 button {

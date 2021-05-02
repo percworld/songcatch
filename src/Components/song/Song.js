@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { formatDate } from '../../utilities';
 import { Link } from 'react-router-dom';
 import { getSong } from '../../api';
 import './Song.scss';
 
 const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
-    console.log('incoming song: ', song)
-    console.log("matched SONG ID: ", matchedSongID)
-    console.log("prev SONG ID: ", song.id)
+    // console.log('incoming song: ', song)
+    // console.log("matched SONG ID: ", matchedSongID)
+    // console.log("prev SONG ID: ", song.id)
 
     // useEffect(async () => {
     //     try {
@@ -46,7 +46,7 @@ const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
             <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
             <p className='title'>{song.name}</p>
             <button onClick={() => { addFavorite(song) }}>Add to favorites</button>
-            {song.cover ? <p>Cover of {song.artist}</p> : <p>Lotus Original Song</p>}
+            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p>Lotus Original Song</p>}
 
             {!plays.length ? <p>Loading...</p> :
                 <div>

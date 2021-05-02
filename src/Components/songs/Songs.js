@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Song from '../song/Song';
-
+import './Songs.scss';
 
 const Songs = ({ songs, category, setSong }) => {
     const sortedSongs = songs.sort((a, b) => a.Name - b.Name);
@@ -29,8 +29,8 @@ const Songs = ({ songs, category, setSong }) => {
     })
 
     return (
-        <section className="songList">
-            <p>Lotus - {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
+        <section className='songList'>
+            <p className='head'>Lotus {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
             {songsToDisplay}
         </section>
 

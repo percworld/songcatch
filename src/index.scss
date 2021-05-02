@@ -1,3 +1,7 @@
+@import "variables";
+@import "base";
+@import "typography";
+@import "mixins";
 
 html {
     overflow: visible;
@@ -22,8 +26,3 @@ code {
     /* width: 100em */
   }
 }
-
-// @import "variables";
-// @import "base";
-// @import "typography";
-// @import "mixins";

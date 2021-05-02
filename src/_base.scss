@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  list-style: none;
+}
+
+html {
+  //font-size: 72.5%;
+}
+
+body {
+  //box-sizing: border-box;
+}
+
+button {
+  background-color: #a844ad;
+  border: none;
+  font-weight:  100;
+  text-transform: none;
+  padding: 0;
+}

@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+.playList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: 1em;
+    font-family: $setlist-font;
+    //font-size: 85%;
+}
+
+img {
+   max-width: 45vw;
+   margin-left: 28vw; 
+}
+.title {
+    font-family: $logo-font; //$songlist-font;
+   font-size: 34px;
+   font-weight: 800;
+   color: rgb(125, 47, 122);
+}
+
+button {
+    width: 15vw;
+    margin-top: .5vh;
+}

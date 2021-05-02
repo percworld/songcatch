@@ -32,21 +32,19 @@ const Show = ({ plays, song, showID }) => {
     })
 
     return (
-        <>
+        <div className='songList'>
 
             {match && <div><p>{match.Name}</p><p> was song #{match.Position} in set {match.SetNumber}.</p>
                 {match.DateLastPlayed && <p>It was last played on {match.DateLastPlayed},</p>}
                 {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows ago and was</p>}
                 {match.LastPosition && <p>song #{match.LastPosition} in set {match.LastSetNumber}</p>}
-            </div>
-            }
-            {/* {console.log(venue)} */}
+            </div>}
             {venue && <div>
                 <p>{venue.Venue.Name} - {venue.Locale}</p>
                 <p>Setlist - Lotus - {venue.DateTime}</p></div>}
             {show.length ? songsToDisplay : <p>Loading...</p>}
 
-        </>
+        </div>
     )
 }
 export default Show;

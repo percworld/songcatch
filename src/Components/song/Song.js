@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 //import { dateModify } from '../../utilities'
 import { Link } from 'react-router-dom';
 import { getSong } from '../../api';
+import './Song.scss';
 
 const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
     console.log('incoming song: ', song)
@@ -41,7 +42,8 @@ const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
     })
     return (
         <article className="playList">
-            <p>{song.name}</p>
+            <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
+            <p className='title'>{song.name}</p>
             <button onClick={() => { addFavorite(song) }}>Add to favorites</button>
             {song.cover ? <p>Cover of {song.artist}</p> : <p>Lotus Original</p>}
 

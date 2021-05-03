@@ -1,0 +1,75 @@
+@import '../../index.scss';
+
+.playList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-family: $logo-font;
+    //font-size: 85%;
+}
+
+img {
+   max-width: 45vw;
+   margin-left: 28vw; 
+}
+.title {
+   font-family: $logo-font; //$songlist-font;
+   font-size: 34px;
+   font-weight: 800;
+   color: rgb(125, 47, 122);
+}
+ .playCount {
+    margin-bottom: 1em;
+    font-size: 26px;
+}
+.play {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around;
+    // height: 100%;
+    margin-bottom: 1em;;
+    
+}
+.venue {
+    font-size: 32px;
+
+}
+
+.locDate {
+    font-size: 22px;
+    margin-top: -50vh;
+}
+
+.head {
+    font-family: $logo-font;
+    font-size: 26px;
+    margin-bottom: 0;
+}
+.playCount {
+    .margin-top: -2em;
+    font-family: $logo-font;
+
+}
+
+.favorites-button {
+    display: inline;
+  background-color: #953c9a;
+  border: none;
+  font-family: 'Krona One', sans-serif;
+  font-weight:  100;
+  text-transform: none;
+  padding: 0;
+  width: 19vw;
+  margin-top: 7vh;
+  margin-left: .5em;
+  font-size: 11px;
+  .see {
+      
+  }
+}
+
+.fas {
+    //background-image: url('/assets/heart-solid.svg');
+    width: 2em;
+    height: 2em;
+}

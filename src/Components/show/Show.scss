@@ -1,1 +1,57 @@
+@import '../../index.scss';
 
+.songList {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 15px;
+    font-family: $setlist-font;
+    font-weight: 600;
+    //font-size: 85%;
+}
+
+.stats {
+    display: inline-block;
+    position: absolute;
+    font-size: 11px;
+    // margin: 3vh, 0, 0, 40vw;
+    justify-content:first baseline;
+    font-family: $showlist-font;
+    width: 59%;
+}
+.head1 {
+    font-family: $showlist-font;  //$songlist-font; //$logo-font; 
+    font-size: 19px;
+    font-weight: 600;
+    color: rgb(125, 47, 122);
+    width: 68%;
+    margin: 0, 0, 2em, 35vw;
+    align-self: flex-end;
+    margin-top: -10vh;
+    .head2 {
+        font-size: 13px;
+        font-weight: 700;
+        margin-top: .3vh;
+    }
+    .head3 {
+        font-size: 12px;
+        font-weight: 800;
+        margin-top: .1vh;
+    }
+}
+
+
+.setList {
+    background-color: whitesmoke;
+    opacity: 69%;
+    width: 80%;
+    margin-top: 7em;
+    margin-left: 2.1em; 
+    max-height: 67vh;
+    font-size: 12px;
+
+
+    .set {
+        margin-top: 1em;
+    }
+}

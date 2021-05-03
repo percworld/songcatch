@@ -1,27 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Song from '../song/Song';
+import './Songs.scss';
+import Search from '../search/Search';
+import './Songs.scss';
 
-
-const Songs = ({ songs, category, setSong }) => {
-    const sortedSongs = songs.sort((a, b) => a.Name - b.Name);
+const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
+    const sortedSongs = songs.sort((a, b) => {
+        if (a.Name < b.Name) {
+            return -1;
+        }
+        if (a.Name > b.Name) {
+            return 1;
+        }
+        return 0;
+    });
     const filteredSongs = sortedSongs.filter(song => {
         switch (category) {
             case 'All':
                 return true;
             case 'Original': return !song.Cover;
             case 'Cover': return song.Cover;
+            default: return true;
         }
-
-        // (category === 'all') && 
-        // return true;
-        // category === 'original' && return song.Cover === false;
-        // category === 'cover' && return song.Cover === true;
     })
-    const songsToDisplay = filteredSongs.map(song => {
+    const songsToDisplay = filteredSongs.map((song, index) => {
         return (
-            <section className='songSingle' key={song.Id}>
-                <Link to={`/${song.Id}`} className="songName" onClick={() => setSong(song)}>
+            <section className='songSingle' key={index}>
+                {/* <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
+                    <p>{song.Name}</p>
+                </Link> */}
+                <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
                     <p>{song.Name}</p>
                 </Link>
             </section>
@@ -29,8 +37,11 @@ const Songs = ({ songs, category, setSong }) => {
     })
 
     return (
-        <section className="songList">
-            <p>Lotus - {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
+        <section className='songList'>
+            <p className='head'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
+            {/* {filteredSongs.length > 20 && <Search searchSongName={searchSongName}></Search>} */}
+            {/* {console.log(filteredSongs)} */}
+            <Search searchSongName={searchSongName}></Search>
             {songsToDisplay}
         </section>
 

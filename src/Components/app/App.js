@@ -1,13 +1,16 @@
 import React from 'react';
-import Nav from '../Components/nav/Nav'
-import Songs from '../Components/songs/Songs';
-import Show from '../Components/show/Show';
-import Song from '../Components/song/Song';
-import Header from '../Components/header/Header';
-import Footer from '../Components/footer/Footer';
+import Nav from '../nav/Nav'
+import Songs from '../songs/Songs';
+import Show from '../show/Show';
+import Shows from '../shows/Shows';
+import Song from '../song/Song';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+import Bands from '../bands/Bands';
+
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
-import { getBands, getSongs, getPlays, getSet, getSong } from '../api'; //getTourById, 
+import { getBands, getSongs, getPlays, getSet, getSong } from '../../api'; //getTourById, 
 
 class App extends React.Component {
   constructor() {
@@ -50,10 +53,10 @@ class App extends React.Component {
 
   setSong = async (song) => {
     try {
-      console.log(song)
+      //console.log(song)
       const formattedSong = await getSong(song.Id || song.id)
       this.setState({ song: formattedSong });
-      console.log(formattedSong);
+      //console.log(formattedSong);
       const playDetails = await getPlays(formattedSong.id);
       //console.log('List of Plays: ', playDetails.aaData);
       this.setState({ playlist: playDetails.aaData })
@@ -89,22 +92,31 @@ class App extends React.Component {
     !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] });
   }
 
+  setBand = (id, name) => {
+    getSongs(id)
+      .then(response => this.setState({ songs: response, bandID: id, bandName: name }), console.log(this.state.bandName))
+    // .then(console.log(this.state.bandName));
+  }
+
   render() {
 
     return (
       <main className="App" >
+        <div className="stars"></div>
+        <div className="twinkling"></div>
+        <div className="clouds"></div>
         <Header />
         <Switch>
           <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} />)} />
           <Route path="/tours" render={() => (<>tours</>)} />
-          <Route path="/shows" render={() => (<>festivals</>)} />
-          <Route path="/bands" render={() => (<>festivals</>)} />
+          <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} />)} />
+          <Route path="/bands" render={() => (<Bands setBand={this.setBand} bands={this.state.bands} />)} />
           <Route path="/projects" render={() => (<>festivals</>)} />
           <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
           <Route path="/songs" render={() => (<Songs bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
           <Route path="/show/:showID" render={({ match }) => {
             const { showID } = match.params;
-            return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} />)
+            return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} bandName={this.state.bandName} />)
           }} />
           <Route path="/song/:song" render={({ match }) => {
             const { song } = match.params

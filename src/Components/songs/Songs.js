@@ -29,7 +29,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
                 {/* <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
                     <p>{song.Name}</p>
                 </Link> */}
-                <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
+                <Link to={`/song/${song.Id}`} onClick={() => setSong(song)}>
                     <p>{song.Name}</p>
                 </Link>
             </section>

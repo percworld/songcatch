@@ -23,6 +23,8 @@ img {
     font-size: 26px;
 }
 .play {
+     z-index: 5;
+    font-size: 27px;
     // display: flex;
     // flex-direction: column;
     // justify-content: space-around;
@@ -30,9 +32,9 @@ img {
     margin-bottom: 1em;;
     
 }
-.venue {
-    font-size: 32px;
 
+.venue {
+    z-index:5;
 }
 
 .locDate {
@@ -52,7 +54,8 @@ img {
 }
 
 .favorites-button {
-    display: inline;
+  z-index: 5;
+  display: inline;
   background-color: #953c9a;
   border: none;
   font-family: 'Krona One', sans-serif;

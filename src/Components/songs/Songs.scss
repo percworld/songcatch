@@ -1,6 +1,7 @@
 @import '../../index.scss';
 
 .songList {
+    z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -9,8 +10,12 @@
     font-weight: 600;
     font-size: 21px;
     @include bottom;
+    // overscroll-behavior-y: contain;
+    overflow-y: scroll;
+    height: 1000px;
 }
 .songSingle {
+    z-index: 5;
     font-family: $showlist-font
 }
 .head {

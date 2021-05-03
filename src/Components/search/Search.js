@@ -9,11 +9,11 @@ const Search = ({ searchSongName }) => {
         searchSongName(searchText);
     }
 
-    const searchSongByName = (event, searchText) => {
-        event.preventDefault();
-        searchSongName(searchText);
-        setSearchText('');
-    }
+    // const searchSongByName = (event, searchText) => {
+    //     event.preventDefault();
+    //     searchSongName(searchText);
+    //     setSearchText('');
+    // }
 
     return (
         <form>

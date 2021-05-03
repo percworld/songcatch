@@ -4,7 +4,7 @@ import { getSet } from '../../api'
 import { formatDate } from '../../utilities';
 import './Show.scss';
 
-const Show = ({ plays, song, showID }) => {
+const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Show = ({ plays, song, showID }) => {
     });
     const encoreToDisplay = encore.map((track, index) => {
         return (
-            <Link to={`/song/${track.Id}`} key={index} >
+            <Link to={`/song/${track.Id}`} key={index} className='trackLink'>
                 <p>{track.Name}</p>
             </Link>
         )
@@ -61,7 +61,7 @@ const Show = ({ plays, song, showID }) => {
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
 
             {venue && <div className='head1'>
-                <p>Lotus - {formatDate(venue.DateTime)}</p>
+                <p>{bandName} - {formatDate(venue.DateTime)}</p>
                 <p className='head2'>{venue.Venue.Name}</p>
                 <p className='head3'>{venue.Venue.Locale}</p>
             </div>}

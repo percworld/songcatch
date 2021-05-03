@@ -1,4 +1,6 @@
+@import '../../index.scss';
 footer {
+  z-index: 5;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -6,7 +8,11 @@ footer {
   display: flex;
   justify-content: space-around;
   a {
-
+      font-size: 27px;
+      font-family: $showlist-font;
       color: whitesmoke;
+      &:hover {
+          font-size:27px;
+      }
   }
 }

@@ -4,26 +4,17 @@ import { Link } from 'react-router-dom';
 import { getSong } from '../../api';
 import './Song.scss';
 
-const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
+const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
     //console.log('incoming song: ', song)
-    // console.log("matched SONG ID: ", matchedSongID)
+    console.log("matched SONG ID: ", matchedSongID)
     // console.log("prev SONG ID: ", song.id)
-
-    // useEffect(async () => {
-    //     try {
-    //         const fetchedSong = getSong(songID)
-    //         setSong(fetchedSong)
-    //     } catch {
-    //         console.log('SONG')
-    //     }
-    // }, []);
     const switchSong = async () => {
         try {
             const fetchedSong = await getSong(matchedSongID)
-            //console.log('SONG LINE 22 FETCH', fetchedSong)
+            console.log('Song LINE 14 FETCH', fetchedSong)
             setSong(fetchedSong)
         } catch {
-            console.log('SONG')
+            console.log('SONG Problem')
         }
     }
     if (parseInt(matchedSongID) !== song.id) {
@@ -43,10 +34,13 @@ const Song = ({ song, plays, addFavorite, matchedSongID, setSong }) => {
     })
     return (
         <article className="playList">
-            <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
+            {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             <p className='title'>{song.name}</p>
-            <button onClick={() => { addFavorite(song) }}>Add to favorites</button>
-            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p>Lotus Original Song</p>}
+            {favorites.includes(song) ?
+                <button onClick={() => { removeFavorite(song) }}>Remove from favorites</button> :
+                <button onClick={() => { addFavorite(song) }}>Add to favorites</button>
+            }
+            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p>{bandName} Original</p>}
 
             {!plays.length ? <p>Loading...</p> :
                 <div>

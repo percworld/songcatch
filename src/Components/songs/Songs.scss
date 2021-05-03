@@ -5,9 +5,12 @@
     flex-direction: column;
     justify-content: flex-end;
     margin-top: 2em;
-    font-family: $setlist-font;
+    font-family: $logo-font;
     font-weight: 600;
-    //font-size: 85%;
+    font-size: 21px;
+}
+.songSingle {
+    font-family: $showlist-font
 }
 .head {
     font-family: $logo-font; //$songlist-font;

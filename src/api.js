@@ -6,13 +6,18 @@ const checkResponse = (response) => {
     }
 }
 
+const getBands = () => {
+    return fetch('/bands?%24orderby=followerCount+desc%2C+name&%24top=16')
+        .then(checkResponse)
+}
+
 const getSet = (showID) => {
     return fetch(`/shows/${showID}/songstats`)
         .then(checkResponse)
 }
 
-const getSongs = () => {
-    return fetch("/songs/?bandId=12")
+const getSongs = (id) => {
+    return fetch(`/songs/?bandId=${id}`)
         .then(checkResponse)
 }
 
@@ -31,4 +36,4 @@ const getPlays = (songID) => {
         .then(checkResponse)
 }
 
-export { getPlays, getSong, getSongs, getShowsByTour, getSet };
+export { getBands, getPlays, getSong, getSongs, getShowsByTour, getSet };

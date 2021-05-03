@@ -6,6 +6,7 @@ const Search = ({ searchSongName }) => {
 
     const updateSearch = (text) => {
         setSearchText(text);
+        searchSongName(searchText);
     }
 
     const searchSongByName = (event, searchText) => {
@@ -17,7 +18,7 @@ const Search = ({ searchSongName }) => {
     return (
         <form>
             <input onChange={event => updateSearch(event.target.value)} type='text' value={searchText} placeholder='Scroll or enter a Song Name' name='songName'></input>
-            <button onClick={event => searchSongByName(event, searchText)}>Submit</button>
+            {/* <button onClick={event => searchSongByName(event, searchText)}>Submit</button> */}
 
         </form>
     )

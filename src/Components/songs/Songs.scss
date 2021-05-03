@@ -8,6 +8,7 @@
     font-family: $logo-font;
     font-weight: 600;
     font-size: 21px;
+    @include bottom;
 }
 .songSingle {
     font-family: $showlist-font

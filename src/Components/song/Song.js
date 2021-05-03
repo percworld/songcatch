@@ -26,9 +26,9 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             <div className='play' key={index}>
                 <Link to={`/show/${play.Id}`} >
                     {/* key={play.Id} */}
-                    <p>{play.Venue.Name}</p>
+                    <p className='venue'>{play.Venue.Name}</p>
                 </Link>
-                <span>{play.Venue.Locale} on {formatDate(play.DateTime)}</span>
+                <span className='locDate'>{play.Venue.Locale} / {formatDate(play.DateTime)}</span>
             </div>
         )
     })
@@ -37,14 +37,15 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             <p className='title'>{song.name}</p>
             {favorites.includes(song) ?
-                <button onClick={() => { removeFavorite(song) }}>Remove from favorites</button> :
-                <button onClick={() => { addFavorite(song) }}>Add to favorites</button>
+                <button className='favorites-button' onClick={() => { removeFavorite(song) }}>Remove from favorites</button> :
+                <div className='favorites-button' onClick={() => { addFavorite(song) }}>Add to favorites
+                </div>
             }
-            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p>{bandName} Original</p>}
+            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
 
             {!plays.length ? <p>Loading...</p> :
                 <div>
-                    <p className='playCount'>{plays.length} Play{plays.length > 1 && <span>s</span>}:</p>
+                    <p className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}</p>
                     {playsToDisplay}
                 </div>}
         </article>

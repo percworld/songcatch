@@ -53,12 +53,14 @@ const Show = ({ plays, song, showID }) => {
     return (
         <div className='songList'>
             {console.log('Show Match:', match, 'Show Venue: ', venue)}
-            {match && <div><p>{match.Name}</p><p> was song #{match.Position} in set {match.SetNumber}.</p>
+            {match && <div className='stats'><p>{match.Name}</p><p> was song #{match.Position} in set {match.SetNumber}.</p>
                 {match.DateLastPlayed && <p>It was last played on {match.DateLastPlayed},</p>}
                 {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows ago and was</p>}
-                {match.LastPosition && <p>song #{match.LastPosition} in set {match.LastSetNumber}</p>}
+                {match.LastPosition && <p>song #{match.LastPosition} of set {match.LastSetNumber}</p>}
             </div>}
-            {venue && <div className='head'>
+            {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
+
+            {venue && <div className='head1'>
                 <p>Lotus - {formatDate(venue.DateTime)}</p>
                 <p className='head2'>{venue.Venue.Name}</p>
                 <p className='head3'>{venue.Venue.Locale}</p>
@@ -87,7 +89,7 @@ const Show = ({ plays, song, showID }) => {
                 </div>
             </article>
 
-        </div>
+        </div >
     )
 }
 export default Show;

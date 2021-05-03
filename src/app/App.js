@@ -4,6 +4,7 @@ import Songs from '../Components/songs/Songs';
 import Show from '../Components/show/Show';
 import Song from '../Components/song/Song';
 import Header from '../Components/header/Header';
+import Footer from '../Components/footer/Footer';
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
 import { getBands, getSongs, getPlays, getSet, getSong } from '../api'; //getTourById, 
@@ -95,7 +96,10 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} />)} />
-          <Route path="/festivals" render={() => (<>festivals</>)} />
+          <Route path="/tours" render={() => (<>tours</>)} />
+          <Route path="/shows" render={() => (<>festivals</>)} />
+          <Route path="/bands" render={() => (<>festivals</>)} />
+          <Route path="/projects" render={() => (<>festivals</>)} />
           <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
           <Route path="/songs" render={() => (<Songs bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
           <Route path="/show/:showID" render={({ match }) => {
@@ -107,6 +111,7 @@ class App extends React.Component {
             return (<Song bandName={this.state.bandName} matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} favorites={this.state.favorites} setSong={this.setSong} />)
           }} />
         </Switch>
+        <Footer />
       </main>
     );
   }

@@ -8,6 +8,7 @@ const Nav = ({ updateCategory, bandName }) => {
     return (
         <section className='page-container'>
             {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
+            {bandName !== 'Lotus' && <p className='bandName'>{bandName}</p>}
             <div className='nav-container'>
                 <Link to="/songs" onClick={() => updateCategory('Original')} >
                     <p>Originals</p>

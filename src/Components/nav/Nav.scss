@@ -2,11 +2,26 @@
 .page-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-end;   
 }
 .nav-container {
-    margin-top: 21vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+    margin-top: 6vh;
     font-family: $logo-font;
     font-size: 27px;
     z-index: 5;
+    height: 200px;
+}
+
+.bandName {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    color: $purple;
+    font-size: 33px;
+    font-family: $showlist-font ;
+    height: 100%;
+    margin-top: 111vh;
 }

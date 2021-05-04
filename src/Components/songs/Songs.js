@@ -39,6 +39,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
             <p className='head'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
             <Search searchSongName={searchSongName}></Search>
             {songsToDisplay}
+            {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart to the left.</p>}
         </section>
 
     )

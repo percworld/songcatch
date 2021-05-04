@@ -107,7 +107,7 @@ class App extends React.Component {
         <div className="clouds"></div>
         <Header />
         <Switch>
-          <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} />)} />
+          <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName} />)} />
           <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
           <Route path="/tour/:tourID" render={({ match }) => {
             const { tourID } = match.params;

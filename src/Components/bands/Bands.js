@@ -1,7 +1,6 @@
 import './Bands.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import { getBands, getSongs, getPlays, getSet, getSong } from '../../api';
 
 const Bands = ({ setBand, bands }) => {
     console.log(bands);

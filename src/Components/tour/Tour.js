@@ -10,7 +10,6 @@ const Tours = ({ bandName, tourID }) => {
         const updateTour = async () => {
             try {
                 const listings = await getShowsByTour(tourID);
-                console.log(listings)
                 setTour(listings)
             } catch {
                 throw new Error(`This Tour is not Available for ${bandName}`)
@@ -20,8 +19,6 @@ const Tours = ({ bandName, tourID }) => {
     }, [])
 
     const tourToDisplay = tour.map(show => {
-        console.log(show)
-
         return (
             <section className='showSingle' key={show.id}>
                 <Link to={`/show/${show.id}`}>

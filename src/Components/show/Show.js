@@ -23,11 +23,6 @@ const Show = ({ plays, song, showID, bandName }) => {
     const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
     const setTwo = show.filter(song => parseInt(song.SetNumber) === 2);
     const encore = show.filter(song => parseInt(song.SetNumber) === 9);
-    // console.log('match: ', match)
-    // console.log('SONG: ', song);
-    // console.log('PLAYS: ', plays);
-    //console.log('SHOW: ', show);
-    // console.log('SHOW 1st: ', show[0]);
     const songsToDisplayOne = setOne.map((track, index) => {
         return (
             <Link to={`/song/${track.Id}`} key={index} >
@@ -52,7 +47,6 @@ const Show = ({ plays, song, showID, bandName }) => {
 
     return (
         <div className='setListContainer'>
-            {/* {console.log('Show Match:', match, 'Show Venue: ', venue)} */}
             {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span></p>
                 {match.DateLastPlayed && <p>Last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}
                     {/* and was
@@ -90,8 +84,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                         </div>}
                 </div>
             </article>
-
-        </div >
+        </div>
     )
 }
 export default Show;

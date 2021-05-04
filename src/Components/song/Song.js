@@ -7,13 +7,9 @@ import './Song.scss';
 // import heart from '/assets/heart-solid.svg';
 
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
-    //console.log('incoming song: ', song)
-    //console.log("matched SONG ID: ", matchedSongID)
-    // console.log("prev SONG ID: ", song.id)
     const switchSong = async () => {
         try {
             const fetchedSong = await getSong(matchedSongID)
-            //console.log('Song LINE 14 FETCH', fetchedSong)
             setSong(fetchedSong)
         } catch {
             throw new Error(`Song #${matchedSongID} cannot be fetched at this time.`)
@@ -27,7 +23,6 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
         return (
             <div className='play' key={index}>
                 <Link to={`/show/${play.Id}`} >
-                    {/* key={play.Id} */}
                     <p className='venue'>{play.Venue.Name}</p>
                 </Link>
                 <span className='locDate'>{play.Venue.Locale} / {formatDate(play.DateTime)}</span>

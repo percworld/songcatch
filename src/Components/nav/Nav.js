@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import './Nav.scss';
 
-const Nav = ({ updateCategory }) => {
+const Nav = ({ updateCategory, bandName }) => {
 
     return (
         <section className='page-container'>
-            <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
+            {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             <div className='nav-container'>
                 <Link to="/songs" onClick={() => updateCategory('Original')} >
                     <p>Originals</p>

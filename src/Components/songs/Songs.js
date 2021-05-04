@@ -36,8 +36,6 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
     return (
         <section className='songList'>
             <p className='head'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
-            {/* {filteredSongs.length > 20 && <Search searchSongName={searchSongName}></Search>} */}
-            {/* {console.log(filteredSongs)} */}
             <Search searchSongName={searchSongName}></Search>
             {songsToDisplay}
         </section>

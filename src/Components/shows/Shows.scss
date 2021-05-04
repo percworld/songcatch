@@ -1,20 +1,29 @@
 @import '../../index.scss';
 
-.showList {
-    font-size: 20px;
-    font-family: $showlist-font ;
-    height: 100%;
+.showList{
+    position: 0;
+    z-index: 4;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    height: 900px;
     overflow-y: scroll;
-    height: 3000px;
+    max-height: 2000px;
 }
 
-.showSingle {
-    margin-bottom: 1em;
+
+
+.showContainer {
+    font-size: 20px;
+    font-family: $showlist-font ;
+    padding: 8px;
+    color: $purple
+    
+    // overflow-y: scroll;
+    // max-height: 2000px;
+    
 }
 
-.bandName {
-
+.singleShow {
+    
 }

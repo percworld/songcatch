@@ -9,9 +9,11 @@ const Bands = ({ setBand, bands }) => {
         return <Link to='/' key={band.id} onClick={() => setBand(band.id, band.name)}>{band.name}</Link>
     })
     return (
-        <section className='bandList'>
-            {bandsToDisplay}
-        </section>
+        <div className='list' data-cy='list'>
+            <section className='bandList'>
+                {bandsToDisplay}
+            </section>
+        </div>
 
     )
 }

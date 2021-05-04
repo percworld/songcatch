@@ -20,6 +20,7 @@ const Tours = ({ bandName, bandID }) => {
     }, [])
 
     const toursToDisplay = tours.map(tour => {
+        console.log(tours)
         return (
             <section className='tourSingle' key={tour.id}>
                 <Link to={`/tour/${tour.id}`}>
@@ -34,7 +35,7 @@ const Tours = ({ bandName, bandID }) => {
         <section>
             {tours.length ?
                 <article className='tourList'>
-                    <div className='bandName'>{bandName} Tours: {tours.length}</div>
+                    <div className='tourBandName'>{bandName} Tours: {tours.length}</div>
                     {toursToDisplay}
                 </article>
                 : <p>Loading...</p>}

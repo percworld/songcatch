@@ -1,17 +1,15 @@
 .App {
-  // overscroll-behavior-y: contain;
   text-align: center;
-  //overflow-y: scroll;
 }
 
 .App::before {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 31; 
+  opacity: 59; 
   z-index: -2;
   background-position: center bottom;
   background-repeat: repeat;
@@ -20,16 +18,16 @@
   background-attachment: fixed;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
 
 @keyframes move-twink-back {
     from {background-position:0 0;}
@@ -99,7 +97,7 @@
 .clouds{
   height:100%;
   background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
-  z-index: -1;
+  z-index: -2;
 
   -moz-animation:move-clouds-back 200s linear infinite;
   -ms-animation:move-clouds-back 200s linear infinite;

@@ -21,12 +21,14 @@ const Tours = ({ bandName, tourID }) => {
 
     const tourToDisplay = tour.map(show => {
         return (
-            <section className='showSingle' key={show.id}>
-                <Link to={`/show/${show.id}`}>
-                    <span>{show.band.name} @ {show.venue.name}</span>
-                </Link>
-                <p>{show.venue.locale}<span> - {formatDate(show.dateTime)} </span> </p>
-            </section>
+            <div classname='showsContainer'>
+                <section className='showSingle' key={show.id}>
+                    <Link to={`/show/${show.id}`}>
+                        <span>{show.band.name} @ {show.venue.name}</span>
+                    </Link>
+                    <p>{show.venue.locale}<span> - {formatDate(show.dateTime)} </span> </p>
+                </section>
+            </div>
         )
     })
 

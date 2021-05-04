@@ -27,7 +27,7 @@ const getShowsByTour = (id) => {
 }
 
 const getToursByBandID = id => {
-    return fetch(`/bands/${id}/tours?%24orderby=startDate+desc&%24top=99`)
+    return fetch(`/bands/${id}/tours?%24orderby=startDate+desc&%24top=200`)
         .then(checkResponse)
 }
 

@@ -58,8 +58,6 @@ const Show = ({ plays, song, showID, bandName }) => {
                     {/* and was
                     <span> song #{match.LastPosition} of set {match.LastSetNumber}</span> */}
                 </p>}
-                {/* {match.GapSinceLastPlay && <span>{match.GapSinceLastPlay} shows before and was</span>}
-                {match.LastPosition && <span>song #{match.LastPosition} of set {match.LastSetNumber}</span>} */}
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
 

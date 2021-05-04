@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.scss';
@@ -6,7 +7,7 @@ import './Header.scss';
 const Header = () => {
     return (
         <header>
-            <Link to='/'>
+            <Link to='/' className='homeLink'>
                 {/* <img src={'../../assets/celtic logo thick Vector.ai'} /> */}
                 {/* <img src={`${process.env.PUBLIC_URL}../../public/assets/lotuslogo-removebg-preview.png`} alt="lotus logo" /> */}
 

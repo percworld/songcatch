@@ -3,56 +3,65 @@
 .playList {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-family: $logo-font;
-    //font-size: 85%;
+    @include bottom;
+    overflow-y: visible;
+}
+
+.plays{
+    overflow-y: scroll;
+    height: 5000px; 
 }
 
 img {
-   max-width: 45vw;
+   max-width: 41vw;
    margin-left: 28vw; 
+   margin-top: -5vh;
+   z-index: 5;
 }
 .title {
    font-family: $logo-font; //$songlist-font;
-   font-size: 34px;
+   font-size: 33px;
    font-weight: 800;
-   color: rgb(125, 47, 122);
+   color: $purple
 }
  .playCount {
     margin-bottom: 1em;
-    font-size: 26px;
+    font-size: 21px;
+    font-weight: 800;
+    color: $purple
 }
 .play {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
-    // height: 100%;
-    margin-bottom: 1em;;
-    
+     z-index: 5;
+    font-size: 27px;
+    margin-bottom: .25em;  
 }
-.venue {
-    font-size: 32px;
 
+.venue {
+    z-index:5;
+    margin-bottom: -1.5vh;
 }
 
 .locDate {
-    font-size: 22px;
-    margin-top: -50vh;
+    font-size: 20px;
+    font-weight: 800;
+    color: $purple
 }
 
 .head {
     font-family: $logo-font;
-    font-size: 26px;
+    font-size: 21px;
     margin-bottom: 0;
 }
 .playCount {
     .margin-top: -2em;
     font-family: $logo-font;
-
 }
 
 .favorites-button {
-    display: inline;
+  z-index: 5;
+  display: inline;
   background-color: #953c9a;
   border: none;
   font-family: 'Krona One', sans-serif;
@@ -60,7 +69,7 @@ img {
   text-transform: none;
   padding: 0;
   width: 19vw;
-  margin-top: 7vh;
+  margin-top: -6vh;
   margin-left: .5em;
   font-size: 11px;
   .see {

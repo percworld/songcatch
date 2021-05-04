@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import React from 'react';
 import { formatDate } from '../../utilities';
 import { Link } from 'react-router-dom';
@@ -7,16 +8,12 @@ import './Song.scss';
 // import heart from '/assets/heart-solid.svg';
 
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
-    //console.log('incoming song: ', song)
-    console.log("matched SONG ID: ", matchedSongID)
-    // console.log("prev SONG ID: ", song.id)
     const switchSong = async () => {
         try {
             const fetchedSong = await getSong(matchedSongID)
-            console.log('Song LINE 14 FETCH', fetchedSong)
             setSong(fetchedSong)
         } catch {
-            console.log('SONG Problem')
+            throw new Error(`Song #${matchedSongID} cannot be fetched at this time.`)
         }
     }
     if (parseInt(matchedSongID) !== song.id) {
@@ -27,7 +24,6 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
         return (
             <div className='play' key={index}>
                 <Link to={`/show/${play.Id}`} >
-                    {/* key={play.Id} */}
                     <p className='venue'>{play.Venue.Name}</p>
                 </Link>
                 <span className='locDate'>{play.Venue.Locale} / {formatDate(play.DateTime)}</span>
@@ -38,21 +34,21 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
         <article className="playList">
             {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             <p className='title'>{song.name}</p>
+            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
+            {plays.length && <p className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}</p>}
             {favorites.includes(song) ?
                 <button className='favorites-button' onClick={() => { removeFavorite(song) }}>Remove from favorites</button> :
                 <div className='favorites-button' onClick={() => { addFavorite(song) }}>
                     <span>
                         <i className="fas fa-heart"></i>
-                        <i class="fas fa-heart-broken"></i>
+                        <i className="fas fa-heart-broken"></i>
                         Add to favorites
                     </span>
                 </div>
             }
-            {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
 
             {!plays.length ? <p>Loading...</p> :
-                <div>
-                    <p className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}</p>
+                <div className='plays'>
                     {playsToDisplay}
                 </div>}
         </article>

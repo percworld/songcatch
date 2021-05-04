@@ -1,10 +1,11 @@
+import propTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getSet } from '../../api'
 import { formatDate } from '../../utilities';
 import './Show.scss';
 
-const Show = ({ plays, song, showID }) => {
+const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
 
     useEffect(() => {
@@ -23,11 +24,6 @@ const Show = ({ plays, song, showID }) => {
     const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
     const setTwo = show.filter(song => parseInt(song.SetNumber) === 2);
     const encore = show.filter(song => parseInt(song.SetNumber) === 9);
-    // console.log('match: ', match)
-    // console.log('SONG: ', song);
-    // console.log('PLAYS: ', plays);
-    //console.log('SHOW: ', show);
-    // console.log('SHOW 1st: ', show[0]);
     const songsToDisplayOne = setOne.map((track, index) => {
         return (
             <Link to={`/song/${track.Id}`} key={index} >
@@ -44,26 +40,27 @@ const Show = ({ plays, song, showID }) => {
     });
     const encoreToDisplay = encore.map((track, index) => {
         return (
-            <Link to={`/song/${track.Id}`} key={index} >
+            <Link to={`/song/${track.Id}`} key={index} className='trackLink'>
                 <p>{track.Name}</p>
             </Link>
         )
     })
 
     return (
-        <div className='songList'>
-            {console.log('Show Match:', match, 'Show Venue: ', venue)}
-            {match && <div className='stats'><p>{match.Name}</p><p> was song #{match.Position} in set {match.SetNumber}.</p>
-                {match.DateLastPlayed && <p>It was last played on {match.DateLastPlayed},</p>}
-                {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows ago and was</p>}
-                {match.LastPosition && <p>song #{match.LastPosition} of set {match.LastSetNumber}</p>}
+        <div className='setListContainer'>
+            {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span></p>
+                {match.DateLastPlayed && <p>Last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}
+                    {/* and was
+                    <span> song #{match.LastPosition} of set {match.LastSetNumber}</span> */}
+                </p>}
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
 
             {venue && <div className='head1'>
-                <p>Lotus - {formatDate(venue.DateTime)}</p>
-                <p className='head2'>{venue.Venue.Name}</p>
-                <p className='head3'>{venue.Venue.Locale}</p>
+                <p>{bandName}</p>
+                <p className='head2'>{formatDate(venue.DateTime)}</p>
+                <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
+
             </div>}
             <article className='setList'>
                 <div className='set'>
@@ -88,8 +85,7 @@ const Show = ({ plays, song, showID }) => {
                         </div>}
                 </div>
             </article>
-
-        </div >
+        </div>
     )
 }
 export default Show;

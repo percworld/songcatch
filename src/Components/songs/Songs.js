@@ -1,10 +1,11 @@
+import propTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Songs.scss';
 import Search from '../search/Search';
 import './Songs.scss';
 
-const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
+const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }) => {
     const sortedSongs = songs.sort((a, b) => {
         if (a.Name < b.Name) {
             return -1;
@@ -26,11 +27,8 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
     const songsToDisplay = filteredSongs.map((song, index) => {
         return (
             <section className='songSingle' key={index}>
-                {/* <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
-                    <p>{song.Name}</p>
-                </Link> */}
-                <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
-                    <p>{song.Name}</p>
+                <Link to={`/song/${song.Id}`} onClick={() => setSong(song)}>
+                    <p>{song.name || song.Name}</p>
                 </Link>
             </section>
         )
@@ -39,10 +37,9 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
     return (
         <section className='songList'>
             <p className='head'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
-            {/* {filteredSongs.length > 20 && <Search searchSongName={searchSongName}></Search>} */}
-            {/* {console.log(filteredSongs)} */}
             <Search searchSongName={searchSongName}></Search>
             {songsToDisplay}
+            {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart to the left.</p>}
         </section>
 
     )

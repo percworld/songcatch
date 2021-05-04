@@ -1,0 +1,20 @@
+@import '../../index.scss';
+
+.showList {
+    font-size: 20px;
+    font-family: $showlist-font ;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+    height: 3000px;
+}
+
+.showSingle {
+    margin-bottom: 1em;
+}
+
+.bandName {
+
+}

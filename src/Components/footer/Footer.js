@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import './Footer.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -8,9 +9,7 @@ const Footer = () => {
             <Link to='/tours'>Tours</Link>
             <Link to='/shows'>Shows</Link>
             <Link to='/bands'>Other</Link>
-            <Link to='/projects'>Projects</Link>
-
-            {/* <button onClick={() => { }}></button> */}
+            <a href='https://github.com/percworld' target="_blank" rel="noopener noreferrer">Projects</a>
         </footer>
     )
 }

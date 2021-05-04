@@ -1,0 +1,11 @@
+@import '../../index.scss';
+
+.bandList {
+    font-size: 17px;
+    font-family: $songlist-font ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow-y: scroll;
+    height: 5000px;
+}

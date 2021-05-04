@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import React, { useState } from 'react';
 import './Search.scss';
 
@@ -9,17 +10,16 @@ const Search = ({ searchSongName }) => {
         searchSongName(searchText);
     }
 
-    const searchSongByName = (event, searchText) => {
-        event.preventDefault();
-        searchSongName(searchText);
-        setSearchText('');
-    }
-
     return (
         <form>
-            <input onChange={event => updateSearch(event.target.value)} type='text' value={searchText} placeholder='Scroll or enter a Song Name' name='songName'></input>
+            <input onChange={event => updateSearch(event.target.value)}
+                type='text'
+                value={searchText}
+                placeholder='Search by Song Name'
+                name='songName'>
+            </input>
+            <p>or scroll and click below</p>
             {/* <button onClick={event => searchSongByName(event, searchText)}>Submit</button> */}
-
         </form>
     )
 }

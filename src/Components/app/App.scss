@@ -1,7 +1,7 @@
 .App {
   // overscroll-behavior-y: contain;
   text-align: center;
-  overflow-y: scroll;
+  //overflow-y: scroll;
 }
 
 .App::before {
@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   opacity: 31; 
-  z-index: -1;
+  z-index: -2;
   background-position: center bottom;
   background-repeat: repeat;
   background-image: url('/©SilkyShots2020-colorado.webres-1428.jpg');
@@ -79,7 +79,7 @@
 
 .stars {
   background:transparent url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-  z-index:-2;
+  z-index:-1;
 }
 
 .twinkling {

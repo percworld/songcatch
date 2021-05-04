@@ -27,7 +27,7 @@ const getShowsByTour = (id) => {
 }
 
 const getShows = id => {
-    return fetch(`/shows/?bandId=${id}`)
+    return fetch(`/bands/${id}/shows?pageSize=300&page=1`)
         .then(checkResponse)
 }
 

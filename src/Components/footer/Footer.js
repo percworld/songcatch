@@ -9,7 +9,8 @@ const Footer = () => {
             <Link to='/shows'>Shows</Link>
             <Link to='/bands'>Other</Link>
             {/* <Link to='/projects'>Projects</Link> */}
-            <a href=''></a>  // target_blank to open in new window
+            <a href='https://github.com/percworld'>Projects</a>
+            {/* // target_blank to open in new window */}
 
             {/* <button onClick={() => { }}></button> */}
         </footer>

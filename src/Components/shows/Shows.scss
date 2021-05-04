@@ -7,11 +7,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: scroll;
+    height: 3000px;
 }
 
 .showSingle {
     margin-bottom: 1em;
-    margin-top: 1em;
 }
 
 .bandName {

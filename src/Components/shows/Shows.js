@@ -6,7 +6,6 @@ import './Shows.scss';
 
 const Shows = ({ bandName, bandID }) => {
     const [shows, setShows] = useState([])
-    console.log(bandName)
     useEffect(() => {
         const updateShow = async () => {
             try {
@@ -36,7 +35,7 @@ const Shows = ({ bandName, bandID }) => {
         <section>
             {shows.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows: {shows.length} Total</div>
+                    <div className='bandName'>{bandName} Shows: latest {shows.length}</div>
                     {showsToDisplay}
                 </article>
                 : <p>Loading...</p>}

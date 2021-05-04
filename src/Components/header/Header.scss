@@ -7,9 +7,10 @@ header {
     margin-top: .5em;
     margin-left: .5em;
     font-family: $logo-font;
-    font-size: 31px
+    font-size: 31px;
+    z-index: 0;
 }
 
 .homeLink{
-    z-index: 5;
+    z-index: 3;
 }

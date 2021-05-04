@@ -51,12 +51,15 @@ const Show = ({ plays, song, showID, bandName }) => {
     })
 
     return (
-        <div className='songList'>
-            {console.log('Show Match:', match, 'Show Venue: ', venue)}
-            {match && <div className='stats'><p>{match.Name}</p><p> was song #{match.Position} in set {match.SetNumber}.</p>
-                {match.DateLastPlayed && <p>It was last played on {match.DateLastPlayed},</p>}
-                {match.GapSinceLastPlay && <p>{match.GapSinceLastPlay} shows ago and was</p>}
-                {match.LastPosition && <p>song #{match.LastPosition} of set {match.LastSetNumber}</p>}
+        <div className='setListContainer'>
+            {/* {console.log('Show Match:', match, 'Show Venue: ', venue)} */}
+            {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span></p>
+                {match.DateLastPlayed && <p>Last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}
+                    {/* and was
+                    <span> song #{match.LastPosition} of set {match.LastSetNumber}</span> */}
+                </p>}
+                {/* {match.GapSinceLastPlay && <span>{match.GapSinceLastPlay} shows before and was</span>}
+                {match.LastPosition && <span>song #{match.LastPosition} of set {match.LastSetNumber}</span>} */}
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
 

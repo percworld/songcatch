@@ -64,9 +64,10 @@ const Show = ({ plays, song, showID, bandName }) => {
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
 
             {venue && <div className='head1'>
-                <p>{bandName} - {formatDate(venue.DateTime)}</p>
-                <p className='head2'>{venue.Venue.Name}</p>
-                <p className='head3'>{venue.Venue.Locale}</p>
+                <p>{bandName}</p>
+                <p className='head2'>{formatDate(venue.DateTime)}</p>
+                <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
+
             </div>}
             <article className='setList'>
                 <div className='set'>

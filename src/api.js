@@ -7,7 +7,7 @@ const checkResponse = (response) => {
 }
 
 const getBands = () => {
-    return fetch('/bands?%24orderby=followerCount+desc%2C+name&%24top=40')
+    return fetch('/bands?%24orderby=followerCount+desc%2C+name&%24top=200')
         .then(checkResponse)
 }
 
@@ -26,6 +26,11 @@ const getShowsByTour = (id) => {
         .then(checkResponse)
 }
 
+const getToursByBandID = id => {
+    return fetch(`/bands/${id}/tours?%24orderby=startDate+desc&%24top=99`)
+        .then(checkResponse)
+}
+
 const getShows = id => {
     return fetch(`/bands/${id}/shows?pageSize=300&page=1`)
         .then(checkResponse)
@@ -41,4 +46,4 @@ const getPlays = (songID) => {
         .then(checkResponse)
 }
 
-export { getBands, getPlays, getSong, getSongs, getShows, getShowsByTour, getSet };
+export { getBands, getPlays, getSong, getSongs, getShows, getToursByBandID, getShowsByTour, getSet };

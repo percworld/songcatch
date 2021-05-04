@@ -4,7 +4,7 @@ import './Songs.scss';
 import Search from '../search/Search';
 import './Songs.scss';
 
-const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
+const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }) => {
     const sortedSongs = songs.sort((a, b) => {
         if (a.Name < b.Name) {
             return -1;
@@ -26,11 +26,8 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName }) => {
     const songsToDisplay = filteredSongs.map((song, index) => {
         return (
             <section className='songSingle' key={index}>
-                {/* <Link to={`/song/${song.Id}`} className="songName" onClick={() => setSong(song)}>
-                    <p>{song.Name}</p>
-                </Link> */}
                 <Link to={`/song/${song.Id}`} onClick={() => setSong(song)}>
-                    <p>{song.Name}</p>
+                    <p>{song.name || song.Name}</p>
                 </Link>
             </section>
         )

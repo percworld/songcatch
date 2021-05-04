@@ -7,7 +7,8 @@
     justify-content: flex-start;
     font-family: $setlist-font;
     font-weight: 600;
-    //font-size: 85%;
+    @include bottom;
+    overflow-y: visible;
 }
 .trackLink{
     z-index: 5;
@@ -16,30 +17,33 @@
 .stats {
     display: inline-flex;
     position: absolute;
-    font-size: 15px;
-    height: 13vh;
+    font-size: 14px;
+    height: 10vh;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
     font-family: $showlist-font;
-    width: 78%;
-    margin-top: 1em;
+    width: 85%;
+    //margin-top: 1.5em;
     margin-left: 2em;
 }
 .head1 {
     font-family: $showlist-font;  //$songlist-font; //$logo-font; 
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 600;
-    color: rgb(91, 37, 89);
+    color: $purple;
     width: 68%;
-    margin-top: -7vh;
+    margin-top: -8vh;
     align-self: flex-end;
+    overflow-y: visible;
+    z-index: 4;
     .head2 {
+        margin-top: -1vh;
         font-size: 13px;
         font-weight: 700;
     }
     .head3 {
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 800;
     }
 }
@@ -49,9 +53,9 @@
     background-color: whitesmoke;
     opacity: 69%;
     width: 80%;
-    margin-top: 7em;
+    margin-top: 5em;
     margin-left: 2.25em; 
-    max-height: 69vh;
+    max-height: 72vh;
     font-size: 12px;
 
 

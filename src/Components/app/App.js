@@ -3,6 +3,8 @@ import Nav from '../nav/Nav'
 import Songs from '../songs/Songs';
 import Show from '../show/Show';
 import Shows from '../shows/Shows';
+import Tours from '../tours/Tours';
+import Tour from '../tour/Tour';
 import Song from '../song/Song';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
@@ -88,7 +90,6 @@ class App extends React.Component {
   }
 
   addFavorite = (song) => {
-    console.log(song)
     !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] });
   }
 
@@ -99,7 +100,6 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
       <main className="App" >
         <div className="stars"></div>
@@ -108,7 +108,11 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} />)} />
-          <Route path="/tours" render={() => (<>tours</>)} />
+          <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
+          <Route path="/tour/:tourID" render={({ match }) => {
+            const { tourID } = match.params;
+            return (<Tour bandName={this.state.bandName} bandID={this.state.bandID} tourID={tourID} />)
+          }} />
           <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} />)} />
           <Route path="/bands" render={() => (<Bands setBand={this.setBand} bands={this.state.bands} />)} />
           <Route path="/projects" render={() => (<>festivals</>)} />
@@ -119,7 +123,7 @@ class App extends React.Component {
             return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} bandName={this.state.bandName} />)
           }} />
           <Route path="/song/:song" render={({ match }) => {
-            const { song } = match.params
+            const { song } = match.params;
             return (<Song bandName={this.state.bandName} matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} favorites={this.state.favorites} setSong={this.setSong} />)
           }} />
         </Switch>

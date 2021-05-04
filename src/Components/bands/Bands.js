@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import './Bands.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';

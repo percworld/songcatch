@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import React from 'react';
 import { formatDate } from '../../utilities';
 import { Link } from 'react-router-dom';

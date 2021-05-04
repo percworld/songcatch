@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import React from 'react';
 import Nav from '../nav/Nav'
 import Songs from '../songs/Songs';

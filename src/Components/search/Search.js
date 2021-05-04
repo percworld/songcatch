@@ -1,3 +1,4 @@
+import propTypes from 'prop-types';
 import React, { useState } from 'react';
 import './Search.scss';
 

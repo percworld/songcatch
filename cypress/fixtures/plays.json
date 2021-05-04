@@ -1,0 +1,77 @@
+{
+    "aaData": [
+        {
+            "Id": 53531,
+            "DateTime": "2020-09-27T19:00:00",
+            "Venue": {
+                "Id": 789,
+                "PermalinkOrId": "red-rocks-amphitheatre",
+                "Name": "Red Rocks Amphitheatre",
+                "Locale": "Morrison, CO"
+            },
+            "SongStats": {
+                "Position": 1,
+                "SetNumber": 1
+            }
+        },
+        {
+            "Id": 52741,
+            "DateTime": "2020-02-14T21:00:00",
+            "Venue": {
+                "Id": 10214,
+                "PermalinkOrId": "10-mile-music-hall-opening-fall-2018",
+                "Name": "10 Mile Music Hall",
+                "Locale": "Frisco, CO"
+            },
+            "SongStats": {
+                "Position": 1,
+                "SetNumber": 1
+            }
+        },
+        {
+            "Id": 50936,
+            "DateTime": "2020-01-17T19:00:00",
+            "Venue": {
+                "Id": 1412,
+                "PermalinkOrId": "park-west-chicago-il",
+                "Name": "Park West",
+                "Locale": "Chicago, IL"
+            },
+            "SongStats": {
+                "Position": 1,
+                "SetNumber": 2
+            }
+        },
+        {
+            "Id": 49612,
+            "DateTime": "2019-12-27T19:00:00",
+            "Venue": {
+                "Id": 4011,
+                "PermalinkOrId": "stage-ae",
+                "Name": "Stage AE",
+                "Locale": "Pittsburgh, PA"
+            },
+            "SongStats": {
+                "Position": 2,
+                "SetNumber": 9
+            }
+        },
+        {
+            "Id": 49606,
+            "DateTime": "2019-11-20T19:00:00",
+            "Venue": {
+                "Id": 3894,
+                "PermalinkOrId": "westcott-theatre",
+                "Name": "Westcott Theatre",
+                "Locale": "Syracuse, NY"
+            },
+            "SongStats": {
+                "Position": 2,
+                "SetNumber": 2
+            }
+        }
+    ],
+    "sEcho": "1",
+    "iTotalRecords": 374,
+    "iTotalDisplayRecords": 374
+}

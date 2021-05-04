@@ -1,0 +1,127 @@
+[
+    {
+        "id": 1,
+        "name": "Phish",
+        "shortName": null,
+        "permalink": "phish",
+        "type": "band",
+        "followerCount": 83663,
+        "color1": null,
+        "color2": null,
+        "color3": null,
+        "color4": null,
+        "accentColor": "#",
+        "url": "/api/bands/1",
+        "webUrl": "/bands/phish",
+        "isFollowing": false,
+        "tags": [
+            {
+                "id": 1,
+                "name": "pt-original",
+                "displayName": "PT Original"
+            },
+            {
+                "id": 9163,
+                "name": "rock",
+                "displayName": "Rock"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "The Disco Biscuits",
+        "shortName": null,
+        "permalink": "bisco",
+        "type": "band",
+        "followerCount": 16461,
+        "color1": null,
+        "color2": null,
+        "color3": null,
+        "color4": null,
+        "accentColor": "#",
+        "url": "/api/bands/4",
+        "webUrl": "/bands/bisco",
+        "isFollowing": false,
+        "tags": [
+            {
+                "id": 1,
+                "name": "pt-original",
+                "displayName": "PT Original"
+            },
+            {
+                "id": 9151,
+                "name": "jamtronica",
+                "displayName": "Jamtronica"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Widespread Panic",
+        "shortName": null,
+        "permalink": "wsp",
+        "type": "band",
+        "followerCount": 16206,
+        "color1": null,
+        "color2": null,
+        "color3": null,
+        "color4": null,
+        "accentColor": "#",
+        "url": "/api/bands/2",
+        "webUrl": "/bands/wsp",
+        "isFollowing": false,
+        "tags": [
+            {
+                "id": 1,
+                "name": "pt-original",
+                "displayName": "PT Original"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Dead & Company",
+        "shortName": null,
+        "permalink": "dead",
+        "type": "band",
+        "followerCount": 11271,
+        "color1": null,
+        "color2": null,
+        "color3": null,
+        "color4": null,
+        "accentColor": "#",
+        "url": "/api/bands/7",
+        "webUrl": "/bands/dead",
+        "isFollowing": false,
+        "tags": [
+            {
+                "id": 1,
+                "name": "pt-original",
+                "displayName": "PT Original"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "The String Cheese Incident",
+        "shortName": null,
+        "permalink": "sci",
+        "type": "band",
+        "followerCount": 9449,
+        "color1": null,
+        "color2": null,
+        "color3": null,
+        "color4": null,
+        "accentColor": "#",
+        "url": "/api/bands/3",
+        "webUrl": "/bands/sci",
+        "isFollowing": false,
+        "tags": [
+            {
+                "id": 1,
+                "name": "pt-original",
+                "displayName": "PT Original"
+            }
+        ]
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "id": 53770,
+        "dateTime": "2021-04-25T19:00:00-06:00",
+        "url": "/bands/lotus/shows/53770",
+        "venue": {
+            "id": 789,
+            "name": "Red Rocks Amphitheatre",
+            "locale": "Morrison, CO",
+            "location": {
+                "latitude": 39.665425,
+                "longitude": -105.205711
+            },
+            "url": "/venues/red-rocks-amphitheatre"
+        },
+        "band": {
+            "id": 12,
+            "name": "Lotus",
+            "url": "/bands/lotus"
+        },
+        "status": "Active",
+        "ticketLinks": [],
+        "hasSetlist": false,
+        "attended": false
+    },
+    {
+        "id": 53769,
+        "dateTime": "2021-04-24T19:00:00-06:00",
+        "url": "/bands/lotus/shows/53769",
+        "venue": {
+            "id": 789,
+            "name": "Red Rocks Amphitheatre",
+            "locale": "Morrison, CO",
+            "location": {
+                "latitude": 39.665425,
+                "longitude": -105.205711
+            },
+            "url": "/venues/red-rocks-amphitheatre"
+        },
+        "band": {
+            "id": 12,
+            "name": "Lotus",
+            "url": "/bands/lotus"
+        },
+        "status": "Active",
+        "ticketLinks": [],
+        "hasSetlist": false,
+        "attended": false
+    },
+    {
+        "id": 53768,
+        "dateTime": "2021-04-23T19:00:00-06:00",
+        "url": "/bands/lotus/shows/53768",
+        "venue": {
+            "id": 789,
+            "name": "Red Rocks Amphitheatre",
+            "locale": "Morrison, CO",
+            "location": {
+                "latitude": 39.665425,
+                "longitude": -105.205711
+            },
+            "url": "/venues/red-rocks-amphitheatre"
+        },
+        "band": {
+            "id": 12,
+            "name": "Lotus",
+            "url": "/bands/lotus"
+        },
+        "status": "Active",
+        "ticketLinks": [],
+        "hasSetlist": false,
+        "attended": false
+    },
+    {
+        "id": 53767,
+        "dateTime": "2021-04-22T19:00:00-06:00",
+        "url": "/bands/lotus/shows/53767",
+        "venue": {
+            "id": 789,
+            "name": "Red Rocks Amphitheatre",
+            "locale": "Morrison, CO",
+            "location": {
+                "latitude": 39.665425,
+                "longitude": -105.205711
+            },
+            "url": "/venues/red-rocks-amphitheatre"
+        },
+        "band": {
+            "id": 12,
+            "name": "Lotus",
+            "url": "/bands/lotus"
+        },
+        "status": "Active",
+        "ticketLinks": [],
+        "hasSetlist": false,
+        "attended": false
+    },
+    {
+        "id": 53531,
+        "dateTime": "2020-09-27T19:00:00-06:00",
+        "url": "/bands/lotus/shows/53531",
+        "venue": {
+            "id": 789,
+            "name": "Red Rocks Amphitheatre",
+            "locale": "Morrison, CO",
+            "location": {
+                "latitude": 39.665425,
+                "longitude": -105.205711
+            },
+            "url": "/venues/red-rocks-amphitheatre"
+        },
+        "band": {
+            "id": 12,
+            "name": "Lotus",
+            "url": "/bands/lotus"
+        },
+        "status": "Active",
+        "ticketLinks": [],
+        "hasSetlist": true,
+        "attended": false
+    }
+]

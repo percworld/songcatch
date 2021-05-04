@@ -1,0 +1,50 @@
+[
+    {
+        "id": 2233,
+        "name": "Spring 2020",
+        "startDate": "2020-02-14T21:00:00",
+        "url": "/api/bands/12/tours/2233",
+        "webUrl": "/bands/lotus/tours/2233",
+        "showCount": 2
+    },
+    {
+        "id": 2087,
+        "name": "New Years Run 2019",
+        "startDate": "2019-12-27T19:00:00",
+        "url": "/api/bands/12/tours/2087",
+        "webUrl": "/bands/lotus/tours/2087",
+        "showCount": 5
+    },
+    {
+        "id": 2086,
+        "name": "Fall 2019",
+        "startDate": "2019-11-15T19:00:00",
+        "url": "/api/bands/12/tours/2086",
+        "webUrl": "/bands/lotus/tours/2086",
+        "showCount": 9
+    },
+    {
+        "id": 1911,
+        "name": "Spring Tour 2019",
+        "startDate": "2019-02-17T19:00:00",
+        "url": "/api/bands/12/tours/1911",
+        "webUrl": "/bands/lotus/tours/1911",
+        "showCount": 14
+    },
+    {
+        "id": 1910,
+        "name": "Winter Tour 2019",
+        "startDate": "2019-01-25T21:00:00",
+        "url": "/api/bands/12/tours/1910",
+        "webUrl": "/bands/lotus/tours/1910",
+        "showCount": 6
+    },
+    {
+        "id": 1879,
+        "name": "Fall Tour 2018",
+        "startDate": "2018-11-07T19:00:00",
+        "url": "/api/bands/12/tours/1879",
+        "webUrl": "/bands/lotus/tours/1879",
+        "showCount": 12
+    }
+]

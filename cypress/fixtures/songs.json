@@ -1,0 +1,47 @@
+[
+    {
+        "id": 27714,
+        "name": "And Yet They Fight",
+        "communityId": 12,
+        "communityPermalink": "lotus",
+        "playCount": 3,
+        "url": "/api/bands/12/songs/27714",
+        "webUrl": "/bands/lotus/songs/27714"
+    },
+    {
+        "id": 27926,
+        "name": "Yoshimi Battles the Pink Robots Pt 2",
+        "communityId": 12,
+        "communityPermalink": "lotus",
+        "playCount": 1,
+        "url": "/api/bands/12/songs/27926",
+        "webUrl": "/bands/lotus/songs/27926"
+    },
+    {
+        "id": 28221,
+        "name": "Leave a Little Room for Jesus",
+        "communityId": 12,
+        "communityPermalink": "lotus",
+        "playCount": 1,
+        "url": "/api/bands/12/songs/28221",
+        "webUrl": "/bands/lotus/songs/28221"
+    },
+    {
+        "id": 29178,
+        "name": "Earl of Grey",
+        "communityId": 12,
+        "communityPermalink": "lotus",
+        "playCount": 1,
+        "url": "/api/bands/12/songs/29178",
+        "webUrl": "/bands/lotus/songs/29178"
+    },
+    {
+        "id": 29179,
+        "name": "Bjorn Gets a Haircut",
+        "communityId": 12,
+        "communityPermalink": "lotus",
+        "playCount": 1,
+        "url": "/api/bands/12/songs/29179",
+        "webUrl": "/bands/lotus/songs/29179"
+    }
+]

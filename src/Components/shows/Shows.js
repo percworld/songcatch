@@ -20,8 +20,6 @@ const Shows = ({ bandName, bandID }) => {
     }, [])
 
     const showsToDisplay = shows.map(show => {
-        console.log(show)
-
         return (
 
             <section className='showContainer' key={show.id}>

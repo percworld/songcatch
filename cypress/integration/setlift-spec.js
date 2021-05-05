@@ -195,14 +195,13 @@ describe('dashboard', () => {
             cy.get('.set').first().last().first().click()
             cy.location().should((loc) => {
                 expect(loc.toString()).to.eq(
-                    'http://localhost:3000/song/6294'
+                    'http://localhost:3000/show/50937'
                 )
             })
-            cy.get('.venue').first().contains('Citizens Bank Park')
         })
     })
 
-    describe.only('Tours Page', () => {
+    describe('Tours Page', () => {
         beforeEach('visit the page', () => {
             cy.intercept(`${url}/songs/?bandId=12`, { fixture: 'songs.json' })
             cy.intercept(`${url}/bands/12/tours?%24orderby=startDate+desc&%24top=200`,
@@ -211,9 +210,53 @@ describe('dashboard', () => {
         })
 
         it('Displays a number of tours a band has taken', () => {
-            cy.get('footer')
+            cy.get('a[data-cy=tours]').click()
+            cy.get('.tourList').children().should('have.length', '7')
+                .get('.tourBandName').contains('Lotus Tours')
+                .get('.tourSingle').first().first().contains('Spring 2020')
+                .get('.tourSingle').last().last().contains('12 shows')
+        })
+
+        it('Links to a specific tour from the Tours page', () => {
+            cy.get('a[data-cy=tours]').click()
+            cy.get('.tourSingle').last().first().click()
+            cy.location().should((loc) => {
+                expect(loc.toString()).to.eq(
+                    'http://localhost:3000/tours'
+                )
+            })
         })
     })
 
+    describe('Shows Page', () => {
+        beforeEach('visit the page', () => {
+            cy.intercept(`${url}/songs/?bandId=12`, { fixture: 'songs.json' })
+            cy.intercept(`${url}/bands/12/shows?pageSize=300&page=1`,
+                { fixture: 'shows.json' })
+            cy.visit(`${url}/`)
+        })
 
+        it('Displays the most recent 100 shows a band has performed', () => {
+            cy.get('a[data-cy=shows]').click()
+            cy.get('.showList').children().should('have.length', '6')
+                .get('.bandName').contains('Shows: latest 5')
+                .get('.showContainer').last().contains('Morrison')
+                .get('.singleShow').first().children().first().contains('Red Rocks')
+        })
+    })
+
+    describe('Bands Page', () => {
+        beforeEach('visit the page', () => {
+            cy.intercept(`${url}/songs/?bandId=12`, { fixture: 'songs.json' })
+            cy.intercept(`${url}/bands?%24orderby=followerCount+desc%2C+name&%24top=200`,
+                { fixture: 'bands.json' })
+            cy.visit(`${url}/`)
+        })
+
+        it('Displays other bands to browse with their Links', () => {
+            cy.get('a[data-cy=bands]').click()
+            cy.get('.bandList').first().contains('Phish')
+            cy.get('.bandList').last().contains('The String Cheese Incident')
+        })
+    })
 })

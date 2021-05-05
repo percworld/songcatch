@@ -20,7 +20,6 @@ const Tours = ({ bandName, bandID }) => {
     }, [])
 
     const toursToDisplay = tours.map(tour => {
-        console.log(tours)
         return (
             <section className='tourSingle' key={tour.id}>
                 <Link to={`/tour/${tour.id}`}>

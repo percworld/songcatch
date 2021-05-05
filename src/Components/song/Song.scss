@@ -27,7 +27,7 @@ img {
     font-size: 33px;
     font-weight: 800;
     font-family: $logo-font;
-    color: $purple
+    color: $purpleLight
 }
 .playCount {
     margin-top: -.2em;
@@ -35,7 +35,7 @@ img {
     font-size: 21px;
     font-weight: 800;
     font-family: $logo-font;
-    color: $purple
+    color: $purpleLight
 }
 .play {
     z-index: 5;
@@ -57,7 +57,9 @@ img {
 .head {
     font-family: $logo-font;
     font-size: 21px;
+    margin-top: -.3em;
     margin-bottom: 0;
+    color: $purpleLight;
 }
 
 

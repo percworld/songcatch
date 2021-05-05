@@ -7,7 +7,7 @@ const checkResponse = (response) => {
 }
 
 const getBands = () => {
-    return fetch('/bands?%24orderby=followerCount+desc%2C+name&%24top=200')
+    return fetch('/bands?%24orderby=followerCount+desc%2C+name&%24top=28')
         .then(checkResponse)
 }
 

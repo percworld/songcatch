@@ -24,15 +24,17 @@ img {
    z-index: 5;
 }
 .title {
-   font-family: $logo-font;
-   font-size: 33px;
-   font-weight: 800;
-   color: $purple
+    font-size: 33px;
+    font-weight: 800;
+    font-family: $logo-font;
+    color: $purple
 }
- .playCount {
-    margin-bottom: 1em;
+.playCount {
+    margin-top: -.2em;
+    margin-bottom: .3em;
     font-size: 21px;
     font-weight: 800;
+    font-family: $logo-font;
     color: $purple
 }
 .play {
@@ -57,10 +59,7 @@ img {
     font-size: 21px;
     margin-bottom: 0;
 }
-.playCount {
-    margin-top: .5em;
-    font-family: $logo-font;
-}
+
 
 .favorites-button {
   z-index: 5;

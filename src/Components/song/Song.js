@@ -36,7 +36,11 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             <p className='title'>{song.name}</p>
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
-            {plays.length && <p className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}</p>}
+            {console.log(song)}
+            {plays.length &&
+                <div className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}
+                    <p className='playCount'>Debuted on {formatDate(song.debut)}</p>
+                </div>}
             {favorites.includes(song) ?
                 <div className='favorites-button' onClick={() => { removeFavorite(song) }}>
                     <i><BrokenHeart className="heart"></BrokenHeart></i>

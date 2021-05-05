@@ -20,15 +20,14 @@ const Shows = ({ bandName, bandID }) => {
     }, [])
 
     const showsToDisplay = shows.map(show => {
-        console.log(show)
-
         return (
-            <section className='showSingle' key={show.id}>
-                <Link to={`/show/${show.id}`}>
+
+            <section className='showContainer' key={show.id}>
+                <Link to={`/show/${show.id}`} className='singleShow' >
                     <span>{show.venue.name}</span>
                 </Link>
                 <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
-            </section>
+            </section >
         )
     })
 

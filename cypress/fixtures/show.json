@@ -1,0 +1,62 @@
+[
+    {
+        "Id": 9813,
+        "Permalink": null,
+        "Name": "Eats the Light",
+        "SetNumber": 1,
+        "Position": 1,
+        "DateLastPlayed": "11/21/2019",
+        "LastSetNumber": 1,
+        "LastPosition": 1,
+        "GapSinceLastPlay": 4,
+        "WebUrl": "/bands/lotus/songs/9813/eats-the-light"
+    },
+    {
+        "Id": 6294,
+        "Permalink": null,
+        "Name": "Livingston Storm",
+        "SetNumber": 1,
+        "Position": 2,
+        "DateLastPlayed": "11/21/2019",
+        "LastSetNumber": 1,
+        "LastPosition": 2,
+        "GapSinceLastPlay": 4,
+        "WebUrl": "/bands/lotus/songs/6294/livingston-storm"
+    },
+    {
+        "Id": 22361,
+        "Permalink": null,
+        "Name": "Cosmosis",
+        "SetNumber": 1,
+        "Position": 3,
+        "DateLastPlayed": "9/20/2019",
+        "LastSetNumber": 1,
+        "LastPosition": 3,
+        "GapSinceLastPlay": 13,
+        "WebUrl": "/bands/lotus/songs/22361/cosmosis"
+    },
+    {
+        "Id": 6376,
+        "Permalink": null,
+        "Name": "Spaghetti",
+        "SetNumber": 1,
+        "Position": 4,
+        "DateLastPlayed": "11/15/2019",
+        "LastSetNumber": 1,
+        "LastPosition": 6,
+        "GapSinceLastPlay": 8,
+        "WebUrl": "/bands/lotus/songs/6376/spaghetti"
+    },
+    {
+        "Id": 6385,
+        "Permalink": null,
+        "Name": "Sunrain",
+        "SetNumber": 1,
+        "Position": 5,
+        "DateLastPlayed": "11/21/2019",
+        "LastSetNumber": 9,
+        "LastPosition": 1,
+        "GapSinceLastPlay": 4,
+        "WebUrl": "/bands/lotus/songs/6385/sunrain"
+    }
+]

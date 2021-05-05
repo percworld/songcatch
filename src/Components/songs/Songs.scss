@@ -1,5 +1,11 @@
 @import '../../index.scss';
 
+.list{
+    overflow-y: scroll;
+    height: 3000px;  
+    @include bottom;  
+}
+
 .songList {
     z-index: 5;
     display: flex;
@@ -9,7 +15,7 @@
     font-family: $logo-font;
     font-weight: 600;
     font-size: 21px;
-    @include bottom;
+
 }
 .songSingle {
     z-index: 5;

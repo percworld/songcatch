@@ -35,7 +35,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
     })
 
     return (
-        <section className='songList'>
+        <section className='songList' data-cy='song-list'>
             <p className='head'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
             <Search searchSongName={searchSongName}></Search>
             {songsToDisplay}

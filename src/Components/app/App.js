@@ -96,8 +96,8 @@ class App extends React.Component {
 
   setBand = (id, name) => {
     getSongs(id)
-      .then(response => this.setState({ songs: response, bandID: id, bandName: name }), console.log(this.state.bandName))
-    // .then(console.log(this.state.bandName));
+      .then(response => this.setState({ songs: response, bandID: id, bandName: name }))
+
   }
 
   render() {

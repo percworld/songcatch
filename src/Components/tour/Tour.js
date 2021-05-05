@@ -37,7 +37,7 @@ const Tours = ({ bandName, tourID }) => {
         <section>
             {tour.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows: {tour.length}</div>
+                    <div className='bandName'>{tour.length} shows on this tour...</div>
                     {tourToDisplay}
                 </article>
                 : <p>Loading...</p>}

@@ -22,3 +22,9 @@
     font-family: $showlist-font ;
     height: 100%;
 }
+
+@media only screen and (max-width: 500px) {
+  img {
+    margin-left: 10vw;
+  }
+}

@@ -18,17 +18,6 @@
   background-attachment: fixed;
 }
 
-// .App-header {
-//   background-color: #282c34;
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: white;
-// }
-
 @keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
@@ -64,7 +53,6 @@
 }
 
 .stars, .twinkling, .clouds {
-  // z-index: -1;
   position:absolute;
   top:0;
   left:0;
@@ -83,16 +71,7 @@
 .twinkling {
   z-index: -2;
 }
-// .twinkling{
-//   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-//   z-index:1;
 
-//   -moz-animation:move-twink-back 200s linear infinite;
-//   -ms-animation:move-twink-back 200s linear infinite;
-//   -o-animation:move-twink-back 200s linear infinite;
-//   -webkit-animation:move-twink-back 200s linear infinite;
-//   animation:move-twink-back 200s linear infinite;
-// }
 
 .clouds{
   height:100%;
@@ -105,3 +84,24 @@
   -webkit-animation:move-clouds-back 200s linear infinite;
   animation:move-clouds-back 200s linear infinite;
 }
+
+// MEDIA _ TABLET
+@media only screen and (max-width: 500px) {
+  .App {
+    //background-image: url('/songcatcher1.jpeg');
+    background-size: cover;
+    background-repeat: repeat-y;
+    height: 71em;
+  }
+}
+
+// SAVE FOR POSSIBLE EXTENSION
+// .twinkling{
+//   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+//   z-index:1;
+//   -moz-animation:move-twink-back 200s linear infinite;
+//   -ms-animation:move-twink-back 200s linear infinite;
+//   -o-animation:move-twink-back 200s linear infinite;
+//   -webkit-animation:move-twink-back 200s linear infinite;
+//   animation:move-twink-back 200s linear infinite;
+// }

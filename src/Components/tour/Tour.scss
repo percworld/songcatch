@@ -3,10 +3,10 @@
 .showsContainer {
     font-size: 20px;
     font-family: $showlist-font ;
-    height: 100%;
+    max-height: 2000px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .showList {
@@ -15,12 +15,12 @@
 
 .showSingle {
     overflow-y: scroll;
-    height: 1000px;
     margin-bottom: 1em;
 }
 
 .bandName {
     margin-top: .4vh;
     margin-bottom: .5em;
+    font-size: 26px;
 
 }

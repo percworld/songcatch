@@ -16,7 +16,12 @@
     height: 5000px; 
     @include bottom;
 }
-
+.backArrow {
+   position: absolute;
+   margin-top: 9vh; 
+   margin-left: -18em;
+   height: 34px;  
+}
 img {
    max-width: 41vw;
    margin-left: 28vw; 
@@ -83,6 +88,28 @@ img {
     margin-top: -2.5vh;
     margin-left: -1.25em;
     color: $purple
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  img {
+   max-width: 14vw;
+   margin-left: 10vw; 
+   margin-top: 10vh;
+    
+  }
+  .heart {
+     margin-top: -1vh; 
+     margin-left: 1em;
+     width: 7vw;
+  }
+  .add {
+    margin-top: -10vh;
+    margin-left: -1.25em;
+    color: $purple
+  }
+  .playList{
+      margin-top: -27vh;
   }
 }
 

@@ -7,7 +7,7 @@ import './Song.scss';
 // import brokenHeart from '/assets/heart-broken-solid.svg';
 import { ReactComponent as Heart } from '../icons/heart-solid.svg';
 import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
-
+import { ReactComponent as BackArrow } from '../icons/chevron-circle-left-solid.svg'
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
     const switchSong = async () => {
         try {
@@ -33,6 +33,9 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
     })
     return (
         <article className="playList">
+            {/* <Link to='/Songs'>
+                <BackArrow className='backArrow' />
+            </Link> */}
             {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             <p className='title'>{song.name}</p>
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
@@ -51,7 +54,6 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
                     <p className='add'>Add</p>
                 </div>
             }
-
             {(!plays.length || song.id === matchedSongID) ? <p>Loading...</p> :
                 <div className='plays'>
                     <div className='playsContainer'>{playsToDisplay}</div>

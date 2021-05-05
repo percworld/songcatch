@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getSet } from '../../api'
 import { formatDate } from '../../utilities';
 import './Show.scss';
+import { ReactComponent as BackArrow } from '../icons/chevron-circle-left-solid.svg'
 
 const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
@@ -48,6 +49,9 @@ const Show = ({ plays, song, showID, bandName }) => {
 
     return (
         <div className='setListContainer'>
+            {/* <Link to='/Song'>
+                <BackArrow className='backArrow' />
+            </Link> */}
             {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span></p>
                 {match.DateLastPlayed && <p>Last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}
                     {/* and was

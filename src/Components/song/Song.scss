@@ -55,25 +55,30 @@ img {
     margin-bottom: 0;
 }
 .playCount {
-    .margin-top: -2em;
+    margin-top: .5em;
     font-family: $logo-font;
 }
 
 .favorites-button {
   z-index: 5;
+  position: absolute;
   display: inline;
-  background-color: #953c9a;
   border: none;
-  font-family: 'Krona One', sans-serif;
-  font-weight:  100;
+  font-family: $songlist-font;
+  font-weight:  600;
   text-transform: none;
   padding: 0;
-  width: 19vw;
-  margin-top: -6vh;
-  margin-left: .5em;
-  font-size: 11px;
-  .see {
-      
+  width: 15vw;
+  height: 12vh;
+  margin-left: 23.5em;
+  font-size: 12px;
+  .heart {
+     margin-top: 4em; 
+  }
+  .add {
+    margin-top: -2.5vh;
+    margin-left: -1.5em;
+    color: $purple
   }
 }
 

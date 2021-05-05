@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { getSong } from '../../api';
 import './Song.scss';
 // import brokenHeart from '/assets/heart-broken-solid.svg';
-// import heart from '/assets/heart-solid.svg';
+import { ReactComponent as Heart } from '../icons/heart-solid.svg';
+import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
     const switchSong = async () => {
@@ -37,13 +38,13 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
             {plays.length && <p className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}</p>}
             {favorites.includes(song) ?
-                <button className='favorites-button' onClick={() => { removeFavorite(song) }}>Remove from favorites</button> :
+                <div className='favorites-button' onClick={() => { removeFavorite(song) }}>
+                    <i><BrokenHeart className="heart"></BrokenHeart></i>
+                    <p className='add'>Remove</p>
+                </div> :
                 <div className='favorites-button' onClick={() => { addFavorite(song) }}>
-                    <span>
-                        <i className="fas fa-heart"></i>
-                        <i className="fas fa-heart-broken"></i>
-                        Add to favorites
-                    </span>
+                    <p><Heart className="heart"></Heart></p>
+                    <p className='add'>Add</p>
                 </div>
             }
 

@@ -18,3 +18,8 @@ const Bands = ({ setBand, bands }) => {
 }
 
 export default Bands;
+
+Bands.propTypes = {
+    setBand: propTypes.func,
+    band: propTypes.object
+}

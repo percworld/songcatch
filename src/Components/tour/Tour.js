@@ -17,6 +17,7 @@ const Tours = ({ bandName, tourID }) => {
             }
         }
         updateTour()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const tourToDisplay = tour.map(show => {

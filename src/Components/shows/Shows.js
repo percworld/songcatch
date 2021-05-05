@@ -17,6 +17,7 @@ const Shows = ({ bandName, bandID }) => {
             }
         }
         updateShow()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const showsToDisplay = shows.map(show => {

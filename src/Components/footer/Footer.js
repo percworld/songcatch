@@ -7,7 +7,7 @@ const Footer = () => {
         <footer>
             <Link to='/tours' data-cy='tours'>Tours</Link>
             <Link to='/shows' data-cy='shows'>Shows</Link>
-            <Link to='/bands' data-cy='bands'>Other</Link>
+            <Link to='/bands' data-cy='bands'>Bands</Link>
             <a href='https://github.com/percworld' target="_blank" rel="noopener noreferrer">Projects</a>
         </footer>
     )

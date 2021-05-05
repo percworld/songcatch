@@ -56,3 +56,14 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
 }
 
 export default Song;
+
+Song.propTypes = {
+    song: propTypes.object,
+    plays: propTypes.array,
+    addFavorite: propTypes.func,
+    removeFavorite: propTypes.func,
+    favorites: propTypes.array,
+    matchedSongID: propTypes.string,
+    setSong: propTypes.func,
+    bandName: propTypes.string
+}

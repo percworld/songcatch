@@ -47,3 +47,12 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
 }
 
 export default Songs;
+
+Songs.propTypes = {
+    songs: propTypes.array,
+    setSong: propTypes.func,
+    bandName: propTypes.string,
+    category: propTypes.string,
+    searchSongName: propTypes.func,
+    favorites: propTypes.array
+}

@@ -43,3 +43,8 @@ const Tours = ({ bandName, bandID }) => {
     )
 }
 export default Tours;
+
+Tours.propTypes = {
+    bandName: propTypes.string,
+    bandID: propTypes.number
+}

@@ -28,3 +28,8 @@ const Nav = ({ updateCategory, bandName }) => {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+    updateCategory: propTypes.func,
+    bandName: propTypes.string
+}

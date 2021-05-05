@@ -21,8 +21,8 @@ const Tours = ({ bandName, tourID }) => {
 
     const tourToDisplay = tour.map(show => {
         return (
-            <div classname='showsContainer'>
-                <section className='showSingle' key={show.id}>
+            <div className='showsContainer' key={show.id}>
+                <section className='showSingle'>
                     <Link to={`/show/${show.id}`}>
                         <span>{show.band.name} @ {show.venue.name}</span>
                     </Link>
@@ -45,3 +45,8 @@ const Tours = ({ bandName, tourID }) => {
     )
 }
 export default Tours;
+
+Tours.propTypes = {
+    bandName: propTypes.string,
+    tourID: propTypes.string
+}

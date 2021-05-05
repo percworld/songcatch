@@ -11,7 +11,7 @@ const Header = () => {
                 {/* <img src={'../../assets/celtic logo thick Vector.ai'} /> */}
                 {/* <img src={`${process.env.PUBLIC_URL}../../public/assets/lotuslogo-removebg-preview.png`} alt="lotus logo" /> */}
 
-                <h3>Setlift</h3>
+                <h3 data-cy='setlift'>Setlift</h3>
             </Link>
 
 

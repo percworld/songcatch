@@ -17,12 +17,13 @@ const Tours = ({ bandName, tourID }) => {
             }
         }
         updateTour()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const tourToDisplay = tour.map(show => {
         return (
-            <div classname='showsContainer'>
-                <section className='showSingle' key={show.id}>
+            <div className='showsContainer' key={show.id}>
+                <section className='showSingle'>
                     <Link to={`/show/${show.id}`}>
                         <span>{show.band.name} @ {show.venue.name}</span>
                     </Link>
@@ -36,7 +37,7 @@ const Tours = ({ bandName, tourID }) => {
         <section>
             {tour.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows: {tour.length}</div>
+                    <div className='bandName'>{tour.length} shows on this tour...</div>
                     {tourToDisplay}
                 </article>
                 : <p>Loading...</p>}
@@ -45,3 +46,8 @@ const Tours = ({ bandName, tourID }) => {
     )
 }
 export default Tours;
+
+Tours.propTypes = {
+    bandName: propTypes.string,
+    tourID: propTypes.string
+}

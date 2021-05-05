@@ -38,7 +38,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
         <section className='songList' data-cy='song-list'>
             <p className='head'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
             <Search searchSongName={searchSongName}></Search>
-            {songsToDisplay}
+            <div className='trackContainer'>{songsToDisplay}</div>
             {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart to the left.</p>}
         </section>
 
@@ -47,3 +47,12 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
 }
 
 export default Songs;
+
+Songs.propTypes = {
+    songs: propTypes.array,
+    setSong: propTypes.func,
+    bandName: propTypes.string,
+    category: propTypes.string,
+    searchSongName: propTypes.func,
+    favorites: propTypes.array
+}

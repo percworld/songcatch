@@ -89,3 +89,10 @@ const Show = ({ plays, song, showID, bandName }) => {
     )
 }
 export default Show;
+
+Show.propTypes = {
+    plays: propTypes.array,
+    song: propTypes.object,
+    showID: propTypes.string,
+    bandName: propTypes.string
+}

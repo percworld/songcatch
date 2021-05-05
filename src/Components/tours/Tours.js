@@ -17,6 +17,7 @@ const Tours = ({ bandName, bandID }) => {
             }
         }
         updateTours()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const toursToDisplay = tours.map(tour => {
@@ -43,3 +44,8 @@ const Tours = ({ bandName, bandID }) => {
     )
 }
 export default Tours;
+
+Tours.propTypes = {
+    bandName: propTypes.string,
+    bandID: propTypes.number
+}

@@ -5,15 +5,23 @@
     flex-direction: column;
     justify-content: flex-start;
     font-family: $logo-font;
-    @include bottom;
-    overflow-y: visible;
 }
 
 .plays{
-    overflow-y: scroll;
-    height: 5000px; 
+    height: 2000px;
 }
 
+.playsContainer{
+    overflow-y: scroll;
+    height: 5000px; 
+    @include bottom;
+}
+.backArrow {
+   position: absolute;
+   margin-top: 9vh; 
+   margin-left: -18em;
+   height: 34px;  
+}
 img {
    max-width: 41vw;
    margin-left: 28vw; 
@@ -21,19 +29,21 @@ img {
    z-index: 5;
 }
 .title {
-   font-family: $logo-font; //$songlist-font;
-   font-size: 33px;
-   font-weight: 800;
-   color: $purple
+    font-size: 33px;
+    font-weight: 800;
+    font-family: $logo-font;
+    color: $purpleLight
 }
- .playCount {
-    margin-bottom: 1em;
+.playCount {
+    margin-top: -.2em;
+    margin-bottom: .3em;
     font-size: 21px;
     font-weight: 800;
-    color: $purple
+    font-family: $logo-font;
+    color: $purpleLight
 }
 .play {
-     z-index: 5;
+    z-index: 5;
     font-size: 27px;
     margin-bottom: .25em;  
 }
@@ -52,33 +62,54 @@ img {
 .head {
     font-family: $logo-font;
     font-size: 21px;
+    margin-top: -.3em;
     margin-bottom: 0;
+    color: $purpleLight;
 }
-.playCount {
-    .margin-top: -2em;
-    font-family: $logo-font;
-}
+
 
 .favorites-button {
   z-index: 5;
+  position: absolute;
   display: inline;
-  background-color: #953c9a;
   border: none;
-  font-family: 'Krona One', sans-serif;
-  font-weight:  100;
+  font-family: $songlist-font;
+  font-weight:  600;
   text-transform: none;
   padding: 0;
-  width: 19vw;
-  margin-top: -6vh;
-  margin-left: .5em;
-  font-size: 11px;
-  .see {
-      
+  width: 15vw;
+  height: 12vh;
+  margin-left: 25.5em;
+  font-size: 12px;
+  .heart {
+     margin-top: 4em; 
+  }
+  .add {
+    margin-top: -2.5vh;
+    margin-left: -1.25em;
+    color: $purple
   }
 }
 
-.fas {
-    //background-image: url('/assets/heart-solid.svg');
-    width: 2em;
-    height: 2em;
+@media only screen and (min-width: 500px) {
+  img {
+   max-width: 14vw;
+   margin-left: 10vw; 
+   margin-top: 10vh;
+    
+  }
+  .heart {
+     margin-top: -1vh; 
+     margin-left: 1em;
+     width: 7vw;
+  }
+  .add {
+    margin-top: -10vh;
+    margin-left: -1.25em;
+    color: $purple
+  }
+  .playList{
+      margin-top: -27vh;
+  }
 }
+

@@ -8,7 +8,7 @@ const Nav = ({ updateCategory, bandName }) => {
     return (
         <section className='page-container'>
             {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
-            {bandName !== 'Lotus' && <p className='bandName'>{bandName}</p>}
+            {bandName !== 'Lotus' && <p className='name'>{bandName}</p>}
             <div className='nav-container' data-cy='nav-container'>
                 <Link to="/songs" data-cy='originals' onClick={() => updateCategory('Original')} >
                     <p>Originals</p>
@@ -28,3 +28,8 @@ const Nav = ({ updateCategory, bandName }) => {
 }
 
 export default Nav;
+
+Nav.propTypes = {
+    updateCategory: propTypes.func,
+    bandName: propTypes.string
+}

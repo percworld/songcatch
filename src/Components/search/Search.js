@@ -25,3 +25,7 @@ const Search = ({ searchSongName }) => {
 }
 
 export default Search;
+
+Search.propTypes = {
+    searchSongName: propTypes.func
+}

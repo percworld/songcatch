@@ -50,7 +50,7 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
 
             {(!plays.length || song.id === matchedSongID) ? <p>Loading...</p> :
                 <div className='plays'>
-                    {playsToDisplay}
+                    <div className='playsContainer'>{playsToDisplay}</div>
                 </div>}
         </article>
     )

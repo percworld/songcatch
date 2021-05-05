@@ -5,13 +5,16 @@
     flex-direction: column;
     justify-content: flex-start;
     font-family: $logo-font;
-    @include bottom;
-    overflow-y: visible;
 }
 
 .plays{
+    height: 2000px;
+}
+
+.playsContainer{
     overflow-y: scroll;
     height: 5000px; 
+    @include bottom;
 }
 
 img {
@@ -21,7 +24,7 @@ img {
    z-index: 5;
 }
 .title {
-   font-family: $logo-font; //$songlist-font;
+   font-family: $logo-font;
    font-size: 33px;
    font-weight: 800;
    color: $purple
@@ -33,7 +36,7 @@ img {
     color: $purple
 }
 .play {
-     z-index: 5;
+    z-index: 5;
     font-size: 27px;
     margin-bottom: .25em;  
 }
@@ -82,8 +85,3 @@ img {
   }
 }
 
-.fas {
-    //background-image: url('/assets/heart-solid.svg');
-    width: 2em;
-    height: 2em;
-}

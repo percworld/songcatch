@@ -1,11 +1,10 @@
 @import '../../index.scss';
 
-.list{
+.trackContainer {
     overflow-y: scroll;
     height: 3000px;  
     @include bottom;  
 }
-
 .songList {
     z-index: 5;
     display: flex;

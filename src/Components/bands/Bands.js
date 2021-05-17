@@ -4,7 +4,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Bands = ({ setBand, bands }) => {
-    const bandsToDisplay = bands.map(band => {
+    const lespecial = bands.find(band => band.name === 'lespecial');
+    const tempBandList = bands.filter(band => !(band.name === 'lespecial'))
+    lespecial && tempBandList.unshift(lespecial);
+
+    tempBandList.splice(76)
+
+
+
+    const bandsToDisplay = tempBandList.map(band => {
         return <Link to='/' key={band.id} onClick={() => setBand(band.id, band.name)}>{band.name}</Link>
     })
     return (

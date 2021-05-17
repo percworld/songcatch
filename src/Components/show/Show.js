@@ -62,29 +62,31 @@ const Show = ({ plays, song, showID, bandName }) => {
                 <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
 
             </div>}
-            <article className='setList'>
-                <div className='set'>
-                    <p>Set 1</p>
-                    <p>-----------------------</p>
-                    {show.length ? songsToDisplayOne : <p>Loading...</p>}
-                </div>
-                <div className='set'>
-                    {songsToDisplayTwo.length &&
-                        <div>
-                            <p>Set 2</p>
-                            <p>-------------------</p>
-                            {songsToDisplayTwo}
-                        </div>}
-                </div>
-                <div className='set'>
-                    {encore.length &&
-                        <div>
-                            <p>Encore</p>
-                            <p>-------------------</p>
-                            {encoreToDisplay}
-                        </div>}
-                </div>
-            </article>
+            {setOne.length ?
+                <article className='setList'>
+                    <div className='set'>
+                        <p>Set 1</p>
+                        <p>-----------------------</p>
+                        {show.length ? songsToDisplayOne : <p>Loading...</p>}
+                    </div>
+                    <div className='set'>
+                        {songsToDisplayTwo.length &&
+                            <div>
+                                <p>Set 2</p>
+                                <p>-------------------</p>
+                                {songsToDisplayTwo}
+                            </div>}
+                    </div>
+                    <div className='set'>
+                        {encore.length &&
+                            <div>
+                                <p>Encore</p>
+                                <p>-------------------</p>
+                                {encoreToDisplay}
+                            </div>}
+                    </div>
+                </article>
+                : <p className='error'>Sorry, This show does not have a an associated Setlist</p>}
         </div>
     )
 }

@@ -14,8 +14,12 @@
     font-family: $logo-font;
     font-weight: 600;
     font-size: 21px;
-
 }
+
+p {
+    color: $purple;
+}
+
 .songSingle {
     z-index: 5;
     font-family: $showlist-font

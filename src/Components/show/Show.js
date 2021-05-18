@@ -86,7 +86,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                             </div>}
                     </div>
                 </article>
-                : <p className='error'>Sorry, This show does not have a an associated Setlist</p>}
+                : <p className='error'>Loading...</p>}
         </div>
     )
 }

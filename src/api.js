@@ -10,7 +10,7 @@ const checkResponse = (response) => {
 }
 
 const getBands = () => {
-    return fetch(`${url}/bands?%24orderby=followerCount+desc%2C+name&%24top=28`)
+    return fetch('/bands?%24orderby=followerCount+desc%2C+name&%24top=154')
         .then(checkResponse)
 }
 

@@ -1,16 +1,34 @@
 const express = require('express');
-
+const fetch = require('node-fetch');
 const app = express();
 app.use(express.json());
 
-app.locals.title = "Songcatch";
+app.locals.title = "Setlift";
+
+const checkResponse = (response) => {
+    if (!response.ok) {
+        throw new Error('The songs aren\'t currently available.');
+    } else {
+        return response.json();
+    }
+}
+
 
 app.get('/', (req, res) => {
-    res.send('<h1>Songcatch</h1>')
+    res.send('<h1>Setlift</h1>')
+})
+
+app.get('/songs/', async (req, res) => {
+    //get id 
+    const bandId = req.query.Id;
+    const songs = await fetch(`https://phantasytour.com/api/songs/?bandId=${bandId}`)
+        .then(checkResponse)
+    console.log(songs)
+    res.json(songs);
 })
 
 
-a
-const PORT = process.env.PORT || 5000;
+
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`${app.locals.title} Server started on ${PORT}`))

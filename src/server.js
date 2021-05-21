@@ -14,9 +14,9 @@ const checkResponse = (response) => {
 }
 
 
-app.get('/', (req, res) => {
-    res.send('<h1>Setlift</h1>')
-})
+// app.get('/', (req, res) => {
+//     res.send('<h1>Setlift</h1>')
+// })
 
 app.get('/songs/', async (req, res) => {
     //get id 
@@ -28,7 +28,14 @@ app.get('/songs/', async (req, res) => {
 })
 
 
+// else {
+//     const songId = req.params.name;
+//     console.log(songId)
+//     const song = await fetch(`https://phantasytour.com/api/songs/${songId}`)
+//         .then(checkResponse)
+//     res.json(song);
 
+// }
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`${app.locals.title} Server started on ${PORT}`))

@@ -14,9 +14,9 @@ const checkResponse = (response) => {
 }
 
 
-// app.get('/', (req, res) => {
-//     res.send('<h1>Setlift</h1>')
-// })
+app.get('/', (req, res) => {
+    res.send('<h1>Setlift</h1>')
+})
 
 app.get('/songs/', async (req, res) => {
     //get id 

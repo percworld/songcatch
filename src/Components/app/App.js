@@ -35,8 +35,8 @@ class App extends React.Component {
   componentDidMount() {
     getSongs(this.state.bandID)
       .then(response => this.setState({ songs: response }));
-    // getBands()
-    //   .then(response => this.setState({ bands: response }));
+    getBands()
+      .then(response => this.setState({ bands: response }));
 
   }
 

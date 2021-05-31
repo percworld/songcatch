@@ -25,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress": "cypress:open",
-    "sass": "sass src/Sass:src/Css --watch --no-source-map"
+    "sass": "sass src/Sass:src/Css --watch --no-source-map",
+    "dev": "nodemon src/server"
   },
   "eslintConfig": {
     "extends": [

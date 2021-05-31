@@ -2,10 +2,11 @@ const cors = require('cors');
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
+
 app.use(express.json());
-
+app.use(cors())
 app.locals.title = "Setlift";
-
+const baseUrl = "https://phantasytour.com/api"
 const checkResponse = (response) => {
     if (!response.ok) {
         throw new Error('The songs aren\'t currently available.');
@@ -14,27 +15,12 @@ const checkResponse = (response) => {
     }
 }
 
-// const logger = (req, res, next) => {
-//     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
-//     next();
-// }
-// app.use(logger);
-
-// app.get('/', (req, res) => {
-//     res.send('<h1>Setlift</h1>')
-// })
-const baseUrl = "https://phantasytour.com/api"
-
-app.use(cors())
-
-
 app.get('/songs/', async (req, res) => {
     const bandId = req.query.bandId;
     const songs = await fetch(`${baseUrl}/songs/?bandId=${bandId}`)
         .then(checkResponse)
     res.json(songs);
 })
-
 
 app.get('/songs/:songId', async (req, res) => {
     const songId = req.params.songId;
@@ -79,7 +65,6 @@ app.get('/latestShows/:bandId', async (req, res) => {
     res.json(shows);
 })
 
-
 app.get('/bands/', async (req, res) => {
     const bands = await fetch(`${baseUrl}/bands?%24orderby=followerCount+desc%2C+name&%24top=154`)
         .then(checkResponse)
@@ -90,3 +75,10 @@ app.get('/bands/', async (req, res) => {
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`${app.locals.title} Server started on ${PORT}`))
+
+
+// const logger = (req, res, next) => {
+//     console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}`);
+//     next();
+// }
+// app.use(logger);

@@ -9,7 +9,7 @@ const checkResponse = (response) => {
 }
 
 const getBands = () => {
-    return fetch(`${baseUrl}/bands?%24orderby=followerCount+desc%2C+name&%24top=154`)
+    return fetch(`${baseUrl}/bands`)
         .then(checkResponse)
 }
 
@@ -40,7 +40,7 @@ const getShowsByTour = (id) => {
 }
 
 const getToursByBandID = id => {
-    return fetch(`${baseUrl}/bands/${id}/tours?%24orderby=startDate+desc&%24top=200`)
+    return fetch(`${baseUrl}/bands/${id}/tours`)
         .then(checkResponse)
 }
 

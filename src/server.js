@@ -3,7 +3,7 @@ const path = require('path');
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(cors())
 app.locals.title = "Setlift";
@@ -15,7 +15,9 @@ const checkResponse = (response) => {
         return response.json();
     }
 }
-
+app.get('/', (req, res) => {
+    res.send('Ok here is my root, let us connect to react now')
+})
 app.get('/songs/', async (req, res) => {
     const bandId = req.query.bandId;
     const songs = await fetch(`${baseUrl}/songs/?bandId=${bandId}`)

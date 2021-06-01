@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "cypress": "cypress:open",
     "sass": "sass src/Sass:src/Css --watch --no-source-map",
-    "dev": "nodemon src/server"
+    "dev": "nodemon server"
   },
   "eslintConfig": {
     "extends": [

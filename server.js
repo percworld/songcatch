@@ -15,9 +15,7 @@ const checkResponse = (response) => {
     return response.json();
   }
 }
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
+
 app.get('/songs/', async (req, res) => {
   const bandId = req.query.bandId;
   const songs = await fetch(`${baseUrl}/songs/?bandId=${bandId}`)
@@ -72,6 +70,10 @@ app.get('/bands/', async (req, res) => {
   const bands = await fetch(`${baseUrl}/bands?%24orderby=followerCount+desc%2C+name&%24top=154`)
     .then(checkResponse)
   res.json(bands);
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 

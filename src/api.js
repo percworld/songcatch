@@ -31,6 +31,7 @@ const getPlays = (songID) => {
 const getSet = (showID) => {
     return fetch(`${baseUrl}/set/${showID}`)
         .then(checkResponse)
+        //.then(A => console.log(A))
 }
 
 

@@ -94,7 +94,14 @@
     height: 71em;
   }
 }
-
+@media only screen and (min-width: 500px) {
+  .App {
+    background-image: '/songcatcher1.jpeg'; //'../../../build/assets/songcatcher1.jpeg';
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 71em;
+  }
+}
 // SAVE FOR POSSIBLE EXTENSION
 // .twinkling{
 //   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;

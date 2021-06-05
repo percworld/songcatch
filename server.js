@@ -5,8 +5,10 @@ const fetch = require('node-fetch');
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+Object.defineProperty(exports, "__esModule", { value: true });
 app.locals.title = "Setlift";
+
 const baseUrl = "https://phantasytour.com/api"
 const checkResponse = (response) => {
   if (!response.ok) {

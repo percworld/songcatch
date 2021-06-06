@@ -2,7 +2,7 @@
 
 .showsContainer {
     font-size: 20px;
-    font-family: $showlist-font ;
+    font-family: $logo-font ;
     max-height: 2000px;
     display: flex;
     flex-direction: column;
@@ -20,7 +20,7 @@
 
 .bandName {
     margin-top: .4vh;
-    margin-bottom: .5em;
+    margin-bottom: 0;
     font-size: 26px;
 
 }

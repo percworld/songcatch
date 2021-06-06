@@ -106,28 +106,30 @@ class App extends React.Component {
         <div className="twinkling"></div>
         <div className="clouds"></div>
         <Header />
-        <Switch>
-          <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName} />)} />
-          <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
-          <Route path="/tour/:tourID" render={({ match }) => {
-            const { tourID } = match.params;
-            return (<Tour bandName={this.state.bandName} bandID={this.state.bandID} tourID={tourID} />)
-          }} />
-          <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} />)} />
-          <Route path="/bands" render={() => (<Bands setBand={this.setBand} bands={this.state.bands} />)} />
-          <Route path="/projects" render={() => (<>festivals</>)} />
-          <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
-          <Route path="/songs" render={() => (<Songs bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
-          <Route path="/show/:showID" render={({ match }) => {
-            const { showID } = match.params;
-            return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} bandName={this.state.bandName} />)
-          }} />
-          <Route path="/song/:song" render={({ match }) => {
-            const { song } = match.params;
-            return (<Song bandName={this.state.bandName} matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} favorites={this.state.favorites} setSong={this.setSong} />)
-          }} />
-        </Switch>
-        <Footer />
+        <div className="app-container">
+          <Switch>
+            <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName} />)} />
+            <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
+            <Route path="/tour/:tourID" render={({ match }) => {
+              const { tourID } = match.params;
+              return (<Tour bandName={this.state.bandName} bandID={this.state.bandID} tourID={tourID} />)
+            }} />
+            <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} />)} />
+            <Route path="/bands" render={() => (<Bands setBand={this.setBand} bands={this.state.bands} />)} />
+            <Route path="/projects" render={() => (<>festivals</>)} />
+            <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
+            <Route path="/songs" render={() => (<Songs bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
+            <Route path="/show/:showID" render={({ match }) => {
+              const { showID } = match.params;
+              return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} bandName={this.state.bandName} />)
+            }} />
+            <Route path="/song/:song" render={({ match }) => {
+              const { song } = match.params;
+              return (<Song bandName={this.state.bandName} matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} favorites={this.state.favorites} setSong={this.setSong} />)
+            }} />
+          </Switch>
+          <Footer />
+        </div>
       </main>
     );
   }

@@ -2,15 +2,14 @@
 
 .tourList {
     font-size: 20px;
-    font-family: $showlist-font ;
+    font-family: $logo-font ;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    overflow-y: scroll;
-    height: 1000px;
+    justify-content: flex-start;   
     z-index: 4;
-    margin-bottom: 400px;
     color: $purple;
+    @include bottom;
+    height: 78vh;
 }
 
 .tourSingle {
@@ -18,7 +17,6 @@
 }
 
 .tourBandName {
-    margin-top: 1em;
+    margin-top: .5em;
     font-size: 32px;
-    margin-bottom: 1em;
-}
+}  

@@ -19,13 +19,13 @@
     font-size: 14px;
     flex-direction: row;
     justify-content: flex-end;
-    font-family: $showlist-font;
+    font-family: $logo-font;
     width: 63%;
     margin-left: 8rem;
-    margin-top: -.4rem;
+    margin-top: -.2rem;
 }
 .head1 {
-    font-family: $showlist-font;  //$songlist-font; //$logo-font; 
+    font-family: $logo-font;  //$songlist-font; //$logo-font; 
     font-size: 21px;
     font-weight: 600;
     color: $purple;

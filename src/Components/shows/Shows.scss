@@ -15,10 +15,10 @@
 
 .showContainer {
     font-size: 20px;
-    font-family: $showlist-font ;
+    font-family: $logo-font ;
     padding: 8px;
     color: $purple;
-     max-height: 2000px;
+    max-height: 2000px;
     
 }
 
@@ -26,8 +26,8 @@
     margin-top: 1em;
     font-size: 32px;
     font-weight: 700;
-    margin-bottom: 1em;
-    font-family: $showlist-font;
+    margin-bottom: 0em;
+    font-family: $logo-font;
     color: $purple;
 }
     

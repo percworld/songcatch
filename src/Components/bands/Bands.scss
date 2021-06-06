@@ -10,7 +10,6 @@
 }
 
 .list {
-    overflow-y: scroll;
-    height: 5000px;
     @include bottom;
+    height: 80vh;
 }

@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:3001';
+const baseUrl = 'https://setlift-api.herokuapp.com';
 
 const checkResponse = (response) => {
     if (!response.ok) {

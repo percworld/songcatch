@@ -48,14 +48,15 @@ const Show = ({ plays, song, showID, bandName }) => {
 
     return (
         <div className='setListContainer'>
-            {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span></p>
-                {match.DateLastPlayed && <p>Last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}
-                    {/* and was
+            {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span>
+                {match.DateLastPlayed && <span>It was last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}.
+                    {/*
                     <span> song #{match.LastPosition} of set {match.LastSetNumber}</span> */}
-                </p>}
+                </span>}
+                </p>
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
-
+            {!venue && console.log('none')}
             {venue && <div className='head1'>
                 <p>{bandName}</p>
                 <p className='head2'>{formatDate(venue.DateTime)}</p>

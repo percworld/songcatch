@@ -7,7 +7,8 @@
     font-family: $setlist-font;
     font-weight: 600;
     @include bottom;
-    overflow-y: visible;
+    margin-top: -5vh;
+
 }
 .trackLink{
     z-index: 5;
@@ -15,49 +16,52 @@
 
 .stats {
     display: inline-flex;
-    position: absolute;
     font-size: 14px;
-    height: 10vh;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-end;
-    align-items: flex-start;
     font-family: $showlist-font;
-    width: 85%;
-    //margin-top: 1.5em;
-    margin-left: 2em;
+    width: 63%;
+    margin-left: 8rem;
+    margin-top: -.4rem;
 }
 .head1 {
     font-family: $showlist-font;  //$songlist-font; //$logo-font; 
-    font-size: 19px;
+    font-size: 21px;
     font-weight: 600;
     color: $purple;
-    width: 68%;
-    margin-top: -8vh;
-    align-self: flex-end;
+    width: 87vw;
+    align-self: flex-start;
     overflow-y: visible;
     z-index: 4;
+    margin-top: 3.5rem;
+    position: absolute;
     .head2 {
-        margin-top: -1vh;
-        font-size: 13px;
+        margin-top: -.5vh;
+        font-size: 18px;
         font-weight: 700;
     }
     .head3 {
-        font-size: 11px;
+        display: inline;
+        font-size: 16px;
         font-weight: 800;
     }
 }
 
 .setList {
     background-color: whitesmoke;
-    //opacity: 69%;
+    opacity: 76%;
     width: 80%;
-    margin-top: 5em;
-    margin-left: 2.25em; 
-    max-height: 73vh;
-    font-size: 12px;
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 2.5em; 
+    max-height: 69vh;
+    font-size: .85em;
     padding-bottom: 2vh;
-    
-
+    -webkit-box-shadow: 3px 13px 50px 6px rgba(230,99,230,0.55);
+    -moz-box-shadow: 3px 13px 50px 6px rgba(230,99,230,0.55);
+    box-shadow: 3px 13px 50px 6px rgba(230,99,230,0.55);
+    border-radius: 2px;
+    overflow: scroll;
 
     .set {
         margin-top: 1em;

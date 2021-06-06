@@ -8,13 +8,12 @@
 }
 
 .plays{
-    height: 2000px;
+    
 }
 
 .playsContainer{
-    overflow-y: scroll;
-    height: 5000px; 
     @include bottom;
+    height: 55vh;
 }
 .backArrow {
    position: absolute;

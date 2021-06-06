@@ -1,8 +1,6 @@
 @import '../../index.scss';
 
 .trackContainer {
-    overflow-y: scroll;
-    height: 3000px;  
     @include bottom;  
 }
 .songList {

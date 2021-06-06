@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
     font-family: $logo-font;
+    margin-left: 2em;
 }
 
 .plays{
@@ -23,12 +24,12 @@
 }
 img {
    max-width: 41vw;
-   margin-left: 28vw; 
+   margin-left: 23vw; 
    margin-top: -5vh;
    z-index: 5;
 }
 .title {
-    font-size: 33px;
+    font-size: 30px;
     font-weight: 800;
     font-family: $logo-font;
     color: $purpleLight

@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.json());
 app.use(cors());
-Object.defineProperty(exports, "__esModule", { value: true });
+
 app.locals.title = "Setlift";
 
 const baseUrl = "https://phantasytour.com/api"
@@ -18,7 +18,7 @@ const checkResponse = (response) => {
   }
 }
 
-app.get('/songs/', async (req, res) => {
+app.get('/songs', async (req, res) => {
   const bandId = req.query.bandId;
   const songs = await fetch(`${baseUrl}/songs/?bandId=${bandId}`)
     .then(checkResponse)

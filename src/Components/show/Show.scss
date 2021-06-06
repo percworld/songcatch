@@ -8,8 +8,8 @@
     font-weight: 600;
     @include bottom;
     margin-top: -5vh;
-
 }
+
 .trackLink{
     z-index: 5;
 }
@@ -52,7 +52,7 @@
     opacity: 76%;
     width: 80%;
     position: absolute;
-    margin-top: 10rem;
+    margin-top: 9rem;
     margin-left: 2.5em; 
     max-height: 69vh;
     font-size: .85em;
@@ -71,4 +71,37 @@
 .error {
     margin-top: 4rem;
     color: $purple;
+}
+
+@media only screen and (min-width: 500px) {
+    .head1 {
+        margin-top: -3em;
+    }
+    .setListContainer {
+    margin-top: 0;
+    //height: 50vh;
+    }
+    .setList {
+        margin-top: 4em;
+    }
+    .stats {
+        margin-top: .8rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .head1 {
+       margin-top: 2.5em;
+    }
+    .setListContainer {
+        margin-top: -3.5em;
+    }
+    .setList {
+      height: 65vh;
+      margin-top: 23vh;
+
+    }
+    .stats {
+       margin-left: 8em; 
+    }
 }

@@ -2,6 +2,7 @@
 
 .trackContainer {
     @include bottom;  
+    height: 59vh;
 }
 .songList {
     z-index: 5;

@@ -32,7 +32,7 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
     })
     return (
         <article className="playList">
-            {bandName === 'Lotus' && <img src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
+            {bandName === 'Lotus' && <img className="songImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             {bandName === 'lespecial' && <img src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
             <p className='title'>{song.name}</p>
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}

@@ -22,13 +22,13 @@
    height: 34px;  
 }
 img {
-   max-width: 41vw;
-   margin-left: 28vw; 
+   max-width: 38vw;
+   margin-left: 30vw; 
    margin-top: -5vh;
    z-index: 5;
 }
 .title {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 800;
     font-family: $logo-font;
     color: $purpleLight
@@ -36,7 +36,7 @@ img {
 .playCount {
     margin-top: -.2em;
     margin-bottom: .3em;
-    font-size: 21px;
+    font-size: 17px;
     font-weight: 800;
     font-family: $logo-font;
     color: $purpleLight
@@ -48,12 +48,14 @@ img {
 }
 
 .venue {
+    font-size: 21px;
+    text-decoration: none;
     z-index:5;
     margin-bottom: -1.5vh;
 }
 
 .locDate {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 800;
     color: $purple
 }
@@ -61,6 +63,7 @@ img {
 .head {
     font-family: $logo-font;
     font-size: 21px;
+    font-weight: 700;
     margin-top: -.3em;
     margin-bottom: 0;
     color: $purpleLight;
@@ -90,11 +93,17 @@ img {
   }
 }
 
+.songImg {
+   max-width: 20vw;
+   margin-left: 38vw; 
+   margin-top: -9vh;
+}
+
 @media only screen and (min-width: 500px) {
   img {
    max-width: 14vw;
    margin-left: 10vw; 
-   margin-top: 10vh;
+   margin-top: 1vh;
     
   }
   .heart {

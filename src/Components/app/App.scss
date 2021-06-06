@@ -11,10 +11,10 @@
   left: 0;
   opacity: 59; 
   z-index: -2;
-  background-position: center bottom;
-  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-image: url('/©SilkyShots2020-colorado.webres-1428.jpg');
-  background-size: contain;
   background-attachment: fixed;
 }
 
@@ -85,23 +85,29 @@
   animation:move-clouds-back 200s linear infinite;
 }
 
-// MEDIA _ TABLET
+// MEDIA _ QUERIES
 @media only screen and (max-width: 500px) {
   .App {
-    //background-image: url('/songcatcher1.jpeg');
-    background-size: cover;
-    background-repeat: repeat-y;
-    height: 71em;
+  
+    width: 360px;
   }
 }
 @media only screen and (min-width: 500px) {
-  .App {
-    background-image: '/songcatcher1.jpeg'; //'../../../build/assets/songcatcher1.jpeg';
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 71em;
-  }
+  
+  .App::before {
+  
+  position: absolute;
+  
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/songcatcher1.jpeg');
+  background-attachment: fixed;
+  //height: 71em;
+//width: 360px;
 }
+}
+
 // SAVE FOR POSSIBLE EXTENSION
 // .twinkling{
 //   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;

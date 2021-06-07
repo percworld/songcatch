@@ -54,7 +54,7 @@
     position: absolute;
     margin-top: 9rem;
     margin-left: 2.5em; 
-    max-height: 69vh;
+    max-height: 67vh;
     font-size: .85em;
     padding-bottom: 2vh;
     -webkit-box-shadow: 3px 13px 50px 6px rgba(230,99,230,0.55);
@@ -73,7 +73,7 @@
     color: $purple;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 400px) {
     .head1 {
         margin-top: -3em;
     }
@@ -82,7 +82,7 @@
     //height: 50vh;
     }
     .setList {
-        margin-top: 4em;
+        margin-top: 3.5em;
     }
     .stats {
         margin-top: .8rem;

@@ -1,4 +1,4 @@
-# Setlift
+# Setlift - [view deployed site](https://setlift.herokuapp.com/)
 
 Voyage into a band's history and get updated as they grow using this setlist-generating app that consumes the phantasy tour API. You may take a look at a tour and choose a show and have a setlist generated. If you see a song you like, explore it further for details and performances. You keep an active tab of your favorite songs so you can stay in the loop with your favorite artist's performances or *reminisce* about a past musical and friendship experience.
 

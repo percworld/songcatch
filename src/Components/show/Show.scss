@@ -105,6 +105,18 @@
       margin-top: -12vh;
       margin-left: 65vw;
     }
+    * p {
+        color: white;
+    }
+    .set > * {
+        color: $purple;
+    }
+    .set > * > * {
+        color: $purple;
+    }
+    .set > * > * > * {
+        color: $purple;
+    }
     
 }
 
@@ -121,6 +133,7 @@
 
     }
     .stats {
-       margin-left: 12em; 
+       margin-left: 10em; 
+       width: 63%;
     }
 }

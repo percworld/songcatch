@@ -100,6 +100,8 @@
    margin-bottom: 1em;
 }
 
+//MEDIA QUERIES
+
 @media only screen and (min-width: 700px) {
   .songImg {
    position: absolute;
@@ -114,9 +116,13 @@
   }
 
   .back-button {
-    margin-top: 38vh;
+    margin-top: 33vh;
     margin-left: 18.5vw;
     z-index: 5;
+  }
+
+  .back-button:hover {
+      color: hotpink
   }
 
   .back {
@@ -124,7 +130,7 @@
   }
 
   .heart {
-     margin-top: -1vh; 
+     margin-top: 2vh; 
      margin-left: 1em;
      width: 7vw;
   }
@@ -140,5 +146,14 @@
   .title {
     margin-top: 20vh;
   }
+  span {
+        color: white;
+    }
+    
+    .locDate {
+        color: white;
+    }
+
+
 }
 

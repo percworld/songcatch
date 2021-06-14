@@ -25,8 +25,8 @@
 
 .navImg {
    max-width: 32vw;
-   margin-left: 34vw; 
-   margin-top: -5vh;
+   margin-left: 35vw; 
+   margin-top: -4vh;
    z-index: 5;
 }
 
@@ -39,7 +39,8 @@ a:hover {
 
 @media only screen and (max-width: 500px) {
   .navImg {
-    margin-left: 10vw;
+    margin-left: 33.5vw;
+    width: 348px;
   }
 }
 

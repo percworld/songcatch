@@ -75,7 +75,7 @@
 
 .show-back {
   position: absolute;
-  margin-top: 17vh;
+  margin-top: 14vh;
   margin-left: 5vw;
   z-index: 5;
 }
@@ -92,7 +92,7 @@
     .setList {
         margin-top: -6em;
         margin-left: 66vw;
-        max-width: 33vw;
+        max-width: 30vw;
         max-height: 87vh;
         font-size: 12px;
     }
@@ -121,18 +121,21 @@
 
 @media only screen and (max-width: 500px) {
     .head1 {
-       margin-top: 2.5em;
+       margin-top: 3em;
     }
     .setListContainer {
         margin-top: -3.5em;
     }
     .setList {
-      height: 65vh;
-      margin-top: 23vh;
+      height: 59vh;
+      margin-top: 20vh;
 
     }
     .stats {
        margin-left: 10em; 
        width: 63%;
+    }
+    .songs-back {
+      margin-left: 9vw;
     }
 }

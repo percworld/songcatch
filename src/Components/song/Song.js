@@ -4,6 +4,7 @@ import { formatDate } from '../../utilities';
 import { Link } from 'react-router-dom';
 import { getSong } from '../../api';
 import './Song.scss';
+import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Heart } from '../icons/heart-solid.svg';
 import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 
@@ -33,7 +34,7 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
     return (
         <article className="playList">
             {bandName === 'Lotus' && <img className="songImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
-            {bandName === 'lespecial' && <img src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
+            {bandName === 'lespecial' && <img className="songImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
             <p className='title'>{song.name}</p>
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
             {plays.length &&
@@ -41,15 +42,18 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
                     <p className='playCount'>Debuted on {formatDate(song.debut)}</p>
                 </div>}
             {favorites.includes(song) ?
-                <div className='favorites-button' onClick={() => { removeFavorite(song) }}>
+                <div className='favorite-button' onClick={() => { removeFavorite(song) }}>
                     <i><BrokenHeart className="heart"></BrokenHeart></i>
                     <p className='add'>Remove</p>
                 </div> :
-                <div className='favorites-button' onClick={() => { addFavorite(song) }}>
+                <div className='favorite-button' onClick={() => { addFavorite(song) }}>
                     <p><Heart className="heart"></Heart></p>
                     <p className='add'>Add</p>
                 </div>
             }
+            <Link className='back-button' to="/songs">
+                <i><Back className="back"></Back></i>
+            </Link>
             {(!plays.length || song.id === matchedSongID) ? <p>Loading...</p> :
                 <div className='plays'>
                     <div className='playsContainer'>{playsToDisplay}</div>

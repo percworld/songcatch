@@ -28,7 +28,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
         return (
             <section className='songSingle' key={index}>
                 <Link to={`/song/${song.Id}`} onClick={() => setSong(song)}>
-                    <p>{song.name || song.Name}</p>
+                    <li>{song.name || song.Name}</li>
                 </Link>
             </section>
         )

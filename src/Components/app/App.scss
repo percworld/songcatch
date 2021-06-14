@@ -87,39 +87,30 @@
 
 // MEDIA _ QUERIES
 @media only screen and (max-width: 500px) {
-  .App {
-  
-   
-  }
 }
 .app-container {
   height: 95%;
 }
 
 @media only screen and (min-width: 500px) {
-  
-  .App::before {
-  
+  .App::before { 
   position: absolute;
-  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('/songcatcher1.jpeg');
   background-attachment: fixed;
-  //height: 71em;
-//width: 360px;
   }
 }
 
 
-// SAVE FOR POSSIBLE EXTENSION
-// .twinkling{
-//   background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-//   z-index:1;
-//   -moz-animation:move-twink-back 200s linear infinite;
-//   -ms-animation:move-twink-back 200s linear infinite;
-//   -o-animation:move-twink-back 200s linear infinite;
-//   -webkit-animation:move-twink-back 200s linear infinite;
-//   animation:move-twink-back 200s linear infinite;
-// }
+SAVE FOR POSSIBLE EXTENSION
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index:1;
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}

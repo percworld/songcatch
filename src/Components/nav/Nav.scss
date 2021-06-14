@@ -23,8 +23,27 @@
     height: 100%;
 }
 
+.navImg {
+   max-width: 32vw;
+   margin-left: 34vw; 
+   margin-top: -5vh;
+   z-index: 5;
+}
+
 @media only screen and (max-width: 500px) {
   img {
     margin-left: 10vw;
   }
+}
+
+@media only screen and (min-width: 500px) {
+  .page-container {
+    margin-top: -1em;
+  }
+  .navImg {
+    position: absolute;
+    margin-left: 1vw;
+
+  }
+
 }

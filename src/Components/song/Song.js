@@ -17,7 +17,8 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             throw new Error(`Song #${matchedSongID} cannot be fetched at this time.`)
         }
     }
-    if (parseInt(matchedSongID) !== song.id) {
+    if ((matchedSongID !== undefined) && (parseInt(matchedSongID) !== song.id)) {
+        console.log(matchedSongID)
         switchSong();
     }
 

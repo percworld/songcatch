@@ -37,7 +37,17 @@ p {
     margin-left: 15vw;
 }
 
-@media only screen and (min-width: 500px) {
+li {
+    text-decoration: none;
+}
+
+.songs-back {
+   position: absolute;
+   margin-top: 8.4vh; 
+   margin-left: 5.2vw;
+   z-index: 5;
+}
+@media only screen and (min-width: 700px) {
   .trackContainer {
     display: flex;
     flex-direction: row;
@@ -49,7 +59,5 @@ p {
   .songSingle {
       width: 10vw;
   }
-  li {
-    
-  }
+  
 }

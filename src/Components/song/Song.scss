@@ -60,8 +60,9 @@
 
 .back-button {
    position: absolute;
-   margin-top: 10vh; 
-   margin-left: 4vw;
+   margin-top: 9vh; 
+   margin-left: 5vw;
+   z-index: 5;
 }
 
 .back {
@@ -77,9 +78,9 @@
   font-weight:  600;
   text-transform: none;
   padding: 0;
-  width: 15vw;
+  width: 16vw;
   height: 12vh;
-  margin-left: 28.5em;
+  margin-left: 26.5em;
   font-size: 12px;
   .heart {
      margin-top: 6em; 
@@ -99,12 +100,12 @@
    margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 700px) {
   .songImg {
    position: absolute;
-   max-width: \23vw;
+   max-width: 23vw;
    margin-left: 10vw; 
-   margin-top: 15vh;
+   margin-top: 52vh;
     
   }
   .favorite-button {
@@ -115,6 +116,7 @@
   .back-button {
     margin-top: 38vh;
     margin-left: 15vw;
+    z-index: 5;
   }
 
   .back {

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getSet } from '../../api'
 import { formatDate } from '../../utilities';
 import './Show.scss';
+import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
@@ -56,7 +57,9 @@ const Show = ({ plays, song, showID, bandName }) => {
                 </p>
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
-            {!venue && console.log('none')}
+            {song && <Link className='show-back' to={`/song/${song.id}`}>
+                <i><Back className="back"></Back></i>
+            </Link>}
             {venue && <div className='head1'>
                 <p>{bandName}</p>
                 <p className='head2'>{formatDate(venue.DateTime)}</p>

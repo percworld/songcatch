@@ -4,6 +4,7 @@
     @include bottom;  
     height: 59vh;
 }
+
 .songList {
     z-index: 5;
     display: flex;
@@ -15,10 +16,10 @@
     font-size: 21px;
 }
 
-
 .songSingle {
     z-index: 5;
 }
+
 .headSongs {
     font-size: 27px;
     font-weight: 600;

@@ -8,18 +8,12 @@
     justify-content: flex-start;
     @include bottom;
     height: 80vh;
-
 }
-
-
 
 .showContainer {
     font-size: 20px;
-    font-family: $logo-font ;
     padding: 8px;
-    color: $purple;
-    max-height: 2000px;
-    
+    max-height: 2000px;   
 }
 
 .bandName {
@@ -27,7 +21,5 @@
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 0em;
-    font-family: $logo-font;
-    color: $purple;
 }
     

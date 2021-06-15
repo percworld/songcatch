@@ -57,7 +57,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                 </p>
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
-            {song && <Link className='show-back' to={`/song/${song.id}`}>
+            {song && <Link className='show-back' to={`/song/${song}`}>
                 <i><Back className="back"></Back></i>
             </Link>}
             {venue && <div className='head1'> 
@@ -66,7 +66,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                 <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
             </div>}
                 
-               {!venue && <p>This show hasn't happened yet, buy some tickets to find out!</p>}
+               {!venue && <p className="alert" >This show hasn't happened yet, buy some tickets to find out!</p>}
             {setOne.length ?
                 <article className='setList'>
                     <div className='set'>
@@ -99,7 +99,7 @@ export default Show;
 
 Show.propTypes = {
     plays: propTypes.array,
-    song: propTypes.object,
+    song: propTypes.number,
     showID: propTypes.string,
     bandName: propTypes.string
 }

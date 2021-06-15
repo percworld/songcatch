@@ -9,6 +9,7 @@ import { ReactComponent as Heart } from '../icons/heart-solid.svg';
 import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
+    console.log('SONG:', matchedSongID)
     const switchSong = async () => {
         try {
             const fetchedSong = await getSong(matchedSongID)

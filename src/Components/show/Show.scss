@@ -18,16 +18,13 @@
     font-size: 14px;
     flex-direction: row;
     justify-content: flex-start;
-    font-family: $logo-font;
     width: 109%;
     margin-left: 11rem;
     margin-top: 0;
 }
 .head1 {
-    font-family: $logo-font;  //$songlist-font; //$logo-font; 
     font-size: 21px;
     font-weight: 600;
-    color: $purple;
     width: 87vw;
     align-self: flex-start;
     overflow-y: visible;
@@ -70,7 +67,6 @@
 
 .error {
   margin-top: 4rem;
-  color: $purple;
 }
 
 .show-back {
@@ -103,20 +99,7 @@
     .show-back {
       margin-top: -12vh;
       margin-left: 65vw;
-    }
-    * p {
-        color: white;
-    }
-    .set > * {
-        color: $purple;
-    }
-    .set > * > * {
-        color: $purple;
-    }
-    .set > * > * > * {
-        color: $purple;
-    }
-    
+    }    
 }
 
 @media only screen and (max-width: 500px) {

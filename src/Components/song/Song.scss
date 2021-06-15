@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    font-family: $logo-font;
 }
 
 .plays{
@@ -19,16 +18,12 @@
 .title {
     font-size: 25px;
     font-weight: 800;
-    font-family: $logo-font;
-    color: $purpleLight
 }
 .playCount {
     margin-top: -.2em;
     margin-bottom: .3em;
     font-size: 17px;
     font-weight: 800;
-    font-family: $logo-font;
-    color: $purpleLight
 }
 .play {
     z-index: 5;
@@ -46,16 +41,13 @@
 .locDate {
     font-size: 16px;
     font-weight: 800;
-    color: $purple
 }
 
 .head {
-    font-family: $logo-font;
     font-size: 21px;
     font-weight: 700;
     margin-top: -.3em;
     margin-bottom: 0;
-    color: $purpleLight;
 }
 
 .back-button {
@@ -89,7 +81,6 @@
   .add {
     margin-top: -2.5vh;
     margin-left: -.25em;
-    color: $purple
   }
 }
 
@@ -121,10 +112,6 @@
     z-index: 5;
   }
 
-  .back-button:hover {
-      color: hotpink
-  }
-
   .back {
     width: 6vw;
   }
@@ -137,7 +124,6 @@
   .add {
     margin-top: -10vh;
     margin-left: -1.25em;
-    color: $purple
   }
   .playList{
       margin-top: -27vh;
@@ -146,14 +132,5 @@
   .title {
     margin-top: 20vh;
   }
-  span {
-        color: white;
-    }
-    
-    .locDate {
-        color: white;
-    }
-
-
 }
 

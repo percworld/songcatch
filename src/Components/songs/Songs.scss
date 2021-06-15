@@ -15,24 +15,17 @@
     font-size: 21px;
 }
 
-p {
-    color: $purple;
-}
 
 .songSingle {
     z-index: 5;
-    font-family: $logo-font
 }
 .headSongs {
-    font-family: $logo-font; 
     font-size: 27px;
     font-weight: 600;
-    color: $purple;
     margin-bottom: 0;
 }
 
 .instructions {
-    color: $purple;
     width:72%;
     margin-left: 15vw;
 }
@@ -58,9 +51,6 @@ li {
   }
   .songSingle {
       width: 10vw;
-  }
-  li {
-      color: white;
   }
   
 }

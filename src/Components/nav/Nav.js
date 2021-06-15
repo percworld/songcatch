@@ -9,19 +9,21 @@ const Nav = ({ updateCategory, bandName }) => {
         <section className='page-container'>
             {bandName === 'Lotus' && <img className="navImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
-            {bandName !== 'Lotu' && <p className='name'>{bandName}</p>}
+            {bandName !== 'Lotus' && <p className='name'>{bandName}</p>}
+            {bandName === 'Lotus' && <a href='https://sites.google.com/site/thetravellog/original-songs?authuser=0' target="_blank" rel="noopener noreferrer" className='name'>{bandName}</a>}
+
             <div className='nav-container' data-cy='nav-container'>
                 <Link to="/songs" data-cy='originals' onClick={() => updateCategory('Original')} >
-                    <p>Originals</p>
+                    Originals
                 </Link>
                 <Link to="/songs" data-cy='covers' onClick={() => updateCategory('Cover')} >
-                    <p>Covers</p>
+                    Covers
                 </Link>
                 <Link to="/songs" data-cy='all' onClick={() => updateCategory('All')} >
-                    <p>All Songs</p>
+                    All Songs
                 </Link>
                 <Link to="/songs/favorites" data-cy='favorites' onClick={() => updateCategory('All')} >
-                    <p>My Favorites</p>
+                    My Favorites
                 </Link>
             </div>
 

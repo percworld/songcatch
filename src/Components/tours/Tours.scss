@@ -2,12 +2,10 @@
 
 .tourList {
     font-size: 20px;
-    font-family: $logo-font ;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;   
     z-index: 4;
-    color: $purple;
     @include bottom;
     height: 78vh;
 }

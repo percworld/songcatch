@@ -55,15 +55,10 @@ class App extends React.Component {
 
   setSong = async (song) => {
     try {
-      //console.log(song)
       const formattedSong = await getSong(song.Id || song.id)
       this.setState({ song: formattedSong });
-      //console.log(formattedSong);
       const playDetails = await getPlays(formattedSong.id);
-      //console.log('List of Plays: ', playDetails.aaData);
       this.setState({ playlist: playDetails.aaData })
-      //console.log('List of Plays: ', this.state.playlist); //this.state.playlist.Venue.Locale  .Venue.Name (venue owns Id too)
-      //console.log('current song: ', this.state.song)  // has lowercase id!
     } catch {
       throw new Error('This song has not been played yet.')
     }

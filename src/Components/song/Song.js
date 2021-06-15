@@ -43,7 +43,8 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
             {plays.length &&
                 <div className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}
-                    <p className='playCount'>Debuted on {formatDate(song.debut)}</p>
+                    {song.debut !== '0001-01-01T00:00:00' &&
+                    <p className='playCount'>Debuted on {formatDate(song.debut)}</p>}
                 </div>}
             {favorites.includes(song) ?
                 <div className='favorite-button' onClick={() => { removeFavorite(song) }}>

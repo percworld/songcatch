@@ -8,7 +8,7 @@ import './Shows.scss';
 const Shows = ({ bandName, bandID }) => {
     const [shows, setShows] = useState([])
     useEffect(() => {
-        const updateShow = async () => {
+        const updateShows = async () => {
             try {
                 const listings = await getShows(bandID);
                 setShows(listings)
@@ -16,7 +16,7 @@ const Shows = ({ bandName, bandID }) => {
                 throw new Error(`No Shows Available for ${bandName}`)
             }
         }
-        updateShow()
+        updateShows()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

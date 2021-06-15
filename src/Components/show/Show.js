@@ -19,7 +19,7 @@ const Show = ({ plays, song, showID, bandName }) => {
             }
         }
         updateShow()
-    }, [showID])
+    }, [])
     const match = show.find(play => song.id === play.Id);
     const venue = plays.find(play => play.Id === parseInt(showID));
     const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
@@ -57,9 +57,13 @@ const Show = ({ plays, song, showID, bandName }) => {
                 </p>
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
-            {song && <Link className='show-back' to={`/song/${song}`}>
-                <i><Back className="back"></Back></i>
-            </Link>}
+            {typeof(song) === 'number' ? 
+                <Link className='show-back' to={`/song/${song}`}>
+                    <i><Back className="back"></Back></i>
+                </Link> : 
+                <Link className='show-back' to={`/song/6238`}>
+                    <i><Back className="back"></Back></i>
+                </Link>}
             {venue && <div className='head1'> 
                 <p>{bandName}</p>
                 <p className='head2'>{formatDate(venue.DateTime)}</p>

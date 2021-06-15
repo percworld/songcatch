@@ -60,12 +60,13 @@ const Show = ({ plays, song, showID, bandName }) => {
             {song && <Link className='show-back' to={`/song/${song.id}`}>
                 <i><Back className="back"></Back></i>
             </Link>}
-            {venue && <div className='head1'>
+            {venue && <div className='head1'> 
                 <p>{bandName}</p>
                 <p className='head2'>{formatDate(venue.DateTime)}</p>
                 <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
-
             </div>}
+                
+               {!venue && <p>This show hasn't happened yet, buy some tickets to find out!</p>}
             {setOne.length ?
                 <article className='setList'>
                     <div className='set'>

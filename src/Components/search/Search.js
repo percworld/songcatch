@@ -18,7 +18,7 @@ const Search = ({ searchSongName }) => {
                 placeholder='Search by Song Name'
                 name='songName'>
             </input>
-            <p>or scroll and click below</p>
+            <p>or scroll and click songs</p>
             {/* <button onClick={event => searchSongByName(event, searchText)}>Submit</button> */}
         </form>
     )

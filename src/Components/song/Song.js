@@ -11,14 +11,17 @@ import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
     const switchSong = async () => {
         try {
-            const fetchedSong = await getSong(matchedSongID)
-            setSong(fetchedSong)
+            if(typeof(parseInt(matchedSongID)) === 'number') {
+                const fetchedSong = await getSong(parseInt(matchedSongID))
+                setSong(fetchedSong)
+            } else {
+              setSong(song)
+            }
         } catch {
-            throw new Error(`Song #${matchedSongID} cannot be fetched at this time.`)
+            console.log(`Song #${matchedSongID} cannot be fetched at this time.`)
         }
     }
     if ((matchedSongID !== undefined) && (parseInt(matchedSongID) !== song.id)) {
-        console.log(matchedSongID)
         switchSong();
     }
 

@@ -18,7 +18,8 @@ const Show = ({ plays, song, showID, bandName }) => {
                 throw new Error(`No Set Available for Show #${showID}`)
             }
         }
-        updateShow()
+        updateShow();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     const match = show.find(play => song.id === play.Id);
     const venue = plays.find(play => play.Id === parseInt(showID));
@@ -57,7 +58,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                 </p>
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
-            {typeof(song) === 'number' ? 
+            {typeof(song) === 'object' ? 
                 <Link className='show-back' to={`/song/${song}`}>
                     <i><Back className="back"></Back></i>
                 </Link> : 
@@ -103,7 +104,6 @@ export default Show;
 
 Show.propTypes = {
     plays: propTypes.array,
-    song: propTypes.number,
     showID: propTypes.string,
     bandName: propTypes.string
 }

@@ -2,15 +2,13 @@
 
 .showsContainer {
     font-size: 20px;
-    font-family: $logo-font ;
     max-height: 2000px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
 }
 
 .showList {
-    
+   @include bottom; 
 }
 
 .showSingle {

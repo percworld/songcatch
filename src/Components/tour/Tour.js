@@ -22,7 +22,7 @@ const Tours = ({ bandName, tourID }) => {
 
     const tourToDisplay = tour.map(show => {
         return (
-            <div className='showsContainer' key={show.id}>
+            <div className='showsList' key={show.id}>
                 <section className='showSingle'>
                     <Link to={`/show/${show.id}`}>
                         <span>{show.band.name} @ {show.venue.name}</span>
@@ -36,7 +36,7 @@ const Tours = ({ bandName, tourID }) => {
     return (
         <section>
             {tour.length ?
-                <article className='showList'>
+                <article className='showsContainer'>
                     <div className='bandName'>{tour.length} shows on this tour...</div>
                     {tourToDisplay}
                 </article>

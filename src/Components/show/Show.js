@@ -70,8 +70,8 @@ const Show = ({ plays, song, showID, bandName }) => {
                 <p className='head2'>{formatDate(venue.DateTime)}</p>
                 <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
             </div>}   
-            {!show.length && <p className="alert" >This show hasn't happened yet, buy some tickets to find out!</p>}
-            {setOne.length ?
+            {!show.length && <p className="alert" >Either this show hasn't happened yet or is</p>}
+            {show.length ?
                 <article className='setList'>
                     <div className='set'>
                         <p>Set 1</p>

@@ -19,7 +19,7 @@
 
 .stats {
     display: inline-flex;
-    font-size: 15px;
+    font-size: 14px;
     flex-direction: row;
     justify-content: flex-start;
     width: 109%;
@@ -27,7 +27,7 @@
     margin-top: 0;
 }
 .head1 {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 600;
     width: 87vw;
     align-self: flex-start;
@@ -38,7 +38,7 @@
     position: absolute;
     .head2 {
         margin-top: -.5vh;
-        font-size: 18px;
+        font-size: 13px;
         font-weight: 700;
     }
     .head3 {

@@ -50,7 +50,7 @@ Search by:
 ## Contributor Links
 [Chuck Morris Github](https://github.com/percworld)
 
-[https://www.silkyshots.photography/](SilkyShots)Artwork by Sam Silkworth 
+[https://www.silkyshots.photography/](SilkyShots) Artwork by Sam Silkworth 
 
 [Music & Merch](http://www/lotusvibes.com)
 

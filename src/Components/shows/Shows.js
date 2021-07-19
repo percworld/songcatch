@@ -13,20 +13,18 @@ const Shows = ({ bandName, bandID }) => {
                 const listings = await getShows(bandID);
                 setShows(listings)
             } catch {
-                throw new Error(`No Shows Available for ${bandName}`)
+                throw new Error(`No Shows Are Available for ${bandName}`)
             }
         }
         updateShows()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const pastShows = shows.filter(show => {
-        
+    const pastShows = shows.filter(show => {      
         return (new Date(show.dateTime) < new Date() && show.status !== "Canceled")
     })
     const showsToDisplay = pastShows.map(show => {
         return (
-
             <section className='showContainer' key={show.id}>
                 <Link to={`/show/${show.id}`} className='singleShow' >
                     <span>{show.venue.name}</span>
@@ -40,7 +38,7 @@ const Shows = ({ bandName, bandID }) => {
         <section>
             {shows.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows: latest {shows.length}</div>
+                    <div className='bandName'>{bandName} Shows: {shows.length}</div>
                     {showsToDisplay}
                 </article>
                 : <p>Loading...</p>}

@@ -34,6 +34,11 @@ const getSet = (showID) => {
         //.then(A => console.log(A))
 }
 
+const getShow = (showID) => {
+    return fetch(`${baseUrl}/show/${showID}`)
+        .then(checkResponse)
+}
+
 
 const getShowsByTour = (id) => {
     return fetch(`${baseUrl}/shows?tourId=${id}`)
@@ -51,4 +56,4 @@ const getShows = id => {
 }
 
 
-export { getBands, getPlays, getSong, getSongs, getShows, getToursByBandID, getShowsByTour, getSet };
+export { getBands, getPlays, getSong, getSongs, getShows, getToursByBandID, getShowsByTour, getSet, getShow };

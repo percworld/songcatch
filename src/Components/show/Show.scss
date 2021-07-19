@@ -19,7 +19,7 @@
 
 .stats {
     display: inline-flex;
-    font-size: 14px;
+    font-size: 12px;
     flex-direction: row;
     justify-content: flex-start;
     width: 109%;
@@ -27,7 +27,7 @@
     margin-top: 0;
 }
 .head1 {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     width: 87vw;
     align-self: flex-start;
@@ -78,6 +78,90 @@
   margin-top: 14vh;
   margin-left: 5vw;
   z-index: 5;
+}
+
+// LOAD ANIMATION
+
+.spinner {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  margin: 0 auto;
+}
+
+.bubble-1,
+.bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 12vh;
+  height: 12vh;
+  border-radius: 100%;
+  background-color: #c44e8b;
+  padding-top: 1em;
+}
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
+}
+
+.load-9 {
+    text-align: center;
+    width: 35vh;
+}
+
+.load-wrapp {
+  //float: left;
+  width: 100px;
+  height: 100px;
+  margin: 5vh 10px 10px 30vw;
+  padding: 20px 20px 20px;
+  border-radius: 5px;
+  text-align: center;
+  //background-color: #d8d8d8;
+}
+
+
+
+
+.spinner {
+  position: relative;
+  width: 25vh;
+  height: 25vh;
+  margin: 0 auto;
+}
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
+}
+
+.load-9 .spinner {
+  animation: loadingI 2s linear infinite;
+}
+.load-9 .bubble-1,
+.load-9 .bubble-2 {
+
+  animation: bounce 2s ease-in-out infinite;
+}
+.load-9 .bubble-2 {
+  animation-delay: -1s;
+}
+
+@keyframes loadingI {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
 }
 
 @media only screen and (min-width: 700px) {

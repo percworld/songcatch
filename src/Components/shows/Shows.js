@@ -20,7 +20,11 @@ const Shows = ({ bandName, bandID }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const showsToDisplay = shows.map(show => {
+    const pastShows = shows.filter(show => {
+        
+        return (new Date(show.dateTime) < new Date() && show.status !== "Canceled")
+    })
+    const showsToDisplay = pastShows.map(show => {
         return (
 
             <section className='showContainer' key={show.id}>

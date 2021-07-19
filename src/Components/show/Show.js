@@ -8,7 +8,7 @@ import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
-
+    // I could GET show by calling /shows/53761 for venue info when show hasn't prev been loaded
     useEffect(() => {
         const updateShow = async () => {
             try {
@@ -21,6 +21,7 @@ const Show = ({ plays, song, showID, bandName }) => {
         updateShow();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    console.log('LINE 24 SHOW', show)
     const match = show.find(play => song.id === play.Id);
     const venue = plays.find(play => play.Id === parseInt(showID));
     const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
@@ -59,9 +60,9 @@ const Show = ({ plays, song, showID, bandName }) => {
             </div>}
             {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
             {typeof(song) === 'object' ? 
-                <Link className='show-back' to={`/song/${song}`}>
+                <div className='show-back' onClick={() => window.history.back()}>
                     <i><Back className="back"></Back></i>
-                </Link> : 
+                </div> : 
                 <Link className='show-back' to={`/song/6238`}>
                     <i><Back className="back"></Back></i>
                 </Link>}
@@ -70,13 +71,24 @@ const Show = ({ plays, song, showID, bandName }) => {
                 <p className='head2'>{formatDate(venue.DateTime)}</p>
                 <p className='head2'>{venue.Venue.Name}<span className='head3'> - {venue.Venue.Locale}</span></p>
             </div>}   
-            {!show.length && <p className="alert" >Either this show hasn't happened yet or is</p>}
+            {!show.length && <p className="alert" >This show hasn't been posted yet or is...</p>}
             {show.length ?
                 <article className='setList'>
                     <div className='set'>
                         <p>Set 1</p>
                         <p>-----------------------</p>
-                        {show.length ? songsToDisplayOne : <p>Loading...</p>}
+                        {show.length ? songsToDisplayOne : 
+                            <div className='loading' >
+                                <div className="load-wrapp">
+                                    <div className="load-9">
+                                        <p>Loading</p>
+                                        <div className="spinner">
+                                            <div className="bubble-1"></div>
+                                            <div className="bubble-2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>}
                     </div>
                     <div className='set'>
                         {songsToDisplayTwo.length &&
@@ -95,7 +107,15 @@ const Show = ({ plays, song, showID, bandName }) => {
                             </div>}
                     </div>
                 </article>
-                : <p className='error'>Loading...</p>}
+                : <div className="load-wrapp">
+                    <div className="load-9">
+                        <p>Loading</p>
+                        <div className="spinner">
+                            <div className="bubble-1">Set 1</div>
+                            <div className="bubble-2">Set 2</div>
+                        </div>
+                    </div>
+                </div>}
         </div>
     )
 }

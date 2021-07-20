@@ -5,6 +5,13 @@ form {
     margin: 2vh;
 }
 
+.purpleButton {
+    background-color: $purple;
+    color: ivory
+}
+
 input {
     height: 3.5vh;
+    width: 49vw;
+    text-align: center;
 }

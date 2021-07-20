@@ -32,9 +32,9 @@ const Show = ({ plays, song, showID, bandName }) => {
         updateShowInfo();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    console.log('LINE 24 SHOWIFO', showInfo)
+
     const match = show.find(play => song.id === play.Id);
-    const venue = plays.find(play => play.Id === parseInt(showID));
+    //const venue = plays.find(play => play.Id === parseInt(showID));
     const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
     const setTwo = show.filter(song => parseInt(song.SetNumber) === 2);
     const encore = show.filter(song => parseInt(song.SetNumber) === 9);
@@ -82,7 +82,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                 <p>{bandName}</p>
                 {formatDate(showInfo.dateTime) !== "December 31, 1969" && <p className='head2'>{formatDate(showInfo.dateTime)}</p>}
                 <p className='head2'>{showInfo.postNotes}</p>
-                {/* <p className='head2'>{showInfo.tour.name}</p> */}
+                {/* <p className='head2'>Tour: {showInfo.tour.name}</p> */}
                 <p className='head2'>{showInfo.event.venue.name}<span className='head3'> - {showInfo.event.venue.locale}</span></p>
             </div>}   
             {!show.length && <p className="alert" >This show hasn't been posted yet or is...</p>}

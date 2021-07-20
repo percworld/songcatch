@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import { getShows } from '../../api';
 import { formatDate } from '../../utilities';
 import './Shows.scss';
+import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Shows = ({ bandName, bandID }) => {
-    const [shows, setShows] = useState([])
+    const [shows, setShows] = useState([]);
+    const [pageCounter, setPageCounter] = useState(1);
+
     useEffect(() => {
         const updateShows = async () => {
             try {
-                const listings = await getShows(bandID);
+                const listings = await getShows(bandID, pageCounter);
                 setShows(listings)
             } catch {
                 throw new Error(`No Shows Are Available for ${bandName}`)
@@ -18,7 +21,8 @@ const Shows = ({ bandName, bandID }) => {
         }
         updateShows()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [pageCounter])
+
 
     const pastShows = shows.filter(show => {      
         return (new Date(show.dateTime) < new Date() && show.status !== "Canceled")
@@ -38,7 +42,15 @@ const Shows = ({ bandName, bandID }) => {
         <section>
             {shows.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows: {shows.length}</div>
+                    <div className='bandName'>{bandName} Shows</div>
+                    <div>
+                        <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
+                            <i><Back className="back"></Back></i>
+                        </button>
+                        <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
+                            <i><Back className="back forward"></Back></i>
+                        </button>
+                    </div>
                     {showsToDisplay}
                 </article>
                 : <p>Loading...</p>}

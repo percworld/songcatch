@@ -12,13 +12,12 @@ const Search = ({ searchSongName }) => {
 
     return (
         <form>
-            <input onChange={event => updateSearch(event.target.value)}
+            <input className='purpleButton' onChange={event => updateSearch(event.target.value)}
                 type='text'
                 value={searchText}
-                placeholder='Search by Song Name'
+                placeholder='Click Me to Filter by Title'
                 name='songName'>
             </input>
-            <p>or scroll and click songs</p>
             {/* <button onClick={event => searchSongByName(event, searchText)}>Submit</button> */}
         </form>
     )

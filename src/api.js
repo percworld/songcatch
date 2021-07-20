@@ -50,8 +50,8 @@ const getToursByBandID = id => {
         .then(checkResponse)
 }
 
-const getShows = id => {
-    return fetch(`${baseUrl}/latestShows/${id}`)
+const getShows = (id, pageCounter) => {
+    return fetch(`${baseUrl}/latestShows/${id}/${pageCounter}`)
         .then(checkResponse)
 }
 

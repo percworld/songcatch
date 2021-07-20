@@ -24,8 +24,9 @@ const Shows = ({ bandName, bandID }) => {
     }, [pageCounter])
 
 
-    const pastShows = shows.filter(show => {      
-        return (new Date(show.dateTime) < new Date() && show.status !== "Canceled")
+    const pastShows = shows.filter(show => { 
+        console.log(show.status)     
+        return (new Date(show.dateTime) < new Date() && show.status === "Active")
     })
     const showsToDisplay = pastShows.map(show => {
         return (

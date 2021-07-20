@@ -42,14 +42,14 @@ const Shows = ({ bandName, bandID }) => {
         <section>
             {shows.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows</div>
+                    <div className='bandName'>{bandName} Shows ({shows.length} on page)</div>
                     <div>
-                        <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
+                        {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
                             <i><Back className="back"></Back></i>
-                        </button>
-                        <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
+                        </button>}
+                        {shows.length > 99 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
                             <i><Back className="back forward"></Back></i>
-                        </button>
+                        </button>}
                     </div>
                     {showsToDisplay}
                 </article>

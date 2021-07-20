@@ -1,13 +1,14 @@
 import './Footer.scss';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <footer>
-            <Link to='/tours' data-cy='tours'>Tours</Link>
-            <Link to='/shows' data-cy='shows'>Shows</Link>
-            <Link to='/bands' data-cy='bands'>Bands</Link>
+            <NavLink exact to='/' data-cy='songs' activeClassName='activeLink'>Songs</NavLink>
+            <NavLink exact to='/tours' data-cy='tours' activeClassName='activeLink'>Tours</NavLink>
+            <NavLink exact to='/shows' data-cy='shows' activeClassName='activeLink'>Shows</NavLink>
+            <NavLink exact to='/bands' data-cy='bands' activeClassName='activeLink'>Bands</NavLink>
             <a href='https://github.com/percworld' target="_blank" rel="noopener noreferrer">Projects</a>
         </footer>
     )

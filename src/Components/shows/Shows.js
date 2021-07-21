@@ -43,7 +43,7 @@ const Shows = ({ bandName, bandID }) => {
             {shows.length ?
                 <article className='showList'>
                     <div className='bandName'>{bandName} Shows <span className='count' >({shows.length} on page)</span></div>
-                    <div>
+                    <div className='buttonWrap'>
                         {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
                             <i><Back className="back"></Back></i>
                         </button>}

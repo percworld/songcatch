@@ -34,3 +34,10 @@
 .forward {
     transform: scaleX(-1);
 }
+
+.buttonWrap {
+    width: 50vw;
+    margin-left: 25vw;
+    display: flex;
+    justify-content: space-around;
+}

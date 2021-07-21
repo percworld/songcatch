@@ -86,7 +86,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                 {/* <p className='head2'>Tour: {showInfo.tour.name}</p> */}
                 <p className='head2'>{showInfo.event.venue.name}<span className='head3'> - {showInfo.event.venue.locale}</span></p>
             </div>}   
-            {!show.length && <p className="alert" >If Loading Persists, This show hasn't been posted.</p>}
+            {!show.length && <p className="alert" >If Loading Persists, This show's set has not posted.<p>Sorry! Head back to continue.</p></p>}
             {show.length ?
                 <article className='setList'>
                     <div className='set'>

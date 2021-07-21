@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getShowsByTour } from '../../api';
 import { formatDate } from '../../utilities';
 import './Tour.scss';
+import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Tours = ({ bandName, tourID }) => {
     const [tour, setTour] = useState([])
@@ -38,10 +39,12 @@ const Tours = ({ bandName, tourID }) => {
             {tour.length ?
                 <article className='showsContainer'>
                     <div className='bandName'>{tour.length} shows on this tour...</div>
+                    <div className='show-back' onClick={() => window.history.back()}>
+                        <i><Back className="back backTour"></Back></i>
+                    </div>
                     {tourToDisplay}
                 </article>
                 : <p>Loading...</p>}
-
         </section>
     )
 }

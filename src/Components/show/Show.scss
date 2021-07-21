@@ -85,19 +85,13 @@
 .loading {
     margin-top: 30vh;
 }
-.spinner {
-  position: relative;
-  width: 35px;
-  height: 35px;
-  margin: 0 auto;
-}
 
 .bubble-1,
 .bubble-2 {
   position: absolute;
   top: 0;
-  width: 12vh;
-  height: 12vh;
+  width: 5vh;
+  height: 5vh;
   border-radius: 100%;
   background-color: #c44e8b;
   padding-top: 1em;
@@ -110,14 +104,14 @@
 
 .load-9 {
     text-align: center;
-    width: 35vh;
+    width: 31vh;
 }
 
 .load-wrapp {
   //float: left;
-  width: 100px;
-  height: 100px;
-  margin: 5vh 10px 10px 13vw;
+  width: 54px;
+  height: 54px;
+  margin: 5vh 10px 10px 10vw;
   padding: 20px 20px 20px;
   border-radius: 5px;
   text-align: center;
@@ -129,8 +123,8 @@
 
 .spinner {
   position: relative;
-  width: 25vh;
-  height: 25vh;
+  width: 9vh;
+  height: 9vh;
   margin: 0 auto;
 }
 

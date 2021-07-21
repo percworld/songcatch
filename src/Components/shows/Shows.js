@@ -51,6 +51,9 @@ const Shows = ({ bandName, bandID }) => {
                             <i><Back className="back forward"></Back></i>
                         </button>}
                     </div>
+                    <div className='show-back' onClick={() => window.history.back()}>
+                        <i><Back className="back backTour"></Back></i>
+                    </div>
                     {showsToDisplay}
                     <div className='buttonWrap'>
                         {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>

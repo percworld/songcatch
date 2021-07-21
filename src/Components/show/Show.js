@@ -9,7 +9,7 @@ import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
     const [showInfo, setShowInfo] = useState([])
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const updateShow = async () => {
@@ -86,7 +86,7 @@ const Show = ({ plays, song, showID, bandName }) => {
                 {/* <p className='head2'>Tour: {showInfo.tour.name}</p> */}
                 <p className='head2'>{showInfo.event.venue.name}<span className='head3'> - {showInfo.event.venue.locale}</span></p>
             </div>}   
-            {loading === false && !show.length && <p className="alert" >If Loading Persists, This show hasn't been posted.</p>}
+            {!show.length && <p className="alert" >If Loading Persists, This show hasn't been posted.</p>}
             {show.length ?
                 <article className='setList'>
                     <div className='set'>

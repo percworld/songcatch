@@ -6,10 +6,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 2000px;
+    height: 243vh;
 }
 
 .list {
     @include bottom;
-    height: 80vh;
+    max-height: 83vh;
 }

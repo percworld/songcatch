@@ -18,6 +18,8 @@ header {
 .title {
     font-size: 27px; 
     text-decoration:overline;
+    animation: color-change 15s 1;
+    animation-delay: 3s;
 }
 
 .star {

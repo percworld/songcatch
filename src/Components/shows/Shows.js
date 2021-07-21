@@ -52,6 +52,14 @@ const Shows = ({ bandName, bandID }) => {
                         </button>}
                     </div>
                     {showsToDisplay}
+                    <div className='buttonWrap'>
+                        {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
+                            <i><Back className="back"></Back></i>
+                        </button>}
+                        {shows.length > 99 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
+                            <i><Back className="back forward"></Back></i>
+                        </button>}
+                    </div>
                 </article>
                 : <p>Loading...</p>}
 

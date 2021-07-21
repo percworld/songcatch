@@ -1,7 +1,7 @@
 import './Footer.scss';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { ReactComponent as Monster } from '../icons/github.svg'
 const Footer = () => {
     return (
         <footer>
@@ -9,7 +9,9 @@ const Footer = () => {
             <NavLink exact to='/tours' data-cy='tours' activeClassName='activeLink'>Tours</NavLink>
             <NavLink exact to='/shows' data-cy='shows' activeClassName='activeLink'>Shows</NavLink>
             <NavLink exact to='/bands' data-cy='bands' activeClassName='activeLink'>Bands</NavLink>
-            <a href='https://github.com/percworld' target="_blank" rel="noopener noreferrer">Projects</a>
+            <a href='https://github.com/percworld' target="_blank" rel="noopener noreferrer">
+                <Monster className='monster'></Monster>
+            </a>
         </footer>
     )
 }

@@ -15,7 +15,7 @@ const Search = ({ searchSongName }) => {
             <input className='purpleButton' onChange={event => updateSearch(event.target.value)}
                 type='text'
                 value={searchText}
-                placeholder='Click Me to Filter by Title'
+                placeholder='SEARCH'
                 name='songName'>
             </input>
             {/* <button onClick={event => searchSongByName(event, searchText)}>Submit</button> */}

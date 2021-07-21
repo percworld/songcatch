@@ -39,7 +39,7 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
         <article className="playList">
             {bandName === 'Lotus' && <img className="songImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             {bandName === 'lespecial' && <img className="songImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
-            <p className='title'>{song.name}</p>
+            <p className='songTitle'>{song.name}</p>
             {song.cover ? <p className='head'>Cover of {song.artist}</p> : <p className='head'>{bandName} Original</p>}
             {plays.length &&
                 <div className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}

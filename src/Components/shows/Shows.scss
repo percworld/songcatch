@@ -1,13 +1,12 @@
 @import '../../index.scss';
 
 .showList{
-    position: 0;
     z-index: 4;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     @include bottom;
-    height: 80vh;
+    padding-bottom: 4vh;
 }
 
 .showContainer {
@@ -24,7 +23,7 @@
 }
 
 .activeLink {
-    color:rgb(133, 240, 128)
+    color: $purple;
 }
 
 .count {
@@ -36,8 +35,12 @@
 }
 
 .buttonWrap {
-    width: 50vw;
-    margin-left: 25vw;
+    width: 41vw;
+    margin-left: 29vw;
     display: flex;
     justify-content: space-around;
 }
+
+// .btm {
+//     height: 15vh;
+// }

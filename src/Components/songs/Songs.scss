@@ -2,7 +2,8 @@
 
 .trackContainer {
     @include bottom;  
-    height: 59vh;
+    height: 60vh;
+    padding-bottom: 10vh;
 }
 
 .songList {
@@ -29,6 +30,7 @@
 .instructions {
     width:72%;
     margin-left: 15vw;
+    margin-top: 2em;
 }
 
 li {

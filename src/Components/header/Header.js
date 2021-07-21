@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Header.scss';
-import { ReactComponent as Star  } from '../icons/star.svg'
+// import { ReactComponent as Star  } from '../icons/star.svg'
 
 const Header = () => {
     return (

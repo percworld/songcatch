@@ -8,11 +8,16 @@ footer {
   display: flex;
   justify-content: space-around;
   a {
-      font-size: 27px;
+      font-size: 23px;
       
       color: whitesmoke;
       &:hover {
           font-size:27px;
       }
   }
+}
+
+.activeLink {
+  color:lightgreen;
+  font-size:27px;
 }

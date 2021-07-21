@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink  } from 'react-router-dom';
 import { getShows } from '../../api';
 import { formatDate } from '../../utilities';
 import './Shows.scss';
@@ -24,15 +24,15 @@ const Shows = ({ bandName, bandID }) => {
     }, [pageCounter])
 
 
-    const pastShows = shows.filter(show => {      
-        return (new Date(show.dateTime) < new Date() && show.status !== "Canceled")
+    const pastShows = shows.filter(show => {    
+        return (new Date(show.dateTime) < new Date() && show.status === "Active")
     })
     const showsToDisplay = pastShows.map(show => {
         return (
             <section className='showContainer' key={show.id}>
-                <Link to={`/show/${show.id}`} className='singleShow' >
+                <NavLink to={`/show/${show.id}`} className='singleShow' activeClassName='activeLink'>
                     <span>{show.venue.name}</span>
-                </Link>
+                </NavLink>
                 <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
             </section >
         )
@@ -42,7 +42,7 @@ const Shows = ({ bandName, bandID }) => {
         <section>
             {shows.length ?
                 <article className='showList'>
-                    <div className='bandName'>{bandName} Shows ({shows.length} on page)</div>
+                    <div className='bandName'>{bandName} Shows <span className='count' >({shows.length} on page)</span></div>
                     <div>
                         {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
                             <i><Back className="back"></Back></i>

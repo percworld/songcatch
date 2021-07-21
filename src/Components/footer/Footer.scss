@@ -18,8 +18,14 @@ footer {
 }
 
 .activeLink {
-  color:lightgreen;
   font-size:27px;
+  animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+  0% { color:lightgreen; }
+  50% { color: $purple; }
+  100% { color:lightgreen; }
 }
 
 .monster {

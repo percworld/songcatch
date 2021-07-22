@@ -22,16 +22,30 @@ const Tours = ({ bandName, tourID }) => {
     }, [])
 
     const tourToDisplay = tour.map(show => {
-        return (
+        if (show.hasSetlist === true) {
+            return (
+                <div className='showsList' key={show.id}>
+                    <section className='showSingle'>
+                        <Link to={`/show/${show.id}`}>
+                            <span>{show.band.name} @ {show.venue.name}</span>
+                        </Link>
+                        <p>{show.venue.locale}<span> - {formatDate(show.dateTime)} </span> </p>
+                    </section>
+                </div>
+            ) 
+        } else {
+            return(
             <div className='showsList' key={show.id}>
                 <section className='showSingle'>
-                    <Link to={`/show/${show.id}`}>
+                    <div>
                         <span>{show.band.name} @ {show.venue.name}</span>
-                    </Link>
+                        <p>~no set list for this show~</p>
+                    </div>
                     <p>{show.venue.locale}<span> - {formatDate(show.dateTime)} </span> </p>
                 </section>
             </div>
-        )
+            )
+        }
     })
 
     return (

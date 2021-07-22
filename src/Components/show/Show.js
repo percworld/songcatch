@@ -35,7 +35,6 @@ const Show = ({ plays, song, showID, bandName }) => {
     }, [showID])
 
     const match = show.find(play => song.id === play.Id);
-    //const venue = plays.find(play => play.Id === parseInt(showID));
     const setOne = show.filter(song => parseInt(song.SetNumber) === 1);
     const setTwo = show.filter(song => parseInt(song.SetNumber) === 2);
     const encore = show.filter(song => parseInt(song.SetNumber) === 9);
@@ -63,14 +62,14 @@ const Show = ({ plays, song, showID, bandName }) => {
     
     return (
         <div className='setListContainer'>
-            {match && <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span>
+            {match ? <div className='stats'><p>{match.Name}<span> was song #{match.Position} in set {match.SetNumber}.</span>
                 {match.DateLastPlayed && <span>It was last played {match.GapSinceLastPlay} shows before on {match.DateLastPlayed}.
                     {/*
                     <span> song #{match.LastPosition} of set {match.LastSetNumber}</span> */}
                 </span>}
                 </p>
-            </div>}
-            {/* <img src={'/assets/Screen_Shot_2021-05-03_at_9.32.20_AM-removebg-preview  (2).png'} /> */}
+            </div>
+            :<div className='spacer'></div>}
             {typeof(song) === 'object' ? 
                 <div className='show-back' onClick={() => window.history.back()}>
                     <i><Back className="back"></Back></i>
@@ -81,12 +80,14 @@ const Show = ({ plays, song, showID, bandName }) => {
             {showInfo.event
              && <div className='head1'> 
                 <p>{bandName}</p>
+                {showInfo.dateTime === null && <p className='head2'>{formatDate(showInfo.event.startDate)}</p>}
+                {showInfo.event.festival !== null && <p className='head2'>{showInfo.event.festival}</p> }
                 {formatDate(showInfo.dateTime) !== "December 31, 1969" && <p className='head2'>{formatDate(showInfo.dateTime)}</p>}
                 <p className='head2'>{showInfo.postNotes}</p>
                 {/* <p className='head2'>Tour: {showInfo.tour.name}</p> */}
                 <p className='head2'>{showInfo.event.venue.name}<span className='head3'> - {showInfo.event.venue.locale}</span></p>
             </div>}   
-            {!show.length && <p className="alert" >If Loading Persists, This show's set has not posted.<p>Sorry! Head back to continue.</p></p>}
+            {!show.length && <p className="alert" ></p>}
             {show.length ?
                 <article className='setList'>
                     <div className='set'>

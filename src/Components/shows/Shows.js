@@ -28,14 +28,26 @@ const Shows = ({ bandName, bandID }) => {
         return (new Date(show.dateTime) < new Date() && show.status === "Active")
     })
     const showsToDisplay = pastShows.map(show => {
-        return (
-            <section className='showContainer' key={show.id}>
-                <NavLink to={`/show/${show.id}`} className='singleShow' activeClassName='activeLink'>
-                    <span>{show.venue.name}</span>
-                </NavLink>
-                <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
-            </section >
-        )
+        if (show.hasSetlist === true) {
+            return (
+                <section className='showContainer' key={show.id}>
+                    <NavLink to={`/show/${show.id}`} className='singleShow' activeClassName='activeLink'>
+                        <span>{show.venue.name}</span>
+                    </NavLink>
+                    <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
+                </section >
+            )
+        } else {
+            return (
+                <section className='showContainer' key={show.id}>
+                    <p className='singleShow' activeClassName='activeLink'>
+                        <span>{show.venue.name}</span>
+                    </p>
+                    <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
+                    <p>~No setlist posted~</p>
+                </section >
+            )
+        }
     })
 
     return (

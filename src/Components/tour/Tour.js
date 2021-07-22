@@ -22,6 +22,8 @@ const Tours = ({ bandName, tourID }) => {
     }, [])
 
     const tourToDisplay = tour.map(show => {
+        console.log(show)
+
         if (show.hasSetlist === true) {
             return (
                 <div className='showsList' key={show.id}>
@@ -40,6 +42,9 @@ const Tours = ({ bandName, tourID }) => {
                     <div>
                         <span>{show.band.name} @ {show.venue.name}</span>
                         <p>~no set list for this show~</p>
+                        {show.status === 'Rescheduled' && <p>...it was rescheduled</p>}
+                        {show.status === 'Canceled' && <p>...it was canceled</p>}
+                        {new Date(show.dateTime) > new Date() && <p>It hasn't been played yet!</p>}
                     </div>
                     <p>{show.venue.locale}<span> - {formatDate(show.dateTime)} </span> </p>
                 </section>

@@ -9,6 +9,7 @@ import Song from '../song/Song';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import Bands from '../bands/Bands';
+import Dashboard from '../dashboard/Dashboard';
 
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
@@ -105,7 +106,8 @@ class App extends React.Component {
         <Header />
         <div className="app-container">
           <Switch>
-            <Route exact path="/" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName} />)} />
+            <Route exact path="/" render={() => (<Dashboard bandName={this.state.bandName} />)} />
+            <Route exact path="/nav" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName} />)} />
             <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
             <Route path="/tour/:tourID" render={({ match }) => {
               const { tourID } = match.params;

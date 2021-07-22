@@ -10,8 +10,6 @@ const Header = () => {
                 <h3 className='title' data-cy='setlift'>Setlist</h3>
                 {/* <Star className='star'></Star> */}
             </Link>
-
-
         </header>)
 }
 

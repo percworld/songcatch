@@ -1,0 +1,21 @@
+@import '../../index.scss';
+
+
+.dashImg {
+  max-width: 54vw;
+  margin-left: 0; 
+  margin-top: 4vh;
+  z-index: 5;
+}
+
+.dashName {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+.bands {
+  position: absolute;
+  font-size: 22px;
+  font-weight: 1600;
+  margin-top: 35vh;
+  margin-left: -15vw;
+}

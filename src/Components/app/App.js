@@ -95,6 +95,8 @@ class App extends React.Component {
   }
 
   render() {
+    let vis = window.toolbar.visible; 
+    vis = false;
     return (
       <main className="App" >
         <div className="stars"></div>

@@ -92,7 +92,6 @@ class App extends React.Component {
   setBand = (id, name) => {
     getSongs(id)
       .then(response => this.setState({ songs: response, bandID: id, bandName: name }))
-
   }
 
   render() {
@@ -103,7 +102,7 @@ class App extends React.Component {
         <div className="stars"></div>
         <div className="twinkling"></div>
         <div className="clouds"></div>
-        <Header />
+        <Header setBand={this.setBand}/>
         <div className="app-container">
           <Switch>
             <Route exact path="/" render={() => (<Dashboard bandName={this.state.bandName} />)} />

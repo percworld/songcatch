@@ -11,21 +11,22 @@ footer {
       font-size: 29px;
       color: #4fe4a7ad;
       &:hover {
-          font-size:27px;
+          
       }
   }
 }
 
 .activeLink {
-  font-size:27px;
-  animation: color-change 11s 1;
-  animation-delay: 3s;
+  font-size:32px;
+  animation: color-change 11s infinite;
+  animation-delay: 0s;
 }
 
+
 @keyframes color-change {
-  0% { color: $purple; }
-  50% { color: rgb(79, 126, 228); }
-  100% { color: $purple; }
+  0% { color: aquamarine; }
+  50% { color: #63f2b6ad; }
+  100% { color:aquamarine }
 }
 
 .monster {

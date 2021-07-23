@@ -40,7 +40,7 @@ const Shows = ({ bandName, bandID }) => {
         } else {
             return (
                 <section className='showContainer' key={show.id}>
-                    <p className='singleShow' activeClassName='activeLink'>
+                    <p className='singleShow'>
                         <span>{show.venue.name}</span>
                     </p>
                     <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>

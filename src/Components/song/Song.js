@@ -12,14 +12,13 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
     const switchSong = async () => {
         try {
             if(typeof(parseInt(matchedSongID)) === 'number' && matchedSongID) {
-                console.log(matchedSongID)
                 const fetchedSong = await getSong(parseInt(matchedSongID))
                 setSong(fetchedSong)
             } else {
               setSong(song)
             }
         } catch {
-            console.log(`Song #${matchedSongID} cannot be fetched at this time.`)
+            throw new Error(`Song #${matchedSongID} cannot be fetched at this time.`)
         }
     }
     if ((matchedSongID !== undefined) && (parseInt(matchedSongID) !== song.id)) {
@@ -36,6 +35,9 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
             </div>
         )
     })
+
+    const faveIds = favorites.map(fave => fave.id);
+
     return (
         <article className="playList">
             {bandName === 'Lotus' && <img className="songImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
@@ -47,8 +49,7 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
                     {song.debut !== '0001-01-01T00:00:00' &&
                     <p className='playCount'>Debuted on {formatDate(song.debut)}</p>}
                 </div>}
-            {console.log(song, favorites)}
-            {favorites.includes(song) ?
+            {faveIds.includes(song.id) ?
                 <div className='favorite-button' onClick={() => { removeFavorite(song) }}>
                     <i><BrokenHeart className="heart"></BrokenHeart></i>
                     <p className='add'>Remove</p>

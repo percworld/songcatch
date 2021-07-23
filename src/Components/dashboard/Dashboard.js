@@ -7,9 +7,7 @@ const Dashboard = ({ bandName }) => {
     <div className='dashWrap'>
       <section className='page-container'>
         {bandName === 'Lotus' && 
-          <a href='https://sites.google.com/site/thetravellog/original-songs?authuser=0' target="_blank" rel="noopener noreferrer" className='name dashName'>
-            <img className="dashImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
-          </a>}
+          <img className="navImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
         {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
         <p className='name dashName'>{bandName}</p>
         

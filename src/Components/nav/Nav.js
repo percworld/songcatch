@@ -7,7 +7,11 @@ const Nav = ({ updateCategory, bandName }) => {
 
     return (
         <section className='page-container'>
-            {bandName === 'Lotus' && <img className="navImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
+            {bandName === 'Lotus' && 
+                <a href='https://sites.google.com/site/thetravellog/original-songs?authuser=0' target="_blank" rel="noopener noreferrer" className='navImg'>
+                    <img className="dashImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />
+                </a>
+            }
             {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
             <p className='name'>{bandName}</p>
 

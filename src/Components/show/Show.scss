@@ -14,13 +14,14 @@
     flex-direction: column;
     justify-content: flex-start;
     font-family: $setlist-font;
-    font-weight: 600;
+    
     margin-top: -5vh;
 }
 
 .trackLink{
     z-index: 5;
     color: $purple;
+    font-weight: 500 !important;
 }
 
 .stats {
@@ -36,12 +37,12 @@
     font-size: 15px;
     font-weight: 600;
     max-width: 77vw;
-    max-height: 12vh;
+    max-height: 13vh;
     align-self: flex-start;
     overflow-y: scroll;
     z-index: 4;
     margin-top: 3.5rem;
-    margin-left: 3em;
+    margin-left: 5em;
 
     .head2 {
         margin-top: -.5vh;

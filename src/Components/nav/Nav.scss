@@ -40,9 +40,10 @@ a:link {
   font-weight: 600;
 }
 a:-webkit-any-link { color: null ; }
-// a:hover {
-//   color: #bf16b7;
-// }
+
+.navLink {
+  color: $purple
+}
 
 @media only screen and (max-width: 500px) {
   .navImg {

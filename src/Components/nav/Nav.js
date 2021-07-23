@@ -9,20 +9,19 @@ const Nav = ({ updateCategory, bandName }) => {
         <section className='page-container'>
             {bandName === 'Lotus' && <img className="navImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
             {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
-            {bandName !== 'Lotus' && <p className='name'>{bandName}</p>}
-            {bandName === 'Lotus' && <a href='https://sites.google.com/site/thetravellog/original-songs?authuser=0' target="_blank" rel="noopener noreferrer" className='name'>{bandName}</a>}
+            <p className='name'>{bandName}</p>
 
             <div className='nav-container' data-cy='nav-container'>
-                <Link to="/songs" data-cy='originals' onClick={() => updateCategory('Original')} >
+                <Link to="/songs" data-cy='originals' onClick={() => updateCategory('Original')} className='navLink'>
                     Originals
                 </Link>
-                <Link to="/songs" data-cy='covers' onClick={() => updateCategory('Cover')} >
+                <Link to="/songs" data-cy='covers' onClick={() => updateCategory('Cover')} className='navLink'>
                     Covers
                 </Link>
-                <Link to="/songs" data-cy='all' onClick={() => updateCategory('All')} >
+                <Link to="/songs" data-cy='all' onClick={() => updateCategory('All')} className='navLink'>
                     All Songs
                 </Link>
-                <Link to="/songs/favorites" data-cy='favorites' onClick={() => updateCategory('All')} >
+                <Link to="/songs/favorites" data-cy='favorites' onClick={() => updateCategory('All')} className='navLink'>
                     My Favorites
                 </Link>
             </div>

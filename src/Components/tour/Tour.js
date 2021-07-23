@@ -22,8 +22,6 @@ const Tours = ({ bandName, tourID }) => {
     }, [])
 
     const tourToDisplay = tour.map(show => {
-        console.log(show)
-
         if (show.hasSetlist === true) {
             return (
                 <div className='showsList' key={show.id}>

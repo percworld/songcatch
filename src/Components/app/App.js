@@ -93,7 +93,6 @@ class App extends React.Component {
     await !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] });
     const stringifiedData = JSON.stringify(this.state.favorites);
     localStorage.setItem('favorites', stringifiedData);
-    console.log(this.state.favorites)
   }
 
   setBand = (id, name) => {

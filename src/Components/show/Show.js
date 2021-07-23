@@ -25,9 +25,10 @@ const Show = ({ plays, song, showID, bandName }) => {
         const updateShowInfo = async () => {
             try {
                 const info = await getShow(showID);
+                console.log(info)
                 setShowInfo(info)
             } catch {
-                throw new Error(`No Show Info Available for Show #${showID}`)
+                console.log(`No Show Info Available for Show #${showID}`)
             }
         }
         updateShowInfo();
@@ -81,10 +82,10 @@ const Show = ({ plays, song, showID, bandName }) => {
              && <div className='head1'> 
                 <p>{bandName}</p>
                 {showInfo.dateTime === null && <p className='head2'>{formatDate(showInfo.event.startDate)}</p>}
-                {showInfo.event.festival !== null && <p className='head2'>{showInfo.event.festival}</p> }
+                {showInfo.event.festival !== null && <p className='head2'>{showInfo.event.festival.name}</p> }
+                {showInfo.event.name && <p className='head2'>{showInfo.event.name}</p> }
                 {formatDate(showInfo.dateTime) !== "December 31, 1969" && <p className='head2'>{formatDate(showInfo.dateTime)}</p>}
-                <p className='head2'>{showInfo.postNotes}</p>
-                {/* <p className='head2'>Tour: {showInfo.tour.name}</p> */}
+                {showInfo.postNotes && <p className='head2'>{showInfo.postNotes}</p>}
                 <p className='head2'>{showInfo.event.venue.name}<span className='head3'> - {showInfo.event.venue.locale}</span></p>
             </div>}   
             {!show.length && <p className="alert" ></p>}

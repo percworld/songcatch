@@ -33,12 +33,18 @@ class App extends React.Component {
     }
   }
 
+  getFavorites() {
+    const data = localStorage.getItem('favorites');
+    const parsedData = JSON.parse(data);
+    parsedData && this.setState({favorites: parsedData})
+  }
+
   componentDidMount() {
     getSongs(this.state.bandID)
       .then(response => this.setState({ songs: response }));
     getBands()
       .then(response => this.setState({ bands: response }));
-
+    this.getFavorites()
   }
 
   updateCategory = (newCategory) => {
@@ -66,27 +72,28 @@ class App extends React.Component {
   }
 
   searchSongName = async (searchText) => {
-    console.log(searchText);
     const filteredSongs = this.state.songs.filter(song => {
       return song.Name.toLowerCase().includes(searchText.toLowerCase())
     })
-    console.log(filteredSongs)
     this.setState({ songs: filteredSongs })
     if (!this.state.songs.length || searchText === '') {
       getSongs(this.state.bandID)
         .then(response => this.setState({ songs: response }));
     }
-
   }
 
   removeFavorite = (song) => {
-    console.log(song)
     const filteredFavorites = this.state.favorites.filter(favorite => favorite.id !== song.id);
     this.setState({ favorites: filteredFavorites });
+    const stringifiedData = JSON.stringify(this.state.favorites);
+    localStorage.setItem('favorites', stringifiedData);
   }
 
-  addFavorite = (song) => {
-    !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] });
+  addFavorite = async (song) => {
+    await !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] });
+    const stringifiedData = JSON.stringify(this.state.favorites);
+    localStorage.setItem('favorites', stringifiedData);
+    console.log(this.state.favorites)
   }
 
   setBand = (id, name) => {

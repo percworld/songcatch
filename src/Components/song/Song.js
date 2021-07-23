@@ -11,7 +11,8 @@ import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
     const switchSong = async () => {
         try {
-            if(typeof(parseInt(matchedSongID)) === 'number') {
+            if(typeof(parseInt(matchedSongID)) === 'number' && matchedSongID) {
+                console.log(matchedSongID)
                 const fetchedSong = await getSong(parseInt(matchedSongID))
                 setSong(fetchedSong)
             } else {
@@ -46,6 +47,7 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
                     {song.debut !== '0001-01-01T00:00:00' &&
                     <p className='playCount'>Debuted on {formatDate(song.debut)}</p>}
                 </div>}
+            {console.log(song, favorites)}
             {favorites.includes(song) ?
                 <div className='favorite-button' onClick={() => { removeFavorite(song) }}>
                     <i><BrokenHeart className="heart"></BrokenHeart></i>
@@ -56,9 +58,9 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
                     <p className='add'>Add</p>
                 </div>
             }
-            <Link className='back-button' to="/songs">
+            <div className='back-button' onClick={() => window.history.back()}>
                 <i><Back className="back"></Back></i>
-            </Link>
+            </div>
             {(!plays.length || song.id === matchedSongID) ? <p>Loading...</p> :
                 <div className='plays'>
                     <div className='playsContainer'>{playsToDisplay}</div>

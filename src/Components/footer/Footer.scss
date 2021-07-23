@@ -9,7 +9,7 @@ footer {
   justify-content: space-around;
   a {
       font-size: 29px;
-      color: whitesmoke;
+      color: #4fe4a7ad;
       &:hover {
           font-size:27px;
       }
@@ -24,13 +24,12 @@ footer {
 
 @keyframes color-change {
   0% { color: $purple; }
-  50% { color: lightgreen; }
+  50% { color: rgb(79, 126, 228); }
   100% { color: $purple; }
 }
 
 .monster {
   background-color: $purple;
-  color: whitesmoke;
   border-radius: 50px;
   margin-top: 5px;
 

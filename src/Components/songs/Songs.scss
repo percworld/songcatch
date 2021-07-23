@@ -1,5 +1,8 @@
 @import '../../index.scss';
 
+a {
+  color: #53e17f;
+}
 .trackContainer {
     @include bottom;  
     height: 60vh;
@@ -46,8 +49,7 @@ li {
 @media only screen and (min-width: 800px) {
   .trackContainer {
     display: flex;
-    flex-direction: column;
-    // flex-wrap: wrap;   
+    flex-direction: column; 
     margin-left: 73vw;
     margin-top: -8em;
     width: 100%;

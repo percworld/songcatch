@@ -20,6 +20,7 @@
 
 .trackLink{
     z-index: 5;
+    color: $purple;
 }
 
 .stats {
@@ -34,12 +35,13 @@
 .head1 {
     font-size: 15px;
     font-weight: 600;
-    width: 87vw;
+    max-width: 77vw;
+    max-height: 12vh;
     align-self: flex-start;
-    overflow-y: visible;
+    overflow-y: scroll;
     z-index: 4;
     margin-top: 3.5rem;
-    margin-left: 2em;
+    margin-left: 3em;
 
     .head2 {
         margin-top: -.5vh;

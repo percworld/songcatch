@@ -40,14 +40,14 @@ const Show = ({ plays, song, showID, bandName }) => {
     const encore = show.filter(song => parseInt(song.SetNumber) === 9);
     const songsToDisplayOne = setOne.map((track, index) => {
         return (
-            <Link to={`/song/${track.Id}`} key={index} >
+            <Link to={`/song/${track.Id}`} key={index} className='trackLink'>
                 <p>{track.Name}</p>
             </Link>
         )
     });
     const songsToDisplayTwo = setTwo.map((track, index) => {
         return (
-            <Link to={`/song/${track.Id}`} key={index} >
+            <Link to={`/song/${track.Id}`} key={index} className='trackLink'>
                 <p>{track.Name}</p>
             </Link>
         )

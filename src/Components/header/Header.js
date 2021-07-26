@@ -6,7 +6,9 @@ import './Header.scss';
 const Header = ({ setBand }) => {
     return (
         <header>
-            <Link to='/' onClick={() => { setBand(12, 'Lotus') }} className='homeLink'>
+            <Link to='/' 
+            //   onClick={() => { setBand(12, 'Lotus') }}
+              className='homeLink'>
                 <h3 className='title' data-cy='setlift'>Setlist</h3>
                 {/* <Star className='star'></Star> */}
             </Link>

@@ -66,6 +66,7 @@ const Tours = ({ bandName, tourID, addShow, removeShow, attendedShows }) => {
             {tour.length ?
                 <article className='showsContainer'>
                     <div className='bandName'>{tour.length} shows on this tour...</div>
+                    <span className='attendance tour'>Attended</span>
                     <div className='show-back' onClick={() => window.history.back()}>
                         <i><Back className="back backTour"></Back></i>
                     </div>

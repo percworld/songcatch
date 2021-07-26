@@ -42,8 +42,10 @@
 }
 
 .currBandBtn {
-    width: 45vw;
-    margin-left: 27vw;
+    position: relative;
+    display: inline-block;
+    padding: 4px 10px;
+    
 }
 
 .unattended {
@@ -61,7 +63,7 @@
 
 .attendance {
     position: fixed;
-    width: 100vw;
+    width: 97vw;
     text-align: right;
     margin-right: 2em;
     margin-top: 2em;

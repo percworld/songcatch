@@ -53,13 +53,20 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
     setShows(currBandShows)
   }
 
+  const resetToAll = () => {
+    console.log(attendedShows)
+    setShows(attendedShows)
+  }
+
   return (
     <section>
       {shows.length ?
         <article className='showList'>
-          <div className='bandName'>My Attended Shows <span className='count' >({shows.length})</span></div>
+          <div className='bandName'>My Attended Shows <span className='count' >({attendedShows.length})</span></div>
           <div className='bandName'>{bandName} Shows <span className='count' >({currBandShows.length} attended)</span></div>
-          {shows.length > currBandShows.length && <button className='purpleButton currBandBtn' onClick={() => filterCurrBand()}>Show me only {bandName} shows</button>}
+          {attendedShows.length > currBandShows.length && shows.length !== currBandShows.length && <button className='purpleButton currBandBtn' onClick={() => filterCurrBand()}>Display only {bandName} shows</button>}
+          {shows.length < attendedShows.length && <button className='purpleButton currBandBtn' onClick={() => resetToAll()}>Display shows from all bands</button>}
+
           <div className='buttonWrap'>
             {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
               <i><Back className="back"></Back></i>

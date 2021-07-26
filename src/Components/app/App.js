@@ -139,7 +139,7 @@ class App extends React.Component {
             <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
             <Route path="/tour/:tourID" render={({ match }) => {
               const { tourID } = match.params;
-              return (<Tour bandName={this.state.bandName} bandID={this.state.bandID} tourID={tourID} />)
+              return (<Tour bandName={this.state.bandName} bandID={this.state.bandID} tourID={tourID} addShow={this.addShow} removeShow={this.removeShow} attendedShows={this.state.shows}  />)
             }} />
             <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} addShow={this.addShow} removeShow={this.removeShow} attendedShows={this.state.shows} />)} />
             <Route path="/attended" render={() => (<Attended bandName={this.state.bandName} bandID={this.state.bandID} addShow={this.addShow} removeShow={this.removeShow} attendedShows={this.state.shows} />)} />

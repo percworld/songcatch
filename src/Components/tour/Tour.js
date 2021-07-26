@@ -5,9 +5,13 @@ import { getShowsByTour } from '../../api';
 import { formatDate } from '../../utilities';
 import './Tour.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
+import { ReactComponent as Unattended } from '../icons/unattended.svg';
+import { ReactComponent as Attended } from '../icons/attended.svg';
 
-const Tours = ({ bandName, tourID }) => {
-    const [tour, setTour] = useState([])
+const Tours = ({ bandName, tourID, addShow, removeShow, attendedShows }) => {
+    const [tour, setTour] = useState([]);
+    const attendedShowsIDs = attendedShows.map(show => show.id);
+
     useEffect(() => {
         const updateTour = async () => {
             try {
@@ -29,6 +33,9 @@ const Tours = ({ bandName, tourID }) => {
                         <Link to={`/show/${show.id}`}>
                             <span>{show.band.name} @ {show.venue.name}</span>
                         </Link>
+                        {attendedShowsIDs.includes(show.id)
+                            ? <Attended className='attended' onClick={() => removeShow(show)}></Attended>
+                            : <Unattended className='unattended' onClick={() => addShow(show)}></Unattended>}
                         <p>{show.venue.locale}<span> - {formatDate(show.dateTime)} </span> </p>
                     </section>
                 </div>
@@ -39,6 +46,9 @@ const Tours = ({ bandName, tourID }) => {
                 <section className='showSingle'>
                     <div>
                         <span>{show.band.name} @ {show.venue.name}</span>
+                            {attendedShowsIDs.includes(show.id)
+                                ? <Attended className='attended' onClick={() => removeShow(show)}></Attended>
+                                : <Unattended className='unattended' onClick={() => addShow(show)}></Unattended>}
                         <p>~no set list for this show~</p>
                         {show.status === 'Rescheduled' && <p>...it was rescheduled</p>}
                         {show.status === 'Canceled' && <p>...it was canceled</p>}

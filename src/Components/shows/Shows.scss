@@ -11,8 +11,8 @@
 
 .showContainer {
     font-size: 20px;
-    padding: 8px;
-    max-height: 2000px;   
+    padding: 7px;
+    padding-left: 54px;
 }
 
 .bandName {
@@ -21,7 +21,6 @@
     font-weight: 700;
     margin-bottom: 0em;
 }
-
 
 .count {
     font-size: 16px;
@@ -38,6 +37,32 @@
     justify-content: space-around;
 }
 
-// .btm {
-//     height: 15vh;
-// }
+.buttonSpacer {
+    height: 6vh;
+}
+
+.currBandBtn {
+    width: 45vw;
+    margin-left: 27vw;
+}
+
+.unattended {
+    float: right;
+    width: 6vw;
+    margin-right: 7vw;
+    margin-top: 2vh;
+}
+.attended {
+    float: right;
+    width: 6vw;
+    margin-right: 7vw;
+    margin-top: 2vh;
+}
+
+.attendance {
+    position: fixed;
+    width: 100vw;
+    text-align: right;
+    margin-right: 2em;
+    margin-top: 2em;
+}

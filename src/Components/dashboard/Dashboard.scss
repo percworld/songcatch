@@ -12,6 +12,7 @@
   margin-bottom: 1vh;
   margin-top: 1vh;
 }
+
 .bands {
   position: absolute;
   font-size: 24px;
@@ -21,11 +22,18 @@
   color: $purple;
 }
 
+.myShows {
+    margin-top: 25vh;
+    margin-left: -12vw;
+  }
+
 @media only screen and (min-width: 700px) {
   .bands {
     margin-top: 18vh;
     margin-left: -6vw;
   }
+
+
   .navImg {
     position: absolute;
     margin-left: 4vw; 

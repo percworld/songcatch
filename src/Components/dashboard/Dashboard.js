@@ -13,6 +13,8 @@ const Dashboard = ({ bandName }) => {
         
       </section>
       <NavLink exact to='/bands' data-cy='bands' className='bands' activeClassName='activeLink'>Other Bands</NavLink>
+      <NavLink exact to='/attended' data-cy='attended' className='bands myShows' activeClassName='activeLink'>My Shows</NavLink>
+
     </div>
   )
 }

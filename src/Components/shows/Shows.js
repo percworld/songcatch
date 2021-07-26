@@ -5,8 +5,10 @@ import { getShows } from '../../api';
 import { formatDate } from '../../utilities';
 import './Shows.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
+import { ReactComponent as Unattended } from '../icons/unattended.svg';
+import { ReactComponent as Attended } from '../icons/attended.svg';
 
-const Shows = ({ bandName, bandID }) => {
+const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
     const [shows, setShows] = useState([]);
     const [pageCounter, setPageCounter] = useState(1);
 
@@ -23,10 +25,12 @@ const Shows = ({ bandName, bandID }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pageCounter])
 
-
     const pastShows = shows.filter(show => {    
         return (new Date(show.dateTime) < new Date() && show.status === "Active")
     })
+    
+    const attendedShowsIDs = attendedShows.map(show => show.id);
+
     const showsToDisplay = pastShows.map(show => {
         if (show.hasSetlist === true) {
             return (
@@ -34,18 +38,24 @@ const Shows = ({ bandName, bandID }) => {
                     <NavLink to={`/show/${show.id}`} className='singleShow' activeClassName='activeLink'>
                         <span>{show.venue.name}</span>
                     </NavLink>
+                    {attendedShowsIDs.includes(show.id) 
+                        ? <Attended className='attended' onClick={() => removeShow(show)}></Attended> 
+                        : <Unattended className='unattended' onClick={() => addShow(show)}></Unattended> }
                     <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
-                </section >
+                </section>
             )
         } else {
             return (
                 <section className='showContainer' key={show.id}>
                     <p className='singleShow'>
                         <span>{show.venue.name}</span>
+                        {attendedShowsIDs.includes(show.id)
+                            ? <Attended className='attended' onClick={() => removeShow(show)}></Attended>
+                            : <Unattended className='unattended' onClick={() => addShow(show)}></Unattended>}
                     </p>
                     <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
                     <p>~No setlist posted~</p>
-                </section >
+                </section>
             )
         }
     })
@@ -62,6 +72,7 @@ const Shows = ({ bandName, bandID }) => {
                         {shows.length > 99 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
                             <i><Back className="back forward"></Back></i>
                         </button>}
+                        <span className='attendance'>Attended</span>
                     </div>
                     <div className='show-back' onClick={() => window.history.back()}>
                         <i><Back className="back backTour"></Back></i>

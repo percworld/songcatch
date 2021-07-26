@@ -10,6 +10,7 @@ import Header from '../header/Header';
 import Footer from '../footer/Footer';
 import Bands from '../bands/Bands';
 import Dashboard from '../dashboard/Dashboard';
+import Attended from '../attended/Attended';
 
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
@@ -104,7 +105,7 @@ class App extends React.Component {
   }
 
   addShow = async (show) => {
-    await !this.state.favorites.includes(show) && this.setState({ shows: [...this.state.favorites, show] });
+    await !this.state.shows.includes(show) && this.setState({ shows: [...this.state.shows, show] });
     const stringifiedData = JSON.stringify(this.state.shows);
     localStorage.setItem('shows', stringifiedData);
   }
@@ -114,6 +115,7 @@ class App extends React.Component {
     this.setState({ shows: filteredShows });
     const stringifiedData = JSON.stringify(this.state.shows);
     localStorage.setItem('shows', stringifiedData);
+    console.log(this.state.shows)
   }
 
   setBand = (id, name) => {
@@ -139,7 +141,8 @@ class App extends React.Component {
               const { tourID } = match.params;
               return (<Tour bandName={this.state.bandName} bandID={this.state.bandID} tourID={tourID} />)
             }} />
-            <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} />)} />
+            <Route path="/shows" render={() => (<Shows bandName={this.state.bandName} bandID={this.state.bandID} addShow={this.addShow} removeShow={this.removeShow} attendedShows={this.state.shows} />)} />
+            <Route path="/attended" render={() => (<Attended bandName={this.state.bandName} bandID={this.state.bandID} addShow={this.addShow} removeShow={this.removeShow} attendedShows={this.state.shows} />)} />
             <Route path="/bands" render={() => (<Bands setBand={this.setBand} bands={this.state.bands} />)} />
             <Route path="/projects" render={() => (<>festivals</>)} />
             <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />

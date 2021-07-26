@@ -4,7 +4,7 @@
 .dashImg {
   max-width: 54vw;
   margin-left: 0; 
-  margin-top: 0vh;
+  margin-top: -11vh;
   z-index: 5;
 }
 
@@ -19,4 +19,24 @@
   margin-top: 18vh;
   margin-left: -16vw;
   color: $purple;
+}
+
+@media only screen and (min-width: 700px) {
+  .bands {
+    margin-top: 18vh;
+    margin-left: -6vw;
+  }
+  .navImg {
+    position: absolute;
+    margin-left: 4vw; 
+    margin-top: 36vh;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+
+  // .dashImg {
+  // margin-top: 2vh;
+  // }
 }

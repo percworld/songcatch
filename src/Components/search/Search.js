@@ -5,20 +5,24 @@ import './Search.scss';
 const Search = ({ searchSongName }) => {
     const [searchText, setSearchText] = useState('');
 
-    const updateSearch = (text) => {
+    const updateSearch = (event, text) => {
         setSearchText(text);
         searchSongName(searchText);
     }
 
+    const preventLoad = event => {
+        event.preventDefault();
+    }
+
     return (
         <form>
-            <input className='purpleButton' onChange={event => updateSearch(event.target.value)}
+            <input className='purpleButton' onChange={event => updateSearch(event, event.target.value)}
+                onSubmit={preventLoad}
                 type='text'
                 value={searchText}
                 placeholder='SEARCH'
                 name='songName'>
             </input>
-            {/* <button onClick={event => searchSongByName(event, searchText)}>Submit</button> */}
         </form>
     )
 }

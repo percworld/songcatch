@@ -29,7 +29,8 @@ class App extends React.Component {
       song: {},
       playlist: [],
       currentShow: [],
-      favorites: []
+      favorites: [],
+      shows: []
     }
   }
 
@@ -39,12 +40,19 @@ class App extends React.Component {
     parsedData && this.setState({favorites: parsedData})
   }
 
+  getShows() {
+    const showsData = localStorage.getItem('shows');
+    const parsedData = JSON.parse(showsData);
+    parsedData && this.setState({ shows: parsedData })
+  }
+
   componentDidMount() {
     getSongs(this.state.bandID)
       .then(response => this.setState({ songs: response }));
     getBands()
       .then(response => this.setState({ bands: response }));
-    this.getFavorites()
+    this.getFavorites();
+    this.getShows();
   }
 
   updateCategory = (newCategory) => {
@@ -93,6 +101,19 @@ class App extends React.Component {
     await !this.state.favorites.includes(song) && this.setState({ favorites: [...this.state.favorites, song] });
     const stringifiedData = JSON.stringify(this.state.favorites);
     localStorage.setItem('favorites', stringifiedData);
+  }
+
+  addShow = async (show) => {
+    await !this.state.favorites.includes(show) && this.setState({ shows: [...this.state.favorites, show] });
+    const stringifiedData = JSON.stringify(this.state.shows);
+    localStorage.setItem('shows', stringifiedData);
+  }
+
+  removeShow = (show) => {
+    const filteredShows = this.state.shows.filter(iteratedShow => iteratedShow.id !== show.id);
+    this.setState({ shows: filteredShows });
+    const stringifiedData = JSON.stringify(this.state.shows);
+    localStorage.setItem('shows', stringifiedData);
   }
 
   setBand = (id, name) => {

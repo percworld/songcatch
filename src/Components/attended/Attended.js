@@ -90,7 +90,17 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
             </button>}
           </div>
         </article>
-        : <p>You can add shows here by marking the Attended circle in any show list</p>}
+        : 
+        <div className="load-wrapp">
+          <div className="load-9">
+            <p>Loading</p>
+            <div className="spinner">
+              <div className="bubble-1"><Attended></Attended></div>
+              <div className="bubble-2"><Attended></Attended></div>
+            </div>
+          </div>
+        {/* <p>You can add shows here by marking the Attended circle in any show list</p>} */}
+        </div>}
 
     </section>
   )

@@ -5,7 +5,7 @@ import { formatDate } from '../../utilities';
 import '../shows/Shows.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Unattended } from '../icons/unattended.svg';
-import { ReactComponent as Attended } from '../icons/attendance.svg';
+import { ReactComponent as Attended } from '../icons/attend.svg';
 import './Attended.scss';
 
 const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {

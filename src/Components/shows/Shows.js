@@ -73,7 +73,6 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
                             <i><Back className="back forward"></Back></i>
                         </button>}
                         <span className='attendance'>I Was There!</span>
-                        <span className='attendance'>v</span>
                     </div>
                     <div className='show-back' onClick={() => window.history.back()}>
                         <i><Back className="back backTour"></Back></i>

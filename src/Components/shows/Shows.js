@@ -6,7 +6,7 @@ import { formatDate } from '../../utilities';
 import './Shows.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Unattended } from '../icons/unattended.svg';
-import { ReactComponent as Attended } from '../icons/attended.svg';
+import { ReactComponent as Attended } from '../icons/attend.svg';
 
 const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
     const [shows, setShows] = useState([]);
@@ -72,7 +72,8 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
                         {shows.length > 99 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
                             <i><Back className="back forward"></Back></i>
                         </button>}
-                        <span className='attendance'>Attended</span>
+                        <span className='attendance'>I Was There!</span>
+                        <span className='attendance'>v</span>
                     </div>
                     <div className='show-back' onClick={() => window.history.back()}>
                         <i><Back className="back backTour"></Back></i>

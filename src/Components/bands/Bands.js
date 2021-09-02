@@ -5,10 +5,9 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Bands = ({ setBand, bands }) => {
-    const lespecial = bands.find(band => band.name === 'lespecial');
-    const tempBandList = bands.filter(band => !(band.name === 'lespecial'))
+    const lespecial = bands.find(band => band.name === 'Lotus');
+    const tempBandList = bands.filter(band => !(band.name === 'Lotus'))
     lespecial && tempBandList.unshift(lespecial);
-
     tempBandList.splice(76)
 
 

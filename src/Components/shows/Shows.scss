@@ -31,8 +31,8 @@
 }
 
 .buttonWrap {
-    width: 41vw;
-    margin-left: 29vw;
+    width: 90vw;
+    margin-left: 36vw;
     display: flex;
     justify-content: space-around;
 }
@@ -57,14 +57,18 @@
 .attended {
     float: right;
     width: 6vw;
+    height: 3vh;
     margin-right: 7vw;
     margin-top: 2vh;
 }
 
 .attendance {
-    position: fixed;
-    width: 97vw;
-    text-align: right;
-    margin-right: 2em;
-    margin-top: 2em;
+    // position: fixed;
+    // width: 97vw;
+    // text-align: right;
+    // margin-right: 2em;
+    font-size: 1rem;
+    margin-top: 1em;
+    position: relative;
+    
 }

@@ -2,6 +2,7 @@ import propTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom'
 import './Nav.scss';
+import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Nav = ({ updateCategory, bandName }) => {
 
@@ -14,7 +15,9 @@ const Nav = ({ updateCategory, bandName }) => {
             }
             {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
             <p className='name'>{bandName}</p>
-
+            <div className='back-btn' onClick={() => window.history.back()}>
+                <i><Back></Back></i>
+            </div>
             <div className='nav-container' data-cy='nav-container'>
                 <Link to="/songs" data-cy='originals' onClick={() => updateCategory('Original')} className='navLink'>
                     Originals

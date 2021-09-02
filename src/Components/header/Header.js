@@ -9,7 +9,7 @@ const Header = ({ setBand }) => {
             <Link to='/' 
             //   onClick={() => { setBand(12, 'Lotus') }}
               className='homeLink'>
-                <h3 className='title' data-cy='setlift'>Setlist</h3>
+                <h3 className='title' data-cy='setlift'>Setlift</h3>
                 {/* <Star className='star'></Star> */}
             </Link>
         </header>)

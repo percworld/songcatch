@@ -5,7 +5,8 @@ import { formatDate } from '../../utilities';
 import '../shows/Shows.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Unattended } from '../icons/unattended.svg';
-import { ReactComponent as Attended } from '../icons/attended.svg';
+import { ReactComponent as Attended } from '../icons/attendance.svg';
+import './Attended.scss';
 
 const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
   const [shows, setShows] = useState([]);
@@ -54,13 +55,15 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
   }
 
   const resetToAll = () => {
-    console.log(attendedShows)
     setShows(attendedShows)
   }
 
   return (
     <section>
-      {shows.length ?
+      <div className='show-back' onClick={() => window.history.back()}>
+        <i><Back className="back backBands"></Back></i>
+      </div>
+      {attendedShows.length ?
         <article className='showList'>
           <div className='bandName'>My Attended Shows <span className='count' >({attendedShows.length})</span></div>
           <div className='bandName'>{bandName} Shows <span className='count' >({currBandShows.length} attended)</span></div>
@@ -77,9 +80,6 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
             {pageCounter === 1 && shows.length <= 99 && <div className='buttonSpacer'></div>}
             <span className='attendance'>Attended</span>
           </div>
-          <div className='show-back' onClick={() => window.history.back()}>
-            <i><Back className="back backTour"></Back></i>
-          </div>
           {showsToDisplay}
           <div className='buttonWrap'>
             {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>
@@ -92,6 +92,7 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
         </article>
         : 
         <div className="load-wrapp">
+          <p className="no-shows">You can add shows here by marking the circle under "I Was There!" in any show list</p>
           <div className="load-9">
             <p>Loading</p>
             <div className="spinner">
@@ -99,7 +100,6 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
               <div className="bubble-2"><Attended></Attended></div>
             </div>
           </div>
-        {/* <p>You can add shows here by marking the Attended circle in any show list</p>} */}
         </div>}
 
     </section>

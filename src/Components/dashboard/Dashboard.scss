@@ -4,7 +4,7 @@
 .dashImg {
   max-width: 54vw;
   margin-left: 0; 
-  margin-top: -11vh;
+  margin-top: -5vh;
   z-index: 5;
 }
 
@@ -13,19 +13,17 @@
   margin-top: 1vh;
 }
 
-.bands {
-  position: absolute;
-  font-size: 24px;
-  font-weight: 600;
-  margin-top: 11vh;
-  margin-left: -16vw;
-  color: $purple;
+.dash-container {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+    margin-top: 5.5vh;
+    font-family: $logo-font;
+    font-size: 27px;
+    z-index: 5;
+    height: 200px;
 }
 
-.myShows {
-    margin-top: 18vh;
-    margin-left: -12vw;
-  }
 
 @media only screen and (min-width: 700px) {
   .bands {

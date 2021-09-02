@@ -5,6 +5,7 @@ import { getSet, getShow } from '../../api'
 import { formatDate } from '../../utilities';
 import './Show.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
+import { ReactComponent as Attended } from '../icons/attended.svg';
 
 const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])
@@ -119,8 +120,8 @@ const Show = ({ plays, song, showID, bandName }) => {
                     <div className="load-9">
                         <p>Loading</p>
                         <div className="spinner">
-                            <div className="bubble-1">Set 1</div>
-                            <div className="bubble-2">Set 2</div>
+                            <div className="bubble-1"><Attended></Attended></div>
+                            <div className="bubble-2"><Attended></Attended></div>
                         </div>
                     </div>
                 </div>}

@@ -16,8 +16,16 @@ footer {
   }
 }
 
+.bands {
+  position: relative;
+  font-size: 24px;
+  font-weight: 600;
+  
+}
+
+
 .activeLink {
-  font-size:32px;
+  font-size: 25px;
   animation: color-change 11s infinite;
   animation-delay: 0s;
 }

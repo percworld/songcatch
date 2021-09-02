@@ -12,9 +12,11 @@ const Dashboard = ({ bandName }) => {
         <p className='name dashName'>{bandName}</p>
         
       </section>
-      <NavLink exact to='/bands' data-cy='bands' className='bands' activeClassName='activeLink'>Other Bands</NavLink>
-      <NavLink exact to='/attended' data-cy='attended' className='bands myShows' activeClassName='activeLink'>My Shows</NavLink>
-
+      <div className='dash-container'>
+        <NavLink exact to='/nav' data-cy='songs' activeClassName='activeLink'>Songs</NavLink>
+        <NavLink exact to='/tours' data-cy='tours' activeClassName='activeLink'>Tours</NavLink>
+        <NavLink exact to='/shows' data-cy='shows' activeClassName='activeLink'>Shows</NavLink>
+      </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { getSet, getShow } from '../../api'
 import { formatDate } from '../../utilities';
 import './Show.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
-import { ReactComponent as Attended } from '../icons/attended.svg';
+import { ReactComponent as Attended } from '../icons/attend.svg';
 
 const Show = ({ plays, song, showID, bandName }) => {
     const [show, setShow] = useState([])

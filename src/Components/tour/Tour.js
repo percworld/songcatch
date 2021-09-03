@@ -6,7 +6,7 @@ import { formatDate } from '../../utilities';
 import './Tour.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Unattended } from '../icons/unattended.svg';
-import { ReactComponent as Attended } from '../icons/attended.svg';
+import { ReactComponent as Attended } from '../icons/attend.svg';
 
 const Tours = ({ bandName, tourID, addShow, removeShow, attendedShows }) => {
     const [tour, setTour] = useState([]);

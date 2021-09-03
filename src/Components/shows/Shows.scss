@@ -9,10 +9,18 @@
     padding-bottom: 4vh;
 }
 
+.venue {
+    font-size: 24px;
+}
+
+.loc-date {
+    font-size: 17px
+}
+
 .showContainer {
-    font-size: 20px;
+    font-size: 19px;
     padding: 7px;
-    padding-left: 54px;
+    padding-left: 34px;
 }
 
 .bandName {
@@ -64,8 +72,15 @@
     font-size: 1.2rem;
     font-weight: 600;
     // font-transform: underline;
-    margin-top: 1em;
-    margin-left: 10vw;
+    margin-top: -1em;
+    margin-left: 61vw;
     position: relative;
     
+}
+
+@media only screen and (min-width: 700px) {
+    .attended {
+        width: 2.7em;
+        height: 2.7em;
+    }
 }

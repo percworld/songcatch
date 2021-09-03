@@ -16,11 +16,11 @@ const Search = ({ searchSongName }) => {
 
     return (
         <form>
-            <input className='purpleButton' onChange={event => updateSearch(event, event.target.value)}
+            <input className='searchbar' onChange={event => updateSearch(event, event.target.value)}
                 onSubmit={preventLoad}
                 type='text'
                 value={searchText}
-                placeholder='SEARCH'
+                placeholder='QUIK SEARCH'
                 name='songName'>
             </input>
         </form>

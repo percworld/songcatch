@@ -8,7 +8,15 @@ form {
 .purpleButton {
     background-color: $purple;
     color: ivory;
-    margin-left: 40vw;
+    margin-left: 74vw;
+    height: 5.7vh;
+}
+
+.searchbar {
+    background-color: #71316e;
+    color: ivory;
+    font-weight: 600;
+    height: 3vh;
 }
 
 input {
@@ -16,3 +24,9 @@ input {
     width: 28vw;
     text-align: center;
 }
+
+// @media only screen and (min-width: 700px) {
+//     .purpleButton {
+//       margin-left: 67vw;
+//     }
+// }

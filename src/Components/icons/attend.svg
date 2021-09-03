@@ -35,12 +35,7 @@
     </g>
   </g>
     
-  <a xlink:href="http://steamcoded.org" _target="blank">
-    <g id="credits" transform="translate(166.75,261.7) scale(0.09)" style="text-anchor:middle;font-size:40px;font-family:Arial;fill:black;stroke:none;">
-      <text x="1" y="1" style="font-weight:bold;font-style:italic;fill:#333333;stroke:#333333;stroke-width:0.5px;">STEAM<tspan style="font-variant:small-caps;">coded.org</tspan></text>
-      <text x="0" y="0" style="font-weight:bold;font-style:italic;"><tspan style="fill:red;">S</tspan><tspan style="fill:orange;">T</tspan><tspan style="fill:lime;">E</tspan><tspan style="fill:#5555ff;">A</tspan><tspan style="fill:purple;">M</tspan><tspan style="fill:blue;font-variant:small-caps;">coded.org</tspan></text>
-    </g>
-  </a>
+  
 
 </svg>
 

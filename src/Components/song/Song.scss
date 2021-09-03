@@ -14,6 +14,7 @@
     @include bottom;
     height: 53vh;
     padding-bottom: 10vh;
+    max-height: 46vh;
 }
 
 .songTitle {
@@ -73,7 +74,7 @@
   padding: 0;
   width: 16vw;
   height: 12vh;
-  margin-left: 26.5em;
+  margin-left: 25.5em;
   font-size: 12px;
   .heart {
      margin-top: 6em; 

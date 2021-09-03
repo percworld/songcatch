@@ -78,8 +78,8 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
               <i><Back className="back forward"></Back></i>
             </button>}
             {pageCounter === 1 && shows.length <= 99 && <div className='buttonSpacer'></div>}
-            <span className='attendance attended'>I Was There!</span>
           </div>
+          <span className='attendance'>I Was There!</span>
           {showsToDisplay}
           <div className='buttonWrap'>
             {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>

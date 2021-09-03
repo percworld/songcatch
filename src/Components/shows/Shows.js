@@ -72,8 +72,8 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
                         {shows.length > 99 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter + 1)}>
                             <i><Back className="back forward"></Back></i>
                         </button>}
-                        <span className='attendance'>I Was There!</span>
                     </div>
+                    <span className='attendance'>I Was There!</span>
                     <div className='show-back' onClick={() => window.history.back()}>
                         <i><Back className="back backTour"></Back></i>
                     </div>

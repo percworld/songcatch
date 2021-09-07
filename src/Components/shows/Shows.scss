@@ -40,7 +40,7 @@
 
 .buttonWrap {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .buttonSpacer {
@@ -82,5 +82,8 @@
     .attended {
         width: 2.7em;
         height: 2.7em;
+    }
+    .showContainer {
+        margin-left: 4em;
     }
 }

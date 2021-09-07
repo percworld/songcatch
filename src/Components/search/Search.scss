@@ -25,8 +25,10 @@ input {
     text-align: center;
 }
 
-// @media only screen and (min-width: 700px) {
-//     .purpleButton {
-//       margin-left: 67vw;
-//     }
-// }
+@media only screen and (min-width: 700px) {
+    .purpleButton {
+        height: 4em;
+        margin-bottom: .5em;
+    //   margin-left: 67vw;
+    }
+}

@@ -14,7 +14,7 @@
     @include bottom;
     height: 53vh;
     padding-bottom: 10vh;
-    max-height: 46vh;
+    max-height: 39vh;
 }
 
 .songTitle {
@@ -94,8 +94,15 @@
 }
 
 //MEDIA QUERIES
+@media only screen and (min-width: 500px) {
+  .favorite-button {
+    margin-left: 73vw;
+    margin-top: -3vh; 
+  }
+  
+}
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 450px) {
   .songImg {
    position: absolute;
    max-width: 23vw;
@@ -103,10 +110,8 @@
    margin-top: 52vh;
     
   }
-  .favorite-button {
-    margin-left: 73vw;
-    margin-top: 23vh; 
-  }
+}
+@media only screen and (min-width: 700px) {
 
   .back-button {
     margin-top: 33vh;
@@ -118,14 +123,19 @@
     width: 6vw;
   }
 
-  .heart {
-     margin-top: 2vh; 
-     margin-left: 1em;
-     width: 7vw;
+  .playsContainer {
+    // height: 84vh;
+    max-height: 74vh
   }
+
+  .favorite-button {
+    margin-left: 75vw;
+    margin-top: 19vh; 
+  }  
+
   .add {
-    margin-top: -10vh;
-    margin-left: -1.25em;
+    // margin-top: -10vh;
+    // margin-left: -1.25em;
   }
   .playList{
       margin-top: -27vh;

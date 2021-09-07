@@ -170,8 +170,12 @@
 
 @media only screen and (min-width: 700px) {
     .head1 {
-        margin-top: -2em;
-        margin-left: -5em;
+        margin-left: 14em;
+        max-height: 30vh; 
+    }
+
+    .head2 {
+
     }
 
     .setListContainer {
@@ -179,15 +183,16 @@
     
     }
     .setList {
-        margin-top: -6em;
-        margin-left: 66vw;
+        margin-top: -5em;
+        margin-left: 68vw;
         max-width: 30vw;
         max-height: 87vh;
         font-size: 12px;
     }
     .stats {
-      margin-top: 3rem;
-      margin-left: 9em;
+      margin-top: 2rem;
+      margin-left: 13em;
+      max-width: 32vw;
     }
     .show-back {
       margin-top: 7vh;
@@ -195,6 +200,14 @@
     }    
 }
 
+@media only screen and (min-width: 500px) {
+  .stats {
+    width: 61%;
+  }
+  .head1 {
+    margin-top: 0.5rem;
+  }
+}
 @media only screen and (max-width: 500px) {
     .head1 {
        margin-top: 1em;
@@ -216,4 +229,13 @@
     .show-back {
         margin-top: 15vh;
     }
+}
+
+@media only screen and (min-width: 700px) {
+  
+  .head1 {
+    width: 43vw;
+    max-height: 44vh;
+    margin-left: 17vw;
+  }
 }

@@ -5,7 +5,7 @@ import './Search.scss';
 const Search = ({ searchSongName }) => {
     const [searchText, setSearchText] = useState('');
 
-    const updateSearch = (event, text) => {
+    const updateSearch = (text) => {
         setSearchText(text);
         searchSongName(searchText);
     }
@@ -16,8 +16,8 @@ const Search = ({ searchSongName }) => {
 
     return (
         <form>
-            <input className='searchbar' onChange={event => updateSearch(event, event.target.value)}
-                onSubmit={preventLoad}
+            <input className='searchbar' onChange={event => updateSearch(event.target.value)}
+                onSubmit={(event) => preventLoad(event)}
                 type='text'
                 value={searchText}
                 placeholder='QUIK SEARCH'

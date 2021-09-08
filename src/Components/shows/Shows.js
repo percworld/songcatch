@@ -44,20 +44,21 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
                     <p className='loc-date' >{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
                 </section>
             )
-        } else {
-            return (
-                <section className='showContainer' key={show.id}>
-                    <p className='singleShow'>
-                        <span>{show.venue.name}</span>
-                        {attendedShowsIDs.includes(show.id)
-                            ? <Attended className='attended' onClick={() => removeShow(show)}></Attended>
-                            : <Unattended className='unattended' onClick={() => addShow(show)}></Unattended>}
-                    </p>
-                    <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
-                    <p>~No setlist posted~</p>
-                </section>
-            )
-        }
+        } else {return (<div></div>)}
+        // else {
+        //     return (
+        //         <section className='showContainer' key={show.id}>
+        //             <p className='singleShow'>
+        //                 <span>{show.venue.name}</span>
+        //                 {attendedShowsIDs.includes(show.id)
+        //                     ? <Attended className='attended' onClick={() => removeShow(show)}></Attended>
+        //                     : <Unattended className='unattended' onClick={() => addShow(show)}></Unattended>}
+        //             </p>
+        //             <p>{show.venue.locale} <span> - {formatDate(show.dateTime)} </span> </p>
+        //             <p>~No setlist posted~</p>
+        //         </section>
+        //     )
+        // }
     })
 
     return (

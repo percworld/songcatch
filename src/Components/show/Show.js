@@ -8,9 +8,8 @@ import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Attended } from '../icons/attend.svg';
 
 const Show = ({ plays, song, showID, bandName }) => {
-    const [show, setShow] = useState([])
-    const [showInfo, setShowInfo] = useState([])
-    // const [loading, setLoading] = useState(false);
+    const [show, setShow] = useState([]);
+    const [showInfo, setShowInfo] = useState([]);
 
     useEffect(() => {
         const updateShow = async () => {
@@ -26,7 +25,6 @@ const Show = ({ plays, song, showID, bandName }) => {
         const updateShowInfo = async () => {
             try {
                 const info = await getShow(showID);
-                console.log(info)
                 setShowInfo(info)
             } catch {
                 console.log(`No Show Info Available for Show #${showID}`)

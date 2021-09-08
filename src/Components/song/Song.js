@@ -1,14 +1,41 @@
 import propTypes from 'prop-types';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { formatDate } from '../../utilities';
 import { Link } from 'react-router-dom';
-import { getSong } from '../../api';
+import { getSong, getSet } from '../../api';
 import './Song.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { ReactComponent as Heart } from '../icons/heart-solid.svg';
 import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 
-const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName }) => {
+const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName, shows }) => {
+    const [attendedShows, setAttendedShows] = useState([]);
+
+    const getSetlist = async (show) => {
+        
+                const setlist = await getSet(show.id);
+                const included = setlist.find(item => {
+                    return item.Id === song.id
+                })
+                if (included) {
+                    console.log([...attendedShows])
+                    setAttendedShows(attendedShows => [...attendedShows, setlist]);
+                }
+          
+    }
+    console.log(attendedShows, ...attendedShows);
+    const addViewed = () => {
+        shows.forEach(show => {
+             getSetlist(show);     
+        })
+    }
+
+    useEffect(() => {
+        addViewed();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    
     const switchSong = async () => {
         try {
             if(typeof(parseInt(matchedSongID)) === 'number' && matchedSongID) {
@@ -38,6 +65,8 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
 
     const faveIds = favorites.map(fave => fave.id);
 
+    
+
     return (
         <article className="playList">
             {bandName === 'Lotus' && <img className="songImg" src={'/assets/lotuslogo-removebg-preview.png'} alt="lotus logo" />}
@@ -48,6 +77,10 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
                 <div className='playCount'>Played {plays.length} Time{plays.length > 1 && <span>s</span>}
                     {song.debut !== '0001-01-01T00:00:00' &&
                     <p className='playCount'>Debuted on {formatDate(song.debut)}</p>}
+                </div>}
+            {attendedShows.length > 0 && 
+                <div className='playCount'>
+                You have seen this song {attendedShows.length} {attendedShows.length < 2 ? <span>time!</span> : <span>times!</span>}
                 </div>}
             {faveIds.includes(song.id) ?
                 <div className='favorite-button' onClick={() => { removeFavorite(song) }}>

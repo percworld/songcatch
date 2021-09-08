@@ -5,3 +5,9 @@
 .attended {
   margin-right: 7vw;
 }
+
+@media only screen and (min-width:700px) {
+  .attended {
+    margin-right: 5.5vw;
+  }
+}

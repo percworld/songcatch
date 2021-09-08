@@ -80,10 +80,12 @@
 
 @media only screen and (min-width: 700px) {
     .attended {
-        width: 2.7em;
-        height: 2.7em;
+        height: 1.5em;
     }
     .showContainer {
         margin-left: 4em;
+    }
+    .unattended {
+        max-width: 1.5em;
     }
 }

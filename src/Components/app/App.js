@@ -153,7 +153,7 @@ class App extends React.Component {
             }} />
             <Route path="/song/:song" render={({ match }) => {
               const { song } = match.params;
-              return (<Song bandName={this.state.bandName} matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} favorites={this.state.favorites} setSong={this.setSong} />)
+              return (<Song bandName={this.state.bandName} matchedSongID={song} song={this.state.song} plays={this.state.playlist} addFavorite={this.addFavorite} removeFavorite={this.removeFavorite} favorites={this.state.favorites} setSong={this.setSong} shows={this.state.shows}/>)
             }} />
           </Switch>
           <Footer />

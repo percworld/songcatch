@@ -10,6 +10,7 @@ footer {
   a {
       font-size: 29px;
       color: #4fe4a7ad;
+      margin-left: .5em;
       &:hover {
           
       }
@@ -29,6 +30,7 @@ footer {
   animation: color-change 11s infinite;
   animation-delay: 0s;
 }
+
 
 
 @keyframes color-change {

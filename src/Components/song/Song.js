@@ -11,19 +11,16 @@ import { ReactComponent as BrokenHeart } from '../icons/heart-broken-solid.svg';
 const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSongID, setSong, bandName, shows }) => {
     const [attendedShows, setAttendedShows] = useState([]);
 
-    const getSetlist = async (show) => {
-        
+    const getSetlist = async (show) => {      
                 const setlist = await getSet(show.id);
                 const included = setlist.find(item => {
                     return item.Id === song.id
                 })
                 if (included) {
-                    console.log([...attendedShows])
                     setAttendedShows(attendedShows => [...attendedShows, setlist]);
-                }
-          
+                }         
     }
-    console.log(attendedShows, ...attendedShows);
+
     const addViewed = () => {
         shows.forEach(show => {
              getSetlist(show);     

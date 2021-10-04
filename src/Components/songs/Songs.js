@@ -1,22 +1,15 @@
 import propTypes from 'prop-types';
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './Songs.scss';
 import Search from '../search/Search';
 import './Songs.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
-
+import { getSong } from '../../api';
 const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }) => {
-    const sortedSongs = songs.sort((a, b) => {
-        if (a.Name < b.Name) {
-            return -1;
-        }
-        if (a.Name > b.Name) {
-            return 1;
-        }
-        return 0;
-    });
-    const filteredSongs = sortedSongs.filter(song => {
+    
+        
+    const filteredSongs = songs.filter(song => {
         switch (category) {
             case 'All':
                 return true;
@@ -46,7 +39,8 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
             <Search searchSongName={searchSongName}></Search>
             <div className='songs-back' onClick={() => window.history.back()}>
 							<i><Back className="back"></Back></i>
-						</div>
+			</div>
+            <Link to='top-songs' className='list-by-pop'>See Top Played</Link>
             <div className='trackContainer'>{songsToDisplay}
              {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart next to the song title.</p>}
             </div>

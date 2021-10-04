@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../nav/Nav'
 import Songs from '../songs/Songs';
+import TopSongs from '../topSongs/TopSongs';
 import Show from '../show/Show';
 import Shows from '../shows/Shows';
 import Tours from '../tours/Tours';
@@ -14,7 +15,7 @@ import Attended from '../attended/Attended';
 
 import './App.scss';
 import { Route, Switch } from 'react-router-dom';
-import { getBands, getSongs, getPlays, getSet, getSong } from '../../api'; //getTourById, 
+import { getBands, getSongs, getPlays, getSet, getSong } from '../../api'; 
 
 class App extends React.Component {
   constructor() {
@@ -147,6 +148,7 @@ class App extends React.Component {
             <Route path="/projects" render={() => (<>festivals</>)} />
             <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
             <Route path="/songs" render={() => (<Songs bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
+            <Route path="/top-songs" render={() => (<TopSongs bandID={this.state.bandID} bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
             <Route path="/show/:showID" render={({ match }) => {
               const { showID } = match.params;
               return (<Show plays={this.state.playlist} song={this.state.song} showID={showID} show={this.state.currentShow} updateShow={this.updateShow} bandName={this.state.bandName} />)

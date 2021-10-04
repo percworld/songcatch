@@ -4,6 +4,7 @@ const checkResponse = (response) => {
     if (!response.ok) {
         throw new Error('The songs aren\'t currently available.');
     } else {
+        console.log(response)
         return response.json();
     }
 }
@@ -15,6 +16,11 @@ const getBands = () => {
 
 const getSongs = (id) => {
     return fetch(`${baseUrl}/songs/?bandId=${id}`)
+    .then(checkResponse)
+}
+
+const getSongsByPlaycount = (id) => {
+    return fetch(`${baseUrl}/topSongs/${id}`)
         .then(checkResponse)
 }
 
@@ -55,4 +61,4 @@ const getShows = (id, pageCounter) => {
 }
 
 
-export { getBands, getPlays, getSong, getSongs, getShows, getToursByBandID, getShowsByTour, getSet, getShow };
+export { getBands, getPlays, getSong, getSongs, getShows, getToursByBandID, getShowsByTour, getSet, getShow, getSongsByPlaycount };

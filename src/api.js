@@ -16,7 +16,7 @@ const getBands = () => {
 
 const getSongs = (id) => {
     return fetch(`${baseUrl}/songs/?bandId=${id}`)
-    .then(checkResponse)
+        .then(checkResponse)
 }
 
 const getSongsByPlaycount = (id) => {

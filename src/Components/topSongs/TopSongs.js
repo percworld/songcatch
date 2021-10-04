@@ -25,14 +25,14 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
   // })
 
   //GET LIST and reverse / assign last 100
-  const topSongs = async () => {
+  const getTopSongs = async () => {
     const unorderedSongs = await getSongsByPlaycount(bandID);
     console.log(unorderedSongs)
     //const orderedSongs = unorderedSongs.reverse();
     //setTopSongsList(orderedSongs);
   }
 
-  topSongs();
+  getTopSongs();
 
   // const sortedSongs = topSongsList.sort((a, b) => {
   //   console.log(a)

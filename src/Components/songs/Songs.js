@@ -40,7 +40,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
             <div className='songs-back' onClick={() => window.history.back()}>
 							<i><Back className="back"></Back></i>
 			</div>
-            <Link to='top-songs' className='list-by-pop'>See Top Played</Link>
+            {/* <Link to='top-songs' className='list-by-pop'>See Top Played</Link> */}
             <div className='trackContainer'>{songsToDisplay}
              {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart next to the song title.</p>}
             </div>

@@ -1,8 +1,16 @@
 import './Dashboard.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Dashboard = ({ bandName }) => {
+const Dashboard = ({ bandName, bandID, bandPref }) => {
+  const [bandChoice, setBandChoice] = useState('Lotus');
+  const updateBandPref = () => {
+    localStorage.setItem('bandPref', bandID)
+    localStorage.setItem('bandName', bandName)
+    
+    setBandChoice(bandName)
+  }
+
   return (
     <div className='dashWrap'>
       <section className='page-container'>
@@ -12,6 +20,10 @@ const Dashboard = ({ bandName }) => {
         <p className='name dashName'>{bandName}</p>
         
       </section>
+      {bandID !== JSON.parse(localStorage.getItem('bandPref')) ?
+        <button className='searchbar bandLink' onClick={() => {updateBandPref(bandPref, bandName)}}>Default to {bandName}</button>
+        :
+        <NavLink exact to='/bands' className='jamLink' activeClassName='activeLink'>This is my Jam</NavLink>}
       <div className='dash-container'>
         <NavLink exact to='/nav' data-cy='songs' activeClassName='activeLink'>Songs</NavLink>
         <NavLink exact to='/tours' data-cy='tours' activeClassName='activeLink'>Tours</NavLink>

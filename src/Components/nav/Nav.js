@@ -6,6 +6,7 @@ import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 
 const Nav = ({ updateCategory, bandName }) => {
 
+    
     return (
         <section className='page-container'>
             {bandName === 'Lotus' && 

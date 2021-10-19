@@ -24,15 +24,16 @@ class App extends React.Component {
       isDashboard: false,
       isLogged: false,
       bands: [],
-      bandID: 12,
-      bandName: 'Lotus',
+      bandID: JSON.parse(localStorage.getItem('bandPref')) || 12,
+      bandPref: JSON.parse(localStorage.getItem('bandPref')) || 12,
+      bandName: localStorage.getItem('bandName') || 'Lotus',
       category: 'All',
       songs: [],
       song: {},
       playlist: [],
       currentShow: [],
       favorites: [],
-      shows: []
+      shows: [],
     }
   }
 
@@ -47,14 +48,30 @@ class App extends React.Component {
     const parsedData = JSON.parse(showsData);
     parsedData && this.setState({ shows: parsedData })
   }
+  
+  getBand() {
+    const bandPrefData = localStorage.getItem('bandPref');
+    const parsedPref = JSON.parse(bandPrefData);
+    parsedPref && this.setState({ bandID: parsedPref })
+
+    const bandNamePref = localStorage.getItem('bandName');
+    const parsedNamePref = JSON.parse(bandNamePref);
+    parsedNamePref && this.setState({ bandName: parsedNamePref })
+  }
+  
+  setBand = (id, name) => {
+    getSongs(id)
+      .then(response => this.setState({ songs: response, bandID: id, bandName: name }))
+  }
 
   componentDidMount() {
+    // this.getBand();
+    this.getShows();
+    this.getFavorites();
     getSongs(this.state.bandID)
       .then(response => this.setState({ songs: response }));
     getBands()
       .then(response => this.setState({ bands: response }));
-    this.getFavorites();
-    this.getShows();
   }
 
   updateCategory = (newCategory) => {
@@ -116,13 +133,8 @@ class App extends React.Component {
     this.setState({ shows: filteredShows });
     const stringifiedData = JSON.stringify(this.state.shows);
     localStorage.setItem('shows', stringifiedData);
-    console.log(this.state.shows)
   }
 
-  setBand = (id, name) => {
-    getSongs(id)
-      .then(response => this.setState({ songs: response, bandID: id, bandName: name }))
-  }
 
   render() {
     // let vis = window.toolbar.visible; 
@@ -135,8 +147,8 @@ class App extends React.Component {
         <Header setBand={this.setBand}/>
         <div className="app-container">
           <Switch>
-            <Route exact path="/" render={() => (<Dashboard bandName={this.state.bandName} />)} />
-            <Route exact path="/nav" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName} />)} />
+            <Route exact path="/" render={() => (<Dashboard bandName={this.state.bandName} bandPref={this.state.bandPref} bandID={this.state.bandID} />)} />
+            <Route exact path="/nav" render={() => (<Nav updateCategory={this.updateCategory} searchSongName={this.searchSongName} bandName={this.state.bandName}/>)} />
             <Route path="/tours" render={() => (<Tours bandName={this.state.bandName} bandID={this.state.bandID} />)} />
             <Route path="/tour/:tourID" render={({ match }) => {
               const { tourID } = match.params;

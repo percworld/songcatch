@@ -4,7 +4,6 @@ const checkResponse = (response) => {
     if (!response.ok) {
         throw new Error('The songs aren\'t currently available.');
     } else {
-        console.log(response)
         return response.json();
     }
 }

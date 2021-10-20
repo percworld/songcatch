@@ -20,7 +20,10 @@ const Dashboard = ({ bandName, bandID, bandPref }) => {
       </section>
       {bandID !== JSON.parse(localStorage.getItem('bandPref')) 
         ? <button className='searchbar bandLink' onClick={() => {updateBandPref(bandPref, bandName)}}>Set {bandName} as my Home Band</button>
-        : <NavLink exact to='/bands' className='jamLink' activeClassName='activeLink'>This is my Jam</NavLink>}
+        : <div></div>
+        }
+      {/* <NavLink exact to='/bands' className='jamLink' activeClassName='activeLink'>This is my Jam</NavLink> */}
+
       <div className='dash-container'>
         <NavLink exact to='/nav' data-cy='songs' activeClassName='activeLink'>Songs</NavLink>
         <NavLink exact to='/tours' data-cy='tours' activeClassName='activeLink'>Tours</NavLink>

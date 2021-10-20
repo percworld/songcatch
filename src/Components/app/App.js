@@ -52,10 +52,9 @@ class App extends React.Component {
   getBand() {
     const bandPrefData = localStorage.getItem('bandPref');
     const parsedPref = JSON.parse(bandPrefData);
-    parsedPref && this.setState({ bandID: parsedPref })
     const bandNamePref = localStorage.getItem('bandName');
     const parsedNamePref = JSON.parse(bandNamePref);
-    parsedNamePref && this.setState({ bandName: parsedNamePref })
+    parsedPref && parsedNamePref &&  this.setBand(parsedPref, parsedNamePref)
   }
   
   setBand = (id, name) => {

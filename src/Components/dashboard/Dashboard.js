@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Dashboard = ({ bandName, bandID, bandPref }) => {
-  const [bandChoice, setBandChoice] = useState('Lotus');
+  const [bandChoice, setBandChoice] = useState('');
   const updateBandPref = () => {
     localStorage.setItem('bandPref', bandID)
     localStorage.setItem('bandName', bandName)
-    
     setBandChoice(bandName)
   }
 

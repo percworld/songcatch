@@ -59,12 +59,14 @@ class App extends React.Component {
   }
   
   setBand = (id, name) => {
+    this.setState({ bandID: id, bandName: name, })
     this.getFavorites()
     getSongs(id)
-      .then(response => this.setState({ songs: response, bandID: id, bandName: name, favorites: response.filter(song => {
-        const foundFavorite = this.state.favorites.find(favorite => favorite.id === song.Id)
-        return foundFavorite;
-      })}))
+    .then(response => this.setState({ songs: response, favorites: response.filter(song => {
+      const foundFavorite = this.state.favorites.find(favorite => favorite.id === song.Id)
+      return foundFavorite;
+    })}))
+    
   }
 
   componentDidMount() {

@@ -1,11 +1,11 @@
 import propTypes from 'prop-types';
-import React, {useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Songs.scss';
 import Search from '../search/Search';
 import './Songs.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
-import { getSong } from '../../api';
+
 const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }) => {
     
         

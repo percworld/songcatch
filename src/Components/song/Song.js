@@ -12,13 +12,13 @@ const Song = ({ song, plays, addFavorite, removeFavorite, favorites, matchedSong
     const [attendedShows, setAttendedShows] = useState([]);
 
     const getSetlist = async (show) => {      
-                const setlist = await getSet(show.id);
-                const included = setlist.find(item => {
-                    return item.Id === song.id
-                })
-                if (included) {
-                    setAttendedShows(attendedShows => [...attendedShows, setlist]);
-                }         
+        const setlist = await getSet(show.id);
+        const included = setlist.find(item => {
+            return item.Id === parseInt(matchedSongID)
+        })
+        if (included) {
+            setAttendedShows(attendedShows => [...attendedShows, setlist]);
+        }         
     }
 
     const addViewed = () => {

@@ -1,10 +1,10 @@
 import propTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Search from '../search/Search';
 import './TopSongs.scss';
 import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { getSongsByPlaycount } from '../../api';
+
 const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorites }) => {
   const [topSongsList, setTopSongsList] = useState([]);
 
@@ -20,8 +20,7 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
       <section className='songSingle' key={index}>
         {song.Id
           ? <Link to={`/song/${song.Id}`} className='topSongTitle' onClick={() => setSong(song)} >
-            <p>{song.name || song.Name}<span className='playCounts'>{song.playCount}</span></p>
-            
+            <p>{song.name || song.Name}<span className='playCounts'>{song.playCount}</span></p>            
           </Link>
           : <Link to={`/song/${song.id}`} className='topSongTitle' onClick={() => setSong(song)} >
             <p>{song.name || song.Name}<span className='playCounts'>{song.playCount}</span></p>

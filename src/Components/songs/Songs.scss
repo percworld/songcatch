@@ -3,14 +3,11 @@
 a {
   color: #7fe2c2e0;
 }
+
 .trackContainer {
     @include bottom;  
     max-height: 46vh;
     padding-bottom: 10vh;
-}
-
-.list-by-pop {
-  margin-bottom: 1em ;
 }
 
 .songList {

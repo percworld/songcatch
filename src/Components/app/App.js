@@ -53,7 +53,6 @@ class App extends React.Component {
     const bandPrefData = localStorage.getItem('bandPref');
     const parsedPref = JSON.parse(bandPrefData);
     parsedPref && this.setState({ bandID: parsedPref })
-
     const bandNamePref = localStorage.getItem('bandName');
     const parsedNamePref = JSON.parse(bandNamePref);
     parsedNamePref && this.setState({ bandName: parsedNamePref })
@@ -65,7 +64,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // this.getBand();
     this.getShows();
     this.getFavorites();
     getSongs(this.state.bandID)

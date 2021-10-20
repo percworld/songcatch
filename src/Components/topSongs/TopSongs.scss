@@ -1,16 +1,21 @@
 @import '../../index.scss';
 
-.playCount {
-  display: flex;
+.topSongTitle {
+  display:flex;
   justify-content: flex-end;
-  margin-right: 2em;
-  font-size: 9px;
+  width: 86vw;
 }
 
-.plays {
-  display: flex;
+.playCounter {
+  display: inline-flex;
   justify-content: flex-end;
-  margin-right: 2em;
-  font-size: 16px;
+  font-size: 18px;
+  color: $purple;
+  margin: 1em -1em 1em 9vw;
+}
+
+.playCounts {
+  margin-left: 10vw;
+  font-size: 22px;
   color: $purple;
 }

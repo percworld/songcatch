@@ -20,17 +20,20 @@ const Nav = ({ updateCategory, bandName }) => {
                 <i><Back></Back></i>
             </div>
             <div className='nav-container' data-cy='nav-container'>
+                <Link to="/songs/favorites" data-cy='favorites' onClick={() => updateCategory('All')} className='navLink'>
+                    My Favorites
+                </Link>
+                <Link to='top-songs'>
+                    Top Played
+                </Link>
+                <Link to="/songs" data-cy='all' onClick={() => updateCategory('All')} className='navLink'>
+                    All Songs
+                </Link>
                 <Link to="/songs" data-cy='originals' onClick={() => updateCategory('Original')} className='navLink'>
                     Originals
                 </Link>
                 <Link to="/songs" data-cy='covers' onClick={() => updateCategory('Cover')} className='navLink'>
                     Covers
-                </Link>
-                <Link to="/songs" data-cy='all' onClick={() => updateCategory('All')} className='navLink'>
-                    All Songs
-                </Link>
-                <Link to="/songs/favorites" data-cy='favorites' onClick={() => updateCategory('All')} className='navLink'>
-                    My Favorites
                 </Link>
             </div>
 

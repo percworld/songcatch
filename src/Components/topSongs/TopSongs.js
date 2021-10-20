@@ -7,61 +7,24 @@ import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 import { getSongsByPlaycount } from '../../api';
 const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorites }) => {
   const [topSongsList, setTopSongsList] = useState([]);
-  
 
-  // const retrieveSong = async (song) => {
-  //   try {
-  //     const formattedSong = await getSong(song.Id || song.id)
-  //     const playDetails = await getPlays(formattedSong.id);
-  //     if (playDetails.aaData.length > 50) {
-  //       setTopSongsList([...topSongsList, formattedSong]);
-  //     }
-  //   } catch {
-  //     throw new Error('Song data is not being retrieved.')
-  //   }
-  // }
-  // songs.forEach(song => {
-  //   retrieveSong(song) 
-  // })
-
-  //GET LIST and reverse / assign last 100
   const getTopSongs = async () => {
     const unorderedSongs = await getSongsByPlaycount(bandID);
     const orderedSongs = unorderedSongs.reverse();
     setTopSongsList(orderedSongs);
   }
-
   getTopSongs();
 
-  // const sortedSongs = topSongsList.sort((a, b) => {
-  //   console.log(a)
-  //   if (a.Name < b.Name) {
-  //          return -1;
-  //      }
-  //      return 1;
-  // });
-
-
-
-  const filteredSongs = topSongsList.filter(song => {
-    switch (category) {
-      case 'All':
-        return true;
-      case 'Original': return !song.Cover;
-      case 'Cover': return song.Cover;
-      default: return true;
-    }
-  })
-  const songsToDisplay = filteredSongs.map((song, index) => {
+  const songsToDisplay = topSongsList.map((song, index) => {
     return (
       <section className='songSingle' key={index}>
         {song.Id
-          ? <Link to={`/song/${song.Id}`} onClick={() => setSong(song)} >
-            <p>{song.name || song.Name}<span className='plays'>{song.playCount}</span></p>
+          ? <Link to={`/song/${song.Id}`} className='topSongTitle' onClick={() => setSong(song)} >
+            <p>{song.name || song.Name}<span className='playCounts'>{song.playCount}</span></p>
             
           </Link>
-          : <Link to={`/song/${song.id}`} onClick={() => setSong(song)} >
-            <p>{song.name || song.Name}<span className='plays'>{song.playCount}</span></p>
+          : <Link to={`/song/${song.id}`} className='topSongTitle' onClick={() => setSong(song)} >
+            <p>{song.name || song.Name}<span className='playCounts'>{song.playCount}</span></p>
           </Link>
         }
       </section>
@@ -70,21 +33,17 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
 
   return (
     <section className='songList' data-cy='song-list'>
-      <p className='headSongs'>{bandName} {category === 'All' ? null : category} Top Songs - listing {filteredSongs.length} Total</p>
-      <Search searchSongName={searchSongName}></Search>
+      <p className='headSongs'>{bandName} {category === 'All' ? null : category} Top Songs</p>
       <div className='songs-back' onClick={() => window.history.back()}>
         <i><Back className="back"></Back></i>
       </div>
       
-      <Link to='songs' className='list-by-pop'>List Alphabetically</Link>
-      <div className='playCount'>Play Count</div>
+      <Link to='songs' className='list-by-pop'>List Alphabetically Instead<span className='playCounter'>Plays</span></Link>
       <div className='trackContainer'>{songsToDisplay}
         {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart next to the song title.</p>}
       </div>
     </section>
-
   )
-
 }
 
 export default TopSongs;

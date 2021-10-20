@@ -70,9 +70,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getShows();
-    this.getFavorites();
-    getSongs(this.state.bandID)
-      .then(response => this.setState({ songs: response }));
+    this.setBand(this.state.bandID, this.state.bandName)
     getBands()
       .then(response => this.setState({ bands: response }));
   }

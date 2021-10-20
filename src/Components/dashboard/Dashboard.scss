@@ -31,9 +31,10 @@
 
 .bandLink {
   height: 2vh;
-  padding: 0 1vw 0 1vw;
+  padding: 0 1vw .5vh 1vw;
   background-color: rgba(0,0,0,0);
-  color:#71316e
+  color:#71316e;
+  font-family: $setlist-font;
 }
 
 

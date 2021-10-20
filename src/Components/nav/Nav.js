@@ -16,7 +16,7 @@ const Nav = ({ updateCategory, bandName }) => {
             }
             {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
             <p className='name'>{bandName}</p>
-            <div className='back-btn' onClick={() => window.history.back()}>
+            <div className='back-btn nav-btn' onClick={() => window.history.back()}>
                 <i><Back></Back></i>
             </div>
             <div className='nav-container' data-cy='nav-container'>

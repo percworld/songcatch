@@ -35,7 +35,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
 
     return (
         <section className='songList' data-cy='song-list'>
-            <p className='headSongs'>{bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
+            <p className='headSongs'>{window.location.pathname === '/songs/favorites' && 'My Favorite'} {bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
             <Search searchSongName={searchSongName}></Search>
             <div className='songs-back' onClick={() => window.history.back()}>
 							<i><Back className="back"></Back></i>

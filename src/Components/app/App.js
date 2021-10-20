@@ -59,8 +59,12 @@ class App extends React.Component {
   }
   
   setBand = (id, name) => {
+    this.getFavorites()
     getSongs(id)
-      .then(response => this.setState({ songs: response, bandID: id, bandName: name }))
+      .then(response => this.setState({ songs: response, bandID: id, bandName: name, favorites: response.filter(song => {
+        const foundFavorite = this.state.favorites.find(favorite => favorite.id === song.Id)
+        return foundFavorite;
+      })}))
   }
 
   componentDidMount() {
@@ -156,7 +160,7 @@ class App extends React.Component {
             <Route path="/attended" render={() => (<Attended bandName={this.state.bandName} bandID={this.state.bandID} addShow={this.addShow} removeShow={this.removeShow} attendedShows={this.state.shows} />)} />
             <Route path="/bands" render={() => (<Bands setBand={this.setBand} bands={this.state.bands} />)} />
             <Route path="/projects" render={() => (<>festivals</>)} />
-            <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} />)} />
+            <Route path="/songs/favorites" render={() => (<Songs category={'All'} songs={this.state.favorites} plays={this.state.playlist} setSong={this.setSong} favorites={this.state.favorites} bandName={this.state.bandName} />)} />
             <Route path="/songs" render={() => (<Songs bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
             <Route path="/top-songs" render={() => (<TopSongs bandID={this.state.bandID} bandName={this.state.bandName} category={this.state.category} songs={this.state.songs} setSong={this.setSong} searchSongName={this.searchSongName} />)} />
             <Route path="/show/:showID" render={({ match }) => {

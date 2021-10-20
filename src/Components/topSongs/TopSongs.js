@@ -27,9 +27,8 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
   //GET LIST and reverse / assign last 100
   const getTopSongs = async () => {
     const unorderedSongs = await getSongsByPlaycount(bandID);
-    console.log(unorderedSongs)
-    //const orderedSongs = unorderedSongs.reverse();
-    //setTopSongsList(orderedSongs);
+    const orderedSongs = unorderedSongs.reverse();
+    setTopSongsList(orderedSongs);
   }
 
   getTopSongs();
@@ -58,10 +57,11 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
       <section className='songSingle' key={index}>
         {song.Id
           ? <Link to={`/song/${song.Id}`} onClick={() => setSong(song)} >
-            <li>{song.name || song.Name}</li>
+            <p>{song.name || song.Name}<span className='plays'>{song.playCount}</span></p>
+            
           </Link>
           : <Link to={`/song/${song.id}`} onClick={() => setSong(song)} >
-            <li>{song.name || song.Name}</li>
+            <p>{song.name || song.Name}<span className='plays'>{song.playCount}</span></p>
           </Link>
         }
       </section>
@@ -77,7 +77,7 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
       </div>
       
       <Link to='songs' className='list-by-pop'>List Alphabetically</Link>
-
+      <div className='playCount'>Play Count</div>
       <div className='trackContainer'>{songsToDisplay}
         {favorites && !favorites.length && <p className='instructions' data-cy='error-no-plays'>When viewing a song's plays, you may add to this list by clicking the heart next to the song title.</p>}
       </div>

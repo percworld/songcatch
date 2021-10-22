@@ -9,7 +9,7 @@ import { ReactComponent as Back } from '../icons/chevron-circle-left-solid.svg';
 const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }) => {
     
         
-    const filteredSongs = songs.filter(song => {
+    const categoryFilteredSongs = songs.filter(song => {
         switch (category) {
             case 'All':
                 return true;
@@ -18,9 +18,13 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
             default: return true;
         }
     })
+    const filteredSongs = categoryFilteredSongs.sort((a,b) => {
+        return a.Name.localeCompare(b.Name, 'en', { sensitivity: 'base' });
+    })
     const songsToDisplay = filteredSongs.map((song, index) => {
         return (
             <section className='songSingle' key={index}>
+                {console.log(song)}
                 {song.Id 
                 ? <Link to={`/song/${song.Id}`} onClick={() => setSong(song)} >
                     <li>{song.name || song.Name}</li>
@@ -35,7 +39,7 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
 
     return (
         <section className='songList' data-cy='song-list'>
-            <p className='headSongs'>{window.location.pathname === '/songs/favorites' && 'My Favorite'} {bandName} {category === 'All' ? null : category} Songs - {filteredSongs.length} Total</p>
+            <p className='headSongs'>{window.location.pathname === '/songs/favorites' && 'My Favorite'} {bandName} {category === 'All' ? null : category} Songs - {categoryFilteredSongs.length} Total</p>
             <Search searchSongName={searchSongName}></Search>
             <div className='songs-back' onClick={() => window.history.back()}>
 							<i><Back className="back"></Back></i>

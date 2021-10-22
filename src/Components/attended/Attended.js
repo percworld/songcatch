@@ -60,6 +60,7 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
 
   return (
     <section>
+      {console.log(shows)}
       <div className='show-back' onClick={() => window.history.back()}>
         <i><Back className="back backBands"></Back></i>
       </div>
@@ -93,13 +94,13 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
         : 
         <div className="load-wrapp">
           <p className="no-shows">You can add shows here by marking the circle under "I Was There!" in any show list</p>
-          <div className="load-9">
+          {/* <div className="load-9">
             <p>Loading</p>
             <div className="spinner">
               <div className="bubble-1"><Attended></Attended></div>
               <div className="bubble-2"><Attended></Attended></div>
             </div>
-          </div>
+          </div> */}
         </div>}
 
     </section>

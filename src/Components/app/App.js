@@ -24,8 +24,8 @@ class App extends React.Component {
       isDashboard: false,
       isLogged: false,
       bands: [],
-      bandID: JSON.parse(localStorage.getItem('bandPref')) || 12,
-      bandPref: JSON.parse(localStorage.getItem('bandPref')) || 12,
+      bandID: 12,
+      bandPref: 12,
       bandName: localStorage.getItem('bandName') || 'Lotus',
       category: 'All',
       songs: [],
@@ -50,11 +50,14 @@ class App extends React.Component {
   }
   
   getBand() {
-    const bandPrefData = localStorage.getItem('bandPref');
-    const parsedPref = JSON.parse(bandPrefData);
-    const bandNamePref = localStorage.getItem('bandName');
-    const parsedNamePref = JSON.parse(bandNamePref);
-    parsedPref && parsedNamePref &&  this.setBand(parsedPref, parsedNamePref)
+    let bandPrefData = localStorage.getItem('bandPref');
+    !bandPrefData && localStorage.setItem('bandPref', 12);
+    bandPrefData = localStorage.getItem('bandPref');
+    let parsedPref = JSON.parse(bandPrefData);
+    let bandNamePref = localStorage.getItem('bandName');
+    !bandNamePref && localStorage.setItem('bandName', 'Lotus');
+    bandNamePref = localStorage.getItem('bandName');
+    this.setBand(parsedPref, bandNamePref)
   }
   
   setBand = (id, name) => {
@@ -69,8 +72,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getShows();
-    this.setBand(this.state.bandID, this.state.bandName)
+    this.getShows()
+    this.getBand()
+    //this.setBand(this.state.bandID, this.state.bandName)
     getBands()
       .then(response => this.setState({ bands: response }));
   }

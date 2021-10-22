@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Dashboard = ({ bandName, bandID, bandPref }) => {
   const [, setBandChoice] = useState('');
+  const storedPreference = JSON.parse(localStorage.getItem('bandPref')) 
   const updateBandPref = () => {
     localStorage.setItem('bandPref', bandID)
     localStorage.setItem('bandName', bandName)
@@ -18,7 +19,7 @@ const Dashboard = ({ bandName, bandID, bandPref }) => {
         {bandName === 'lespecial' && <img className="navImg" src={'/assets/PngItem_2292851.png'} alt="lespecial logo" />}
         <p className='name dashName'>{bandName}</p>       
       </section>
-      {bandID !== JSON.parse(localStorage.getItem('bandPref')) 
+      {bandID !== storedPreference
         ? <button className='searchbar bandLink' onClick={() => {updateBandPref(bandPref, bandName)}}>Set {bandName} as my Home Band</button>
         : <div></div>
         }

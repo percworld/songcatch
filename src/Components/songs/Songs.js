@@ -24,7 +24,6 @@ const Songs = ({ songs, category, setSong, searchSongName, bandName, favorites }
     const songsToDisplay = filteredSongs.map((song, index) => {
         return (
             <section className='songSingle' key={index}>
-                {console.log(song)}
                 {song.Id 
                 ? <Link to={`/song/${song.Id}`} onClick={() => setSong(song)} >
                     <li>{song.name || song.Name}</li>

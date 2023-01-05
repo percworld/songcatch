@@ -10,7 +10,6 @@ const TopSongs = ({ bandID, category, setSong, searchSongName, bandName, favorit
 
   const getTopSongs = async () => {
     const unorderedSongs = await getSongsByPlaycount(bandID);
-    console.log(unorderedSongs)
     const orderedSongs = unorderedSongs.reverse();
     setTopSongsList(orderedSongs);
   }

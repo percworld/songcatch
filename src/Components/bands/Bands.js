@@ -15,15 +15,11 @@ const Bands = ({ setBand, bands }) => {
         tempBandList.splice(fromIndex, 1);
         tempBandList.splice(toIndex, 0, element);
     }
-
-    arraymove(1, 0) 
-    arraymove(15, 0)
-    arraymove(4, 10)
-    arraymove(3, 9)
-    arraymove(3, 9)
-    arraymove(3, 2)
-    arraymove(16, 4)
-    arraymove(12, 15)
+    
+    arraymove(17, 2) // moves GD 
+    arraymove(8, 3) 
+    arraymove(15, 4)
+    arraymove(14, 5)
 
     const bandsToDisplay = tempBandList.map(band => {
         return <Link to='/' key={band.id} onClick={() => setBand(band.id, band.name)}>{band.name}</Link>

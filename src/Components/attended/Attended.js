@@ -60,7 +60,6 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
 
   return (
     <section>
-      {console.log(shows)}
       <div className='show-back' onClick={() => window.history.back()}>
         <i><Back className="back backBands"></Back></i>
       </div>

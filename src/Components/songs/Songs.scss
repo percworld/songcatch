@@ -6,7 +6,7 @@ a {
 
 .trackContainer {
     @include bottom;  
-    max-height: 46vh;
+    max-height: 59vh;
     padding-bottom: 10vh;
 }
 
@@ -47,11 +47,11 @@ li {
    margin-left: 18.5vw;
    z-index: 5;
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 650px) {
   .trackContainer {
     display: flex;
     flex-direction: column; 
-    margin-left: 39vw;
+    margin-left: 17em;
     margin-top: 1em;
     width: 100%;
     height: 80.5vh;
@@ -63,7 +63,7 @@ li {
     //flex: 1 1 100%;    
   }
   .songSingle {
-    margin-left: -78vw;
+    margin-left: -53vw;
   }
   
   

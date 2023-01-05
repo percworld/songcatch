@@ -11,6 +11,7 @@ import { ReactComponent as Attended } from '../icons/attend.svg';
 const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
     const [shows, setShows] = useState([]);
     const [pageCounter, setPageCounter] = useState(1);
+    const [isPast, setIsPast] = useState(true);
 
     useEffect(() => {
         const updateShows = async () => {
@@ -32,12 +33,10 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
     const futureShows = shows.filter(show => {
         return (new Date(show.dateTime) > new Date() && show.status === "Active")
     })
-
-    console.log(futureShows)
     
     const attendedShowsIDs = attendedShows.map(show => show.id);
-
-    const showsToDisplay = pastShows.map(show => {
+    const showsByDate = isPast ? pastShows : futureShows;
+    const showsToDisplay = showsByDate.map(show => {
         if (show.hasSetlist === true) {
             return (
                 <section className='showContainer' key={show.id}>
@@ -80,10 +79,15 @@ const Shows = ({ bandName, bandID, addShow, removeShow, attendedShows }) => {
                             <i><Back className="back forward"></Back></i>
                         </button>}
                     </div>
-                    <span className='attendance'>I Was There!</span>
+                    {isPast ? <span className='attendance'>I Was There!</span> :
+                        <span className='attendance'>I Am So Going!</span>}
                     <div className='show-back' onClick={() => window.history.back()}>
                         <i><Back className="back backTour"></Back></i>
                     </div>
+                    {isPast 
+                        ? <button className='purpleButton upcomingShowsButton' onClick={() => {setIsPast(!isPast)}}>Show Upcoming Shows Instead</button>
+                        : <button className='purpleButton upcomingShowsButton' onClick={() => { setIsPast(!isPast) }}>Show Past Shows Instead</button>
+                    }
                     {showsToDisplay}
                     <div className='buttonWrap'>
                         {pageCounter !== 1 && <button className='purpleButton' onClick={() => setPageCounter(pageCounter - 1)}>

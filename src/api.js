@@ -1,11 +1,13 @@
 const baseUrl = 'https://setlift-api.herokuapp.com';
 
 const checkResponse = (response) => {
-    if (!response.ok) {
-        throw new Error('The songs aren\'t currently available.');
-    } else {
-        return response.json();
-    }
+
+    return response.json()
+    // if (!response.ok) {
+    //     throw new Error('The songs aren\'t currently available.');
+    // } else {
+    //     return response.json();
+    // }
 }
 
 const getBands = () => {
@@ -18,9 +20,10 @@ const getSongs = (id) => {
         .then(checkResponse)
 }
 
-const getSongsByPlaycount = (id) => {
-    return fetch(`${baseUrl}/topSongs/${id}`)
-        .then(checkResponse)
+const getSongsByPlaycount = async (id) => {
+    return await fetch(`${baseUrl}/topSongs/${id}`)
+        // .then(res => console.log(res))
+        .then(res => checkResponse(res))
 }
 
 const getSong = (songID) => {

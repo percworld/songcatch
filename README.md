@@ -54,3 +54,14 @@ Search by:
 
 [Music & Merch](http://www/lotusvibes.com)
 
+
+## Bug Fixes
+### Upgrade to node 19 issues included unrecognized gyp path and this was solved by uninstalling the deprecated node-sass module and installing sass with the updated version.
+### Webpack issues were solved by adding the following to webpack.config.js:
+```const crypto = require("crypto");
+const crypto_orig_createHash = crypto.createHash;
+crypto.createHash = algorithm => crypto_orig_createHash(algorithm == "md4" ? "sha256" : algorithm);```
+and the following to package.json scripts:
+```"debug": "NODE_OPTIONS='--openssl-legacy-provider' next dev -p 5000",```
+
+
